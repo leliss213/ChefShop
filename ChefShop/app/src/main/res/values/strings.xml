@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ChefShop</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_tela_login">TelaLogin</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_cadastro_usuario">CadastroUsuarioActivity</string>
+    <string name="title_activity_categorias_receitas">CategoriasReceitasActivity</string>
+</resources>
