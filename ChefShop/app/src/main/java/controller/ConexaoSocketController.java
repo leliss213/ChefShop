@@ -60,8 +60,8 @@ public class ConexaoSocketController {
     }
 
     // Método pra inserir um usuario:
-    public Usuario inserir(Usuario user) {
-        Usuario userInserido = null;
+    public String inserir(Usuario user) {
+        //Usuario userInserido = null;
         String msgRecebida;
         try {
             informacoesApp.out.writeObject("InserirUsuario");
@@ -69,8 +69,7 @@ public class ConexaoSocketController {
 
             if (msgRecebida.equals("ok")) {
                 informacoesApp.out.writeObject(user);
-                userInserido = (Usuario) informacoesApp.in.readObject();
-                return userInserido;
+                msgRecebida = (String) informacoesApp.in.readObject();
             }
 
         } catch (IOException ioe) {
@@ -80,7 +79,7 @@ public class ConexaoSocketController {
             classe.printStackTrace();
             return null;
         }
-        return userInserido;
+        return msgRecebida;
     }
 
 }

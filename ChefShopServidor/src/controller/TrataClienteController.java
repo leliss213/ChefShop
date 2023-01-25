@@ -45,6 +45,15 @@ public class TrataClienteController extends Thread{
                     UsuarioDao usdao = new UsuarioDao();
                     Usuario userlogado = usdao.efetuarLogin(user);
                     out.writeObject(userlogado);
+                } else if(comando.equalsIgnoreCase("InserirUsuario")){
+                    out.writeObject("ok");
+                    Usuario user = (Usuario) in.readObject();
+                    UsuarioDao dao = new UsuarioDao();
+                    if(dao.inserirUsuario(user)==-1){
+                        out.writeObject("ok");
+                    }else{
+                        out.writeObject("nok");
+                    }
                 }
                 
                 //relendo

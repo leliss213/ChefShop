@@ -57,8 +57,8 @@ public class LoginActivity extends AppCompatActivity {
 
                                 if (userLogado != null) {
                                     informacoesApp.setUsuarioLogado(userLogado);
-                                    //Intent it = new Intent(MainActivity.this, MenuActivity.class);
-                                    //startActivity(it);
+                                    Intent it = new Intent(LoginActivity.this, CategoriasReceitasActivity.class);
+                                    startActivity(it);
                                     runOnUiThread(new Runnable() {
                                         @Override
                                         public void run() {

@@ -52,11 +52,11 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                             @Override
                             public void run() {
                                 ConexaoSocketController ccont = new ConexaoSocketController(informacoesApp);
-                                userInserido = ccont.inserir(user);
-
-                                if (userInserido != null) {
+                                //userInserido = ccont.inserir(user);
+                                String msgRecebida = ccont.inserir(user);
+                                if (msgRecebida.equals("ok")) {
                                     informacoesApp.setUsuarioInserido(userInserido);
-                                    Intent it = new Intent(CadastroUsuarioActivity.this, CategoriasReceitasActivity.class);
+                                    Intent it = new Intent(CadastroUsuarioActivity.this, LoginActivity.class);
                                     startActivity(it);
                                     runOnUiThread(new Runnable() {
                                         @Override

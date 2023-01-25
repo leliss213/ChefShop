@@ -16,6 +16,9 @@ public class Comum extends Usuario implements Serializable{
     public Comum(int codUsuario, String nomeUsuario, String login, String senha, String email) {
         super(codUsuario, nomeUsuario, login, senha, email);
     }
+    public Comum(String login, String senha) {
+        super(login, senha);
+    }
 
     public Comum(int codUsuario) {
         super(codUsuario);

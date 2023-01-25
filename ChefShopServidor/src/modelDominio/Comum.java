@@ -8,6 +8,10 @@ import java.io.Serializable;
  */
 public class Comum extends Usuario implements Serializable{
     private static final long serialVersionUID = 123456789L;
+
+    public Comum(String login, String senha) {
+        super(login, senha);
+    }
     
     //CONSTRUTORES
     public Comum(int codUsuario, String nomeUsuario, String login, String senha, String email) {
