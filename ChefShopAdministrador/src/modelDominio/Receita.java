@@ -5,6 +5,7 @@
 package modelDominio;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,9 +15,9 @@ public class Receita implements Serializable{
     private static final long serialVersionUID = 123456789L;
     
     private int codReceita;
-    private int tipo; //categoria da receita
+    private int tipo; // Carnes -> 1, Massas -> 2, Saladas -> 3, Sobremesas -> 4, Sopas -> 5, Lanches -> 6
     private String nomeReceita;
-    // ArrayList<String> Ingredientes = new ArrayList<>();
+    private ArrayList<Ingredientes> Ingredientes;
     private String modoPreparo;
     private byte[] imagemReceita;
 

@@ -48,9 +48,11 @@ public class UsuarioDao {
                                                         res.getString("email"));
                 } else {
                     //é um usuário comum
-                    userSelecionado = new Comum(res.getString("login"),
-                                                res.getString("senha"));
-                                                
+                    userSelecionado = new Comum(res.getInt("codusuario"),
+                                                res.getString("nomeusuario"),
+                                                res.getString("login"),
+                                                res.getString("senha"),
+                                                res.getString("email"));
                 }
             }
             // Fechar as conexões e statements:
@@ -66,37 +68,4 @@ public class UsuarioDao {
         
     }
     
-    public int inserirUsuario(Usuario usuario){
-        PreparedStatement stmt = null;
-    
-        try{
-            try{
-               con.setAutoCommit(false);
-               String sql = "insert into Usuario(login,senha,tipo) values(?,?,2);";
-               stmt = con.prepareStatement(sql);
-               stmt.setString(1, usuario.getLogin());
-               stmt.setString(2, usuario.getSenha());
-               stmt.execute();
-               con.commit();
-               return -1;
-            }catch(SQLException e){
-                try {
-                    con.rollback(); // cancelando a transação 
-                    return e.getErrorCode(); // devolvendo o erro
-                } catch (SQLException ex) {
-                    return ex.getErrorCode();
-                }
-            }   
-            }
-        finally{
-            try {
-                stmt.close();
-                con.setAutoCommit(true);
-                con.close();
-            } catch (SQLException e) {
-                return e.getErrorCode();
-            }
-        }
-    
-}
 }
