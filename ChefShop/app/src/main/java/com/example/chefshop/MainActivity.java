@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+//        teste
         //executando a thread
         thread.start();
 
