@@ -45,5 +45,17 @@
         android:text="Lanches"
         android:id="@+id/bCategoriaLanches"/>
 
+    <!-- separar, botar em baixo da tela -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Perfil"
+        android:id="@+id/bPerfilUsuario"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Inicial"
+        android:id="@+id/bTelaInicial"/>
+
 
 </LinearLayout>

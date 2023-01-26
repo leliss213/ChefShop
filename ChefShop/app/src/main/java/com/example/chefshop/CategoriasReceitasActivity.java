@@ -1,5 +1,6 @@
 package com.example.chefshop;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -15,7 +16,7 @@ import android.widget.EditText;
 import modelDominio.Usuario;
 
 public class CategoriasReceitasActivity extends AppCompatActivity {
-    Button bCategoriaCarnes,bCategoriaMassas,bCategoriaSaladas,bCategoriaSobremesas,bCategoriaSopas,bCategoriaLanches;
+    Button bCategoriaCarnes,bCategoriaMassas,bCategoriaSaladas,bCategoriaSobremesas,bCategoriaSopas,bCategoriaLanches,bPerfilUsuario,bTelaInicial;
     InformacoesApp informacoesApp;
 
     @Override
@@ -30,6 +31,8 @@ public class CategoriasReceitasActivity extends AppCompatActivity {
         bCategoriaSobremesas = findViewById(R.id.bCategoriaSobremesas);
         bCategoriaSopas = findViewById(R.id.bCategoriaSopas);
         bCategoriaLanches = findViewById(R.id.bCategoriaLanches);
+        bPerfilUsuario = findViewById(R.id.bPerfilUsuario);
+        bTelaInicial = findViewById(R.id.bTelaInicial);
 
         informacoesApp = (InformacoesApp) getApplicationContext();
 
@@ -79,6 +82,24 @@ public class CategoriasReceitasActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+            }
+        });
+
+        //Botão Perfil:
+        bPerfilUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(CategoriasReceitasActivity.this, PerfilUsuarioActivity.class);
+                startActivity(it);
+            }
+        });
+
+        //Botão Tela Inicial:
+        bTelaInicial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent it = new Intent(CategoriasReceitasActivity.this, CategoriasReceitasActivity.class);
+//                startActivity(it);
             }
         });
 

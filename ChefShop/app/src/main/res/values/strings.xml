@@ -5,4 +5,5 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_cadastro_usuario">CadastroUsuarioActivity</string>
     <string name="title_activity_categorias_receitas">CategoriasReceitasActivity</string>
+    <string name="title_activity_perfil_usuario">PerfilUsuarioActivity</string>
 </resources>
