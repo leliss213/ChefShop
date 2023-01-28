@@ -82,4 +82,47 @@ public class UsuarioDao {
         
     }
     
+    public int inserirUsuario(Usuario user){
+        PreparedStatement stmt = null;
+
+        try{
+            try{
+               con.setAutoCommit(false);
+               String sql = "insert into Usuario(login,senha,tipo) values(?,?,2);";
+               stmt = con.prepareStatement(sql);
+               stmt.setString(1, user.getLogin());
+               try {
+                    MessageDigest md = MessageDigest.getInstance("MD5"); // MD5, SHA-1, SHA-256
+
+                    BigInteger a = new BigInteger(1, md.digest(user.getSenha().getBytes()));
+                    String senhaHash = a.toString();
+                    stmt.setString(2, senhaHash); // Trocando o segundo ? pela senha
+                    System.out.println(senhaHash);
+
+                } catch (NoSuchAlgorithmException e) {
+                    System.out.println("Erro ao carregar o MessageDigest");
+                }
+               stmt.execute();
+               con.commit();
+               return -1;
+            }catch(SQLException e){
+                try {
+                    con.rollback(); // cancelando a transação 
+                    return e.getErrorCode(); // devolvendo o erro
+                } catch (SQLException ex) {
+                    return ex.getErrorCode();
+                }
+            }
+            }
+        finally{
+            try {
+                stmt.close();
+                con.setAutoCommit(true);
+                con.close();
+            } catch (SQLException e) {
+                return e.getErrorCode();
+            }
+        }
+    
+    }
 }
