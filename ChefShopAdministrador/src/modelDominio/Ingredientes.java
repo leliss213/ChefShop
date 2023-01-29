@@ -18,6 +18,8 @@ public class Ingredientes implements Serializable{
     private Produto produto;
 
     public Ingredientes(int codIngrediente, int quantidadeIngredientes, Produto produto) {
+//se voces quisererm ter a lista de produtos dentro da receita nao pode ser Produto produto, 
+//teria que ser um arraylist, ficaria assim ArrayList<Produto> listaProdutos;
         this.codIngrediente = codIngrediente;
         this.quantidadeIngredientes = quantidadeIngredientes;
         this.produto = produto;

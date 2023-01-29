@@ -9,11 +9,19 @@
     android:orientation="vertical"
     android:padding="8dp"
     tools:showIn="@layout/activity_main">
-    
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="229dp"
+        android:src="@mipmap/ic_logo"
+        />
+
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Entrar ->"
-        android:id="@+id/bMainEntrar"/>
+        android:id="@+id/bMainEntrar"
+        android:layout_marginTop="30dp"/>
 
 </LinearLayout>

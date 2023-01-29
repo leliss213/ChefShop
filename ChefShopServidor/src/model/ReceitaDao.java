@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author Aila
+ * @author Aila e Alice
  */
 public class ReceitaDao {
     

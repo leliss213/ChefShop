@@ -4,12 +4,18 @@
  */
 package view;
 
+import javax.imageio.ImageIO;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import modelDominio.Produto;
+import view.util.Imagem;
+
 /**
  *
  * @author Aila
  */
 public class FormCadastroReceita extends javax.swing.JDialog {
-
+    private Imagem imagem = null;
     /**
      * Creates new form FormCadastroReceita
      */
@@ -35,18 +41,19 @@ public class FormCadastroReceita extends javax.swing.JDialog {
         jTFNomeReceita = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jCBSelecionaProduto = new javax.swing.JComboBox<>();
-        jTFUnidadeMedida = new javax.swing.JTextField();
         jBAdicionarIngrediente = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jSpinner1 = new javax.swing.JSpinner();
+        jTAModoPreparo = new javax.swing.JTextArea();
+        jSpQuantidade = new javax.swing.JSpinner();
         jBImagem = new javax.swing.JButton();
         jBSalvar = new javax.swing.JButton();
         jBCancelar = new javax.swing.JButton();
         jBDeletar = new javax.swing.JButton();
+        jblImagem = new javax.swing.JLabel();
+        jCBUnidadeMedida = new javax.swing.JComboBox<>();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -61,8 +68,6 @@ public class FormCadastroReceita extends javax.swing.JDialog {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jLabel1.setText("Adicionar Receita");
 
         jLabel2.setText("Categoria:");
@@ -73,11 +78,14 @@ public class FormCadastroReceita extends javax.swing.JDialog {
 
         jLabel4.setText("Ingredientes:");
 
-        jCBSelecionaProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um produto" }));
-
-        jTFUnidadeMedida.setText("Unidade de Medida");
+        jCBSelecionaProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um produto", "teste" }));
 
         jBAdicionarIngrediente.setText("Adicionar");
+        jBAdicionarIngrediente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAdicionarIngredienteActionPerformed(evt);
+            }
+        });
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -94,9 +102,9 @@ public class FormCadastroReceita extends javax.swing.JDialog {
 
         jLabel5.setText("Modo de Preparo:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane3.setViewportView(jTextArea1);
+        jTAModoPreparo.setColumns(20);
+        jTAModoPreparo.setRows(5);
+        jScrollPane3.setViewportView(jTAModoPreparo);
 
         jBImagem.setText("Adicionar Imagem");
         jBImagem.addActionListener(new java.awt.event.ActionListener() {
@@ -116,6 +124,8 @@ public class FormCadastroReceita extends javax.swing.JDialog {
 
         jBDeletar.setText("Deletar");
 
+        jCBUnidadeMedida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a Unidade de Medida", "colher de sopa", "colher de chá", "xícara", "grama", "quilo", "unidade", " " }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -124,46 +134,49 @@ public class FormCadastroReceita extends javax.swing.JDialog {
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel1)
                     .addComponent(jLabel4)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSpQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jCBSelecionaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTFUnidadeMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(77, 77, 77)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCBUnidadeMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
                         .addComponent(jBAdicionarIngrediente))
                     .addComponent(jScrollPane2)
                     .addComponent(jScrollPane3)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCBTipoReceita, 0, 249, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTFNomeReceita)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBImagem)
-                        .addGap(55, 55, 55))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jBSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jBCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)
-                        .addComponent(jBDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jBDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jCBTipoReceita, 0, 249, Short.MAX_VALUE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel3)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jTFNomeReceita)))
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jBImagem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jblImagem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(55, 55, 55)))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel1)
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -174,16 +187,18 @@ public class FormCadastroReceita extends javax.swing.JDialog {
                             .addComponent(jTFNomeReceita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addContainerGap()
+                        .addComponent(jblImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jBImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(23, 23, 23)))
+                        .addGap(17, 17, 17)))
                 .addComponent(jLabel4)
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCBSelecionaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTFUnidadeMedida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBAdicionarIngrediente)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSpQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCBUnidadeMedida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
@@ -203,11 +218,53 @@ public class FormCadastroReceita extends javax.swing.JDialog {
 
     private void jBImagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBImagemActionPerformed
         // TODO add your handling code here:
+        JFileChooser jFileChooser1 = new JFileChooser();
+        FileNameExtensionFilter imageFilter = new FileNameExtensionFilter("Image files", ImageIO.getReaderFileSuffixes());
+        jFileChooser1.addChoosableFileFilter(imageFilter);
+        if (jFileChooser1.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+            imagem = new Imagem(jFileChooser1.getSelectedFile());
+            jblImagem.setIcon(imagem.getImageIcon()); 
+            //jblImagem é um label grande na tela para aparecer a imagem
+        }
+        
     }//GEN-LAST:event_jBImagemActionPerformed
 
     private void jBSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalvarActionPerformed
         // TODO add your handling code here:
+//        if(jCBTipoReceita.getSelectedIndex()!= 0){
+//            if(!jTFNomeReceita.getText().isEmpty()){
+//                if(imagem.getImagem()!=null){
+//                   if(!jSpQuantidade.getValue().equals("0")){
+//                       if(jCBSelecionaProduto.getSelectedIndex()!= 0){
+//                           if(jCBUnidadeMedida.getSelectedIndex()!=0){
+//                               if(jTAModoPreparo.getText().isEmpty()){
+//                                   Produto produto = new Produto(String.valueOf(jCBSelecionaProduto.getSelectedIndex()),jCBUnidadeMedida.getSelectedIndex(), Integer.parseInt(jSpQuantidade.getValue()));
+//                                   
+//                                   
+//                               }else{
+//                                   
+//                               }
+//                           }else{
+//                               
+//                           }
+//                       }else{
+//                           
+//                       }
+//                   } 
+//                }else{
+//                    
+//                }
+//            }else{
+//                
+//            }
+//        }else{
+//            
+//        }
     }//GEN-LAST:event_jBSalvarActionPerformed
+
+    private void jBAdicionarIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAdicionarIngredienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBAdicionarIngredienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,6 +309,7 @@ public class FormCadastroReceita extends javax.swing.JDialog {
     private javax.swing.JButton jBSalvar;
     private javax.swing.JComboBox<String> jCBSelecionaProduto;
     private javax.swing.JComboBox<String> jCBTipoReceita;
+    private javax.swing.JComboBox<String> jCBUnidadeMedida;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -260,11 +318,11 @@ public class FormCadastroReceita extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpQuantidade;
+    private javax.swing.JTextArea jTAModoPreparo;
     private javax.swing.JTextField jTFNomeReceita;
-    private javax.swing.JTextField jTFUnidadeMedida;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel jblImagem;
     // End of variables declaration//GEN-END:variables
 }

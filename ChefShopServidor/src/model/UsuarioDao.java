@@ -11,7 +11,7 @@ import modelDominio.Usuario;
 
 /**
  *
- * @author alice
+ * @author Aila e Alice
  */
 public class UsuarioDao {
     /** Dao: Data Access Object: pega os dados do banco e tranfosrma em objetos de classe:

@@ -15,11 +15,19 @@ public class Produto implements Serializable{
     
     private int codProduto;
     private String nomeProduto;
+    private int quantidadeUnidade;//NAO TINHA ESSE ATRIBUTO EM PRODUTO, FOI ADICIONADO NO BANCO DE DADOS TBM COMO INT
     private int unidade; // Colher de Sopa -> 0, Colher de Chá -> 1, Xícara -> 2, Gramas -> 3, Quilos -> 4, Unidade -> 5, Pitada -> 6
 
-    public Produto(int codProduto, String nomeProduto, int unidade) {
+    public Produto(String nomeProduto, int quantidadeUnidade, int unidade) {
+        this.nomeProduto = nomeProduto;
+        this.quantidadeUnidade = quantidadeUnidade;
+        this.unidade = unidade;
+    }
+
+    public Produto(int codProduto, String nomeProduto, int quantidadeUnidade, int unidade) {
         this.codProduto = codProduto;
         this.nomeProduto = nomeProduto;
+        this.quantidadeUnidade = quantidadeUnidade;
         this.unidade = unidade;
     }
 
