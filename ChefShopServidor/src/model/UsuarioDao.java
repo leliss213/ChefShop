@@ -29,8 +29,7 @@ public class UsuarioDao {
         Usuario userSelecionado = null;
         
         try {
-            String sql = "select * from usuario\n" +
-                        "where login = ? and senha = ?";
+            String sql = "select * from usuario where login = ? and senha = ?";
             //criar o statement e trocar os parametros:
             stmt = con.prepareStatement(sql); // Vai preparar o script de cima pra q eu possa trocar os dois ?;
             stmt.setString(1, user.getLogin()); // Trocando o primeiro ? pelo login
@@ -43,6 +42,7 @@ public class UsuarioDao {
                 System.out.println(senhaHash);
                         
             } catch (NoSuchAlgorithmException e) {
+                //hash não funciona no android
 		System.out.println("Erro ao carregar o MessageDigest");
             }
             
