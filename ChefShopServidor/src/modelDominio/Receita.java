@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Aila
+ * @author Aila e alice
  */
 public class Receita implements Serializable{
     private static final long serialVersionUID = 123456789L;

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelDominio;
 
 import java.io.Serializable;
@@ -13,7 +9,7 @@ import java.util.ArrayList;
  */
 public class Receita implements Serializable{
     private static final long serialVersionUID = 123456789L;
-    
+
     private int codReceita;
     private int tipo; // Carnes -> 1, Massas -> 2, Saladas -> 3, Sobremesas -> 4, Sopas -> 5, Lanches -> 6
     private String nomeReceita;
@@ -39,7 +35,7 @@ public class Receita implements Serializable{
         this.modoPreparo = modoPreparo;
         this.imagemReceita = imagemReceita;
     }
-    
+
     public int getCodReceita() {
         return codReceita;
     }
@@ -85,5 +81,5 @@ public class Receita implements Serializable{
         return "Receita{" + "codReceita=" + codReceita + ", tipo=" + tipo + ", nomeReceita=" + nomeReceita + ", modoPreparo=" + modoPreparo + ", imagemReceita=" + imagemReceita + '}';
     }
 
-    
+
 }
