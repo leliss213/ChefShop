@@ -13,49 +13,102 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Categorias"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Carnes"
-        android:id="@+id/bCategoriaCarnes"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Massas"
-        android:id="@+id/bCategoriaMassas"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Saladas"
-        android:id="@+id/bCategoriaSaladas"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sobremesas"
-        android:id="@+id/bCategoriaSobremesas"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sopas"
-        android:id="@+id/bCategoriaSopas"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Lanches"
-        android:id="@+id/bCategoriaLanches"/>
+        android:layout_gravity="center_horizontal"
+        android:text="Categorias"
+        android:textSize="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="30dp"/>
 
-    <!-- separar, botar em baixo da tela -->
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Perfil"
-        android:id="@+id/bPerfilUsuario"/>
-    <Button
+        android:gravity="center_horizontal"
+        android:layout_margin="20dp">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carnes"
+            android:layout_weight="1"
+            android:id="@+id/ibCategoriaCarnes"
+            android:src="@drawable/carne"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Massas"
+            android:layout_weight="1"
+            android:id="@+id/ibCategoriaMassas"
+            android:src="@drawable/massas"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Inicial"
-        android:id="@+id/bTelaInicial"/>
+        android:gravity="center_horizontal"
+        android:layout_margin="20dp">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saladas"
+            android:layout_weight="1"
+            android:id="@+id/ibCategoriaSaladas"
+            android:src="@drawable/salada"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sobremesas"
+            android:layout_weight="1"
+            android:id="@+id/ibCategoriaSobremesas"
+            android:src="@drawable/sobremesas"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sopas"
+            android:layout_weight="1"
+            android:id="@+id/ibCategoriaSopas"
+            android:src="@drawable/sopas"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lanches"
+            android:layout_weight="1"
+            android:id="@+id/ibCategoriaLanches"
+            android:src="@drawable/lanches"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <!-- separar, botar em baixo da tela -->
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inicial"
+            android:layout_weight="1"
+            android:id="@+id/ibTelaInicial"
+            android:src="@drawable/home"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perfil"
+            android:layout_weight="1"
+            android:id="@+id/ibPerfilUsuario"
+            android:src="@drawable/perfil"/>
+
+    </LinearLayout>
 
 
 </LinearLayout>
