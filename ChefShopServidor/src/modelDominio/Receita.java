@@ -15,16 +15,17 @@ public class Receita implements Serializable{
     private static final long serialVersionUID = 123456789L;
     
     private int codReceita;
-    private int tipo; //categoria da receita
+    private int tipo; // Carnes -> 1, Massas -> 2, Saladas -> 3, Sobremesas -> 4, Sopas -> 5, Lanches -> 6
     private String nomeReceita;
     private ArrayList<Ingredientes> Ingredientes;
     private String modoPreparo;
     private byte[] imagemReceita;
 
-    public Receita(int codReceita, int tipo, String nomeReceita, String modoPreparo, byte[] imagemReceita) {
+    public Receita(int codReceita, int tipo, String nomeReceita, ArrayList<Ingredientes> Ingredientes, String modoPreparo, byte[] imagemReceita) {
         this.codReceita = codReceita;
         this.tipo = tipo;
         this.nomeReceita = nomeReceita;
+        this.Ingredientes = Ingredientes;
         this.modoPreparo = modoPreparo;
         this.imagemReceita = imagemReceita;
     }
@@ -33,13 +34,14 @@ public class Receita implements Serializable{
         this.codReceita = codReceita;
     }
 
-    public Receita(int tipo, String nomeReceita, String modoPreparo, byte[] imagemReceita) {
+    public Receita(int tipo, String nomeReceita, ArrayList<Ingredientes> Ingredientes, String modoPreparo, byte[] imagemReceita) {
         this.tipo = tipo;
         this.nomeReceita = nomeReceita;
+        this.Ingredientes = Ingredientes;
         this.modoPreparo = modoPreparo;
         this.imagemReceita = imagemReceita;
     }
-    
+
     public int getCodReceita() {
         return codReceita;
     }
@@ -64,6 +66,14 @@ public class Receita implements Serializable{
         this.nomeReceita = nomeReceita;
     }
 
+    public ArrayList<Ingredientes> getIngredientes() {
+        return Ingredientes;
+    }
+
+    public void setIngredientes(ArrayList<Ingredientes> Ingredientes) {
+        this.Ingredientes = Ingredientes;
+    }
+
     public String getModoPreparo() {
         return modoPreparo;
     }
@@ -82,8 +92,7 @@ public class Receita implements Serializable{
 
     @Override
     public String toString() {
-        return "Receita{" + "codReceita=" + codReceita + ", tipo=" + tipo + ", nomeReceita=" + nomeReceita + ", modoPreparo=" + modoPreparo + ", imagemReceita=" + imagemReceita + '}';
+        return "Receita{" + "codReceita=" + codReceita + ", tipo=" + tipo + ", nomeReceita=" + nomeReceita + ", Ingredientes=" + Ingredientes + ", modoPreparo=" + modoPreparo + ", imagemReceita=" + imagemReceita + '}';
     }
 
-    
 }

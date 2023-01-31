@@ -3,52 +3,51 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
-
 import factory.Conector;
 import java.sql.*;
 import java.util.ArrayList;
 import modelDominio.Ingredientes;
-import modelDominio.Receita;
+import modelDominio.Produto;
 
 /**
  *
- * @author Aila e Alice
+ * @author Aila
  */
-public class ReceitaDao {
+public class IngredienteDao {
     private Connection con;
     
-    public ReceitaDao() { // deve ser vazio e fazer a conexão dentro
+    public IngredienteDao() {
         con = Conector.getConnection();
     }
     
-         // método que retorna todas as receitas cadastradas 
-        public ArrayList<Receita>getLista(){
+    public ArrayList<Ingredientes>getLista(){
         PreparedStatement stmt = null; 
-        ArrayList<Receita> listaReceita = new ArrayList<>();
+        ArrayList<Ingredientes> listaIngredientes = new ArrayList<>();
        
         try {
-            String sql = "select * from receita";
+            String sql = "select * from ingredientes";
             // criando o statement
             stmt = con.prepareStatement(sql);
             
             //executando o script SQL
             ResultSet res = stmt.executeQuery();
-            // se existe um resultado
-            while (res.next()) {
-                Receita r = new Receita(res.getInt("codreceita"), res.getInt("tipo"), res.getString("nomereceita"), (ArrayList<Ingredientes>) res.getArray("ingredientes"), res.getString("modopreparo"), res.getBytes("imagemreceita"));
-                System.out.println(r);
-                listaReceita.add(r);
+            // se existe um resultado     
+            while (res.next()) { // 
+                Ingredientes ing = new Ingredientes(res.getInt("codingrediente"), res.getInt("quantidadeingredientes"), );
+                System.out.println(ing);
+                listaIngredientes.add(ing);
                 
             }
             /// fechar as conexões e statement 
             res.close();
             stmt.close();
             con.close();
-            return listaReceita;
+            return listaIngredientes;
             
         } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
+    
 }
