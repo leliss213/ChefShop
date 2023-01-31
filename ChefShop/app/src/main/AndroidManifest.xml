@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".VisualizacaoReceitasRecyclerActivity"
+            android:label="@string/title_activity_visualizacao_receitas_recycler"
+            android:parentActivityName=".CategoriasReceitasActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.chefshop.CategoriasReceitasActivity" />
+        </activity>
+        <activity
             android:name=".PerfilUsuarioActivity"
             android:label="@string/title_activity_perfil_usuario"
             android:parentActivityName=".CategoriasReceitasActivity"
