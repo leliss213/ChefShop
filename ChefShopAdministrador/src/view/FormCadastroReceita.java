@@ -42,18 +42,26 @@ public class FormCadastroReceita extends javax.swing.JDialog {
         jLabel4 = new javax.swing.JLabel();
         jCBSelecionaProduto = new javax.swing.JComboBox<>();
         jBAdicionarIngrediente = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
+<<<<<<< Updated upstream
         jTAModoPreparo = new javax.swing.JTextArea();
         jSpQuantidade = new javax.swing.JSpinner();
+=======
+        jTextArea1 = new javax.swing.JTextArea();
+        jSQuantidadeIngredientes = new javax.swing.JSpinner();
+>>>>>>> Stashed changes
         jBImagem = new javax.swing.JButton();
         jBSalvar = new javax.swing.JButton();
         jBCancelar = new javax.swing.JButton();
         jBDeletar = new javax.swing.JButton();
+<<<<<<< Updated upstream
         jblImagem = new javax.swing.JLabel();
         jCBUnidadeMedida = new javax.swing.JComboBox<>();
+=======
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+>>>>>>> Stashed changes
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -73,6 +81,11 @@ public class FormCadastroReceita extends javax.swing.JDialog {
         jLabel2.setText("Categoria:");
 
         jCBTipoReceita.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a categoria", "Carnes", "Massas", "Saladas", "Sobremesas", "Sopas", "Lanches" }));
+        jCBTipoReceita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCBTipoReceitaActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Nome da Receita:");
 
@@ -84,6 +97,7 @@ public class FormCadastroReceita extends javax.swing.JDialog {
         jBAdicionarIngrediente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBAdicionarIngredienteActionPerformed(evt);
+<<<<<<< Updated upstream
             }
         });
 
@@ -96,9 +110,10 @@ public class FormCadastroReceita extends javax.swing.JDialog {
             },
             new String [] {
                 "Quantidade", "Produto", "Unidade"
+=======
+>>>>>>> Stashed changes
             }
-        ));
-        jScrollPane2.setViewportView(jTable2);
+        });
 
         jLabel5.setText("Modo de Preparo:");
 
@@ -124,7 +139,13 @@ public class FormCadastroReceita extends javax.swing.JDialog {
 
         jBDeletar.setText("Deletar");
 
+<<<<<<< Updated upstream
         jCBUnidadeMedida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a Unidade de Medida", "colher de sopa", "colher de chá", "xícara", "grama", "quilo", "unidade", " " }));
+=======
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane4.setViewportView(jTextArea2);
+>>>>>>> Stashed changes
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,6 +154,7 @@ public class FormCadastroReceita extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+<<<<<<< Updated upstream
                     .addComponent(jLabel5)
                     .addComponent(jLabel4)
                     .addGroup(layout.createSequentialGroup()
@@ -153,6 +175,23 @@ public class FormCadastroReceita extends javax.swing.JDialog {
                         .addComponent(jBDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+=======
+                    .addComponent(jScrollPane4)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel5)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel4)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jSQuantidadeIngredientes, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jCBSelecionaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jTFUnidadeMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(77, 77, 77)
+                            .addComponent(jBAdicionarIngrediente))
+                        .addComponent(jScrollPane3)
+                        .addGroup(layout.createSequentialGroup()
+>>>>>>> Stashed changes
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel2)
@@ -162,12 +201,24 @@ public class FormCadastroReceita extends javax.swing.JDialog {
                                     .addComponent(jLabel3)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jTFNomeReceita)))
+<<<<<<< Updated upstream
                             .addComponent(jLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jBImagem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jblImagem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(55, 55, 55)))
+=======
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBImagem)
+                            .addGap(55, 55, 55))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jBSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(37, 37, 37)
+                            .addComponent(jBDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
+>>>>>>> Stashed changes
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -197,11 +248,18 @@ public class FormCadastroReceita extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCBSelecionaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBAdicionarIngrediente)
+<<<<<<< Updated upstream
                     .addComponent(jSpQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCBUnidadeMedida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
+=======
+                    .addComponent(jSQuantidadeIngredientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+>>>>>>> Stashed changes
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -230,6 +288,7 @@ public class FormCadastroReceita extends javax.swing.JDialog {
     }//GEN-LAST:event_jBImagemActionPerformed
 
     private void jBSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalvarActionPerformed
+<<<<<<< Updated upstream
         // TODO add your handling code here:
 //        if(jCBTipoReceita.getSelectedIndex()!= 0){
 //            if(!jTFNomeReceita.getText().isEmpty()){
@@ -264,6 +323,23 @@ public class FormCadastroReceita extends javax.swing.JDialog {
 
     private void jBAdicionarIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAdicionarIngredienteActionPerformed
         // TODO add your handling code here:
+=======
+        int indiceCategoria = jCBTipoReceita.getSelectedIndex();
+        String nomeReceita = jTFNomeReceita.getSelectedText();
+//      int quantidade = (int)jSQuantidadeIngredientes.getValue();
+//      int produto = jCBSelecionaProduto.getSelectedIndex();
+        
+        
+    }//GEN-LAST:event_jBSalvarActionPerformed
+
+    private void jCBTipoReceitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBTipoReceitaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCBTipoReceitaActionPerformed
+
+    private void jBAdicionarIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAdicionarIngredienteActionPerformed
+        int quantidade = (int)jSQuantidadeIngredientes.getValue();
+        
+>>>>>>> Stashed changes
     }//GEN-LAST:event_jBAdicionarIngredienteActionPerformed
 
     /**
@@ -315,14 +391,23 @@ public class FormCadastroReceita extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JSpinner jSQuantidadeIngredientes;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+<<<<<<< Updated upstream
     private javax.swing.JSpinner jSpQuantidade;
     private javax.swing.JTextArea jTAModoPreparo;
+=======
+    private javax.swing.JScrollPane jScrollPane4;
+>>>>>>> Stashed changes
     private javax.swing.JTextField jTFNomeReceita;
     private javax.swing.JTable jTable1;
+<<<<<<< Updated upstream
     private javax.swing.JTable jTable2;
     private javax.swing.JLabel jblImagem;
+=======
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
+>>>>>>> Stashed changes
     // End of variables declaration//GEN-END:variables
 }

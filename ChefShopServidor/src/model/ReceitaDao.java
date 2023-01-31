@@ -6,9 +6,12 @@ package model;
 
 import factory.Conector;
 import java.sql.*;
+<<<<<<< Updated upstream
 import java.util.ArrayList;
 import modelDominio.Ingredientes;
 import modelDominio.Receita;
+=======
+>>>>>>> Stashed changes
 
 /**
  *
@@ -17,7 +20,11 @@ import modelDominio.Receita;
 public class ReceitaDao {
     private Connection con;
     
+<<<<<<< Updated upstream
     public ReceitaDao() { // deve ser vazio e fazer a conexão dentro
+=======
+    public ReceitaDao() {
+>>>>>>> Stashed changes
         con = Conector.getConnection();
     }
     
