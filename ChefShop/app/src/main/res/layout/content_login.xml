@@ -34,12 +34,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/etLoginSenha"
         android:inputType="textPassword"/>
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Esqueci a senha"
-        android:id="@+id/bLoginEsqueciSenha"
-        android:layout_gravity="center_horizontal"/>
+<!--    <Button-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Esqueci a senha"-->
+<!--        android:id="@+id/bLoginEsqueciSenha"-->
+<!--        android:layout_gravity="center_horizontal"/>-->
     <Button
         android:layout_width="200dp"
         android:layout_height="wrap_content"
@@ -50,7 +50,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Não possui uma conta?"
-        android:paddingTop="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="10dp"
         android:layout_gravity="center_horizontal"/>
     <Button
         android:layout_width="200dp"
