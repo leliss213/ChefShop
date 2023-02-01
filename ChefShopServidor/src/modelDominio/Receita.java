@@ -17,7 +17,7 @@ public class Receita implements Serializable{
     private int codReceita;
     private int tipo; // Carnes -> 1, Massas -> 2, Saladas -> 3, Sobremesas -> 4, Sopas -> 5, Lanches -> 6
     private String nomeReceita;
-    private ArrayList<Ingredientes> Ingredientes;
+    private ArrayList<Ingredientes> ingredientes;
     private String modoPreparo;
     private byte[] imagemReceita;
 
@@ -25,7 +25,7 @@ public class Receita implements Serializable{
         this.codReceita = codReceita;
         this.tipo = tipo;
         this.nomeReceita = nomeReceita;
-        this.Ingredientes = Ingredientes;
+        this.ingredientes = Ingredientes;
         this.modoPreparo = modoPreparo;
         this.imagemReceita = imagemReceita;
     }
@@ -37,7 +37,7 @@ public class Receita implements Serializable{
     public Receita(int tipo, String nomeReceita, ArrayList<Ingredientes> Ingredientes, String modoPreparo, byte[] imagemReceita) {
         this.tipo = tipo;
         this.nomeReceita = nomeReceita;
-        this.Ingredientes = Ingredientes;
+        this.ingredientes = Ingredientes;
         this.modoPreparo = modoPreparo;
         this.imagemReceita = imagemReceita;
     }
@@ -67,11 +67,11 @@ public class Receita implements Serializable{
     }
 
     public ArrayList<Ingredientes> getIngredientes() {
-        return Ingredientes;
+        return ingredientes;
     }
 
     public void setIngredientes(ArrayList<Ingredientes> Ingredientes) {
-        this.Ingredientes = Ingredientes;
+        this.ingredientes = Ingredientes;
     }
 
     public String getModoPreparo() {
@@ -92,7 +92,7 @@ public class Receita implements Serializable{
 
     @Override
     public String toString() {
-        return "Receita{" + "codReceita=" + codReceita + ", tipo=" + tipo + ", nomeReceita=" + nomeReceita + ", Ingredientes=" + Ingredientes + ", modoPreparo=" + modoPreparo + ", imagemReceita=" + imagemReceita + '}';
+        return "Receita{" + "codReceita=" + codReceita + ", tipo=" + tipo + ", nomeReceita=" + nomeReceita + ", Ingredientes=" + ingredientes + ", modoPreparo=" + modoPreparo + ", imagemReceita=" + imagemReceita + '}';
     }
 
 }

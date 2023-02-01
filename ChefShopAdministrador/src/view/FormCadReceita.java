@@ -4,9 +4,11 @@
  */
 package view;
 
+import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import modelDominio.Ingredientes;
 import modelDominio.Produto;
 import view.util.Imagem;
 
@@ -16,11 +18,13 @@ import view.util.Imagem;
  */
 public class FormCadReceita extends javax.swing.JDialog {
     private Imagem imagem = null;
+    private ArrayList<Ingredientes>listaIngredientes;
     /**
      * Creates new form FormCadReceita
      */
     public FormCadReceita() {
         initComponents();
+        listaIngredientes =  new ArrayList<>();
     }
 
     /**
@@ -38,7 +42,6 @@ public class FormCadReceita extends javax.swing.JDialog {
         jTFNomeReceita = new javax.swing.JTextField();
         jCBCategoriaReceita = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        jSQuantidade = new javax.swing.JSpinner();
         jLabel5 = new javax.swing.JLabel();
         jCBProduto = new javax.swing.JComboBox<>();
         jCBUnidadeMedida = new javax.swing.JComboBox<>();
@@ -53,6 +56,7 @@ public class FormCadReceita extends javax.swing.JDialog {
         jBDeletar = new javax.swing.JButton();
         jBAdicionarImg = new javax.swing.JButton();
         jLImagem = new javax.swing.JLabel();
+        jFTFQuantidade = new javax.swing.JFormattedTextField();
 
         jLabel1.setText("Cadastrar uma receita:");
 
@@ -77,6 +81,11 @@ public class FormCadReceita extends javax.swing.JDialog {
         jCBUnidadeMedida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a unidade de medida" }));
 
         jBAdicionarIngrediente.setText("Adicionar");
+        jBAdicionarIngrediente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAdicionarIngredienteActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -112,6 +121,8 @@ public class FormCadReceita extends javax.swing.JDialog {
         });
 
         jLImagem.setBorder(new javax.swing.border.MatteBorder(null));
+
+        jFTFQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,##0.00"))));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -154,8 +165,8 @@ public class FormCadReceita extends javax.swing.JDialog {
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jSQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jFTFQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jCBProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -163,7 +174,7 @@ public class FormCadReceita extends javax.swing.JDialog {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jBAdicionarIngrediente, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addComponent(jLabel1)))
-                        .addContainerGap(113, Short.MAX_VALUE))))
+                        .addContainerGap(80, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,11 +199,11 @@ public class FormCadReceita extends javax.swing.JDialog {
                         .addGap(0, 15, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
                     .addComponent(jCBProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCBUnidadeMedida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBAdicionarIngrediente))
+                    .addComponent(jBAdicionarIngrediente)
+                    .addComponent(jFTFQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -262,6 +273,14 @@ public class FormCadReceita extends javax.swing.JDialog {
         
     }//GEN-LAST:event_jBSalvarActionPerformed
 
+    private void jBAdicionarIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAdicionarIngredienteActionPerformed
+        // TODO add your handling code here:
+        float quantidade =0;
+        quantidade = ((Number)jFTFQuantidade.getValue()).floatValue();
+        Ingredientes ing = new Ingredientes(0, quantidade, );
+        
+    }//GEN-LAST:event_jBAdicionarIngredienteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAdicionarImg;
@@ -272,6 +291,7 @@ public class FormCadReceita extends javax.swing.JDialog {
     private javax.swing.JComboBox<String> jCBCategoriaReceita;
     private javax.swing.JComboBox<String> jCBProduto;
     private javax.swing.JComboBox<String> jCBUnidadeMedida;
+    private javax.swing.JFormattedTextField jFTFQuantidade;
     private javax.swing.JLabel jLImagem;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -279,7 +299,6 @@ public class FormCadReceita extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JSpinner jSQuantidade;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTFNomeReceita;
