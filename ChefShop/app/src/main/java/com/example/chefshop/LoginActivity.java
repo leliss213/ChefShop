@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         etLoginUsuario = findViewById(R.id.etLoginUsuario);
         etLoginSenha = findViewById(R.id.etLoginSenha);
         bLoginEntrar = findViewById(R.id.bLoginEntrar);
-        bLoginEsqueciSenha = findViewById(R.id.bLoginEsqueciSenha);
+//        bLoginEsqueciSenha = findViewById(R.id.bLoginEsqueciSenha);
         bLoginRegistrar = findViewById(R.id.bLoginRegistrar);
 
         informacoesApp = (InformacoesApp) getApplicationContext();

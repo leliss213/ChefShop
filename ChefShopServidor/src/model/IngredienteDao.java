@@ -33,9 +33,9 @@ public class IngredienteDao {
             ResultSet res = stmt.executeQuery();
             // se existe um resultado     
             while (res.next()) { // 
-                Ingredientes ing = new Ingredientes(res.getInt("codingrediente"), res.getInt("quantidadeingredientes"), );
-                System.out.println(ing);
-                listaIngredientes.add(ing);
+                //Ingredientes ing = new Ingredientes(res.getInt("codingrediente"), res.getInt("quantidadeingredientes"), );
+                //System.out.println(ing);
+                //listaIngredientes.add(ing);
                 
             }
             /// fechar as conexões e statement 
