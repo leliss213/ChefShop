@@ -12,11 +12,12 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import modelDominio.Usuario;
 
 public class CategoriasReceitasActivity extends AppCompatActivity {
-    Button ibCategoriaCarnes,ibCategoriaMassas,ibCategoriaSaladas,ibCategoriaSobremesas,ibCategoriaSopas,ibCategoriaLanches,ibPerfilUsuario,ibTelaInicial;
+    ImageButton ibCategoriaCarnes,ibCategoriaMassas,ibCategoriaSaladas,ibCategoriaSobremesas,ibCategoriaSopas,ibCategoriaLanches,ibPerfilUsuario,ibTelaInicial;
     InformacoesApp informacoesApp;
 
     @Override
@@ -31,8 +32,6 @@ public class CategoriasReceitasActivity extends AppCompatActivity {
         ibCategoriaSobremesas = findViewById(R.id.ibCategoriaSobremesas);
         ibCategoriaSopas = findViewById(R.id.ibCategoriaSopas);
         ibCategoriaLanches = findViewById(R.id.ibCategoriaLanches);
-        ibPerfilUsuario = findViewById(R.id.ibPerfilUsuario);
-        ibTelaInicial = findViewById(R.id.ibTelaInicial);
 
         informacoesApp = (InformacoesApp) getApplicationContext();
 

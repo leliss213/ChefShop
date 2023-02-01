@@ -87,14 +87,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        //Botão Esqueci a Senha:
-        bLoginEsqueciSenha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //tem que abrir a tela de recuperação de senha
-            }
-        });
-
         //Botão Registre-se:
         bLoginRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override

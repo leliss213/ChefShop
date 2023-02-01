@@ -33,18 +33,20 @@ public class UsuarioDao {
             //criar o statement e trocar os parametros:
             stmt = con.prepareStatement(sql); // Vai preparar o script de cima pra q eu possa trocar os dois ?;
             stmt.setString(1, user.getLogin()); // Trocando o primeiro ? pelo login
-            try {
-		MessageDigest md = MessageDigest.getInstance("MD5"); // MD5, SHA-1, SHA-256
-			
-		BigInteger a = new BigInteger(1, md.digest(user.getSenha().getBytes()));
-		String senhaHash = a.toString();
-		stmt.setString(2, senhaHash); // Trocando o segundo ? pela senha
-                System.out.println(senhaHash);
-                        
-            } catch (NoSuchAlgorithmException e) {
-                //hash não funciona no android
-		System.out.println("Erro ao carregar o MessageDigest");
-            }
+            stmt.setString(2, user.getSenha());
+            stmt.execute();
+//            try {
+//		MessageDigest md = MessageDigest.getInstance("MD5"); // MD5, SHA-1, SHA-256
+//			
+//		BigInteger a = new BigInteger(1, md.digest(user.getSenha().getBytes()));
+//		String senhaHash = a.toString();
+//		stmt.setString(2, senhaHash); // Trocando o segundo ? pela senha
+//                System.out.println(senhaHash);
+//                        
+//            } catch (NoSuchAlgorithmException e) {
+//                //hash não funciona no android
+//		System.out.println("Erro ao carregar o MessageDigest");
+//            }
             
             //Executando o script SQL:
             ResultSet res = stmt.executeQuery();
