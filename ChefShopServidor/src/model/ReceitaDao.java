@@ -6,28 +6,19 @@ package model;
 
 import factory.Conector;
 import java.sql.*;
-<<<<<<< Updated upstream
 import java.util.ArrayList;
 import modelDominio.Ingredientes;
 import modelDominio.Receita;
-=======
->>>>>>> Stashed changes
-
 /**
  *
  * @author Aila e Alice
  */
 public class ReceitaDao {
     private Connection con;
-    
-<<<<<<< Updated upstream
+
     public ReceitaDao() { // deve ser vazio e fazer a conexão dentro
-=======
-    public ReceitaDao() {
->>>>>>> Stashed changes
         con = Conector.getConnection();
     }
-    
          // método que retorna todas as receitas cadastradas 
         public ArrayList<Receita>getLista(){
         PreparedStatement stmt = null; 
