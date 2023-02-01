@@ -3,4 +3,13 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="fundoTela">#FBFBF8</color>
+    <color name="verdeMuitoClaro">#C4FFAA</color>
+    <color name="verdeClaro">#8BBB54</color>
+    <color name="verdeNormal">#84AC38</color>
+    <color name="verdeEscuro">#307921</color>
+    <color name="verdeMuitoEscuro">#1B5106</color>
+    <color name="textoPreto">#000</color>
+
 </resources>

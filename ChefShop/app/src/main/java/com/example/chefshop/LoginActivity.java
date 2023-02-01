@@ -54,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                             public void run() {
                                 ConexaoSocketController ccont = new ConexaoSocketController(informacoesApp);
                                 userLogado = ccont.login(user);
+                                System.out.println(userLogado);
 
                                 if (userLogado != null) {
                                     informacoesApp.setUsuarioLogado(userLogado);

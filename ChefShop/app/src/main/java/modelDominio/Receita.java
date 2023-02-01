@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelDominio;
 
 import java.io.Serializable;
@@ -13,7 +9,7 @@ import java.util.ArrayList;
  */
 public class Receita implements Serializable{
     private static final long serialVersionUID = 123456789L;
-    
+
     private int codReceita;
     private int tipo; // Carnes -> 1, Massas -> 2, Saladas -> 3, Sobremesas -> 4, Sopas -> 5, Lanches -> 6
     private String nomeReceita;
@@ -21,11 +17,10 @@ public class Receita implements Serializable{
     private String modoPreparo;
     private byte[] imagemReceita;
 
-    public Receita(int codReceita, int tipo, String nomeReceita, ArrayList<Ingredientes> Ingredientes, String modoPreparo, byte[] imagemReceita) {
+    public Receita(int codReceita, int tipo, String nomeReceita, String modoPreparo, byte[] imagemReceita) {
         this.codReceita = codReceita;
         this.tipo = tipo;
         this.nomeReceita = nomeReceita;
-        this.Ingredientes = Ingredientes;
         this.modoPreparo = modoPreparo;
         this.imagemReceita = imagemReceita;
     }
@@ -34,10 +29,9 @@ public class Receita implements Serializable{
         this.codReceita = codReceita;
     }
 
-    public Receita(int tipo, String nomeReceita, ArrayList<Ingredientes> Ingredientes, String modoPreparo, byte[] imagemReceita) {
+    public Receita(int tipo, String nomeReceita, String modoPreparo, byte[] imagemReceita) {
         this.tipo = tipo;
         this.nomeReceita = nomeReceita;
-        this.Ingredientes = Ingredientes;
         this.modoPreparo = modoPreparo;
         this.imagemReceita = imagemReceita;
     }
@@ -66,14 +60,6 @@ public class Receita implements Serializable{
         this.nomeReceita = nomeReceita;
     }
 
-    public ArrayList<Ingredientes> getIngredientes() {
-        return Ingredientes;
-    }
-
-    public void setIngredientes(ArrayList<Ingredientes> Ingredientes) {
-        this.Ingredientes = Ingredientes;
-    }
-
     public String getModoPreparo() {
         return modoPreparo;
     }
@@ -92,7 +78,25 @@ public class Receita implements Serializable{
 
     @Override
     public String toString() {
-        return "Receita{" + "codReceita=" + codReceita + ", tipo=" + tipo + ", nomeReceita=" + nomeReceita + ", Ingredientes=" + Ingredientes + ", modoPreparo=" + modoPreparo + ", imagemReceita=" + imagemReceita + '}';
+        return "Receita{" + "codReceita=" + codReceita + ", tipo=" + tipo + ", nomeReceita=" + nomeReceita + ", modoPreparo=" + modoPreparo + ", imagemReceita=" + imagemReceita + '}';
     }
 
+//    Carnes -> 1, Massas -> 2, Saladas -> 3, Sobremesas -> 4, Sopas -> 5, Lanches -> 6
+    public String getTipoLiteral(){
+        String retorno = "";
+        if (this.tipo == 1) {
+            retorno = "Carnes";
+        } else if (this.tipo == 2) {
+            retorno = "Massas";
+        } else if (this.tipo == 3) {
+            retorno = "Saladas";
+        } else if (this.tipo == 4) {
+            retorno = "Sobremesas";
+        } else if (this.tipo == 5) {
+            retorno = "Sopas";
+        } else if (this.tipo == 6) {
+            retorno = "Lanches";
+        }
+        return retorno;
+    }
 }

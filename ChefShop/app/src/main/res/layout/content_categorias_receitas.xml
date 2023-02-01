@@ -6,56 +6,88 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".CategoriasReceitasActivity"
-    android:padding="8dp"
     android:orientation="vertical"
+    android:padding="15dp"
     tools:showIn="@layout/activity_categorias_receitas">
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Categorias"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Carnes"
-        android:id="@+id/bCategoriaCarnes"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Massas"
-        android:id="@+id/bCategoriaMassas"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Saladas"
-        android:id="@+id/bCategoriaSaladas"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sobremesas"
-        android:id="@+id/bCategoriaSobremesas"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sopas"
-        android:id="@+id/bCategoriaSopas"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Lanches"
-        android:id="@+id/bCategoriaLanches"/>
+        android:layout_gravity="center_horizontal"
+        android:text="CATEGORIAS"
+        android:textSize="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="50dp"/>
 
-    <!-- separar, botar em baixo da tela -->
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Perfil"
-        android:id="@+id/bPerfilUsuario"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Inicial"
-        android:id="@+id/bTelaInicial"/>
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="20dp">
 
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:text="Carnes"
+            android:layout_weight="1"
+            android:background="@color/fundoTela"
+            android:id="@+id/ibCategoriaCarnes"
+            android:src="@drawable/carne"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:text="Massas"
+            android:layout_weight="1"
+            android:background="@color/fundoTela"
+            android:id="@+id/ibCategoriaMassas"
+            android:src="@drawable/massas"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="20dp">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:text="Saladas"
+            android:layout_weight="1"
+            android:background="@color/fundoTela"
+            android:id="@+id/ibCategoriaSaladas"
+            android:src="@drawable/salada"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:text="Sobremesas"
+            android:layout_weight="1"
+            android:background="@color/fundoTela"
+            android:id="@+id/ibCategoriaSobremesas"
+            android:src="@drawable/sobremesas"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:text="Sopas"
+            android:layout_weight="1"
+            android:background="@color/fundoTela"
+            android:src="@drawable/sopas"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:text="Lanches"
+            android:layout_weight="1"
+            android:background="@color/fundoTela"
+            android:src="@drawable/lanches"/>
+    </LinearLayout>
 
 </LinearLayout>

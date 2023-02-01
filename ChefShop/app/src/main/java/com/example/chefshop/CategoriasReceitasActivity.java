@@ -16,7 +16,7 @@ import android.widget.EditText;
 import modelDominio.Usuario;
 
 public class CategoriasReceitasActivity extends AppCompatActivity {
-    Button bCategoriaCarnes,bCategoriaMassas,bCategoriaSaladas,bCategoriaSobremesas,bCategoriaSopas,bCategoriaLanches,bPerfilUsuario,bTelaInicial;
+    Button ibCategoriaCarnes,ibCategoriaMassas,ibCategoriaSaladas,ibCategoriaSobremesas,ibCategoriaSopas,ibCategoriaLanches,ibPerfilUsuario,ibTelaInicial;
     InformacoesApp informacoesApp;
 
     @Override
@@ -25,20 +25,20 @@ public class CategoriasReceitasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_categorias_receitas);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        bCategoriaCarnes = findViewById(R.id.bCategoriaCarnes);
-        bCategoriaMassas = findViewById(R.id.bCategoriaMassas);
-        bCategoriaSaladas = findViewById(R.id.bCategoriaSaladas);
-        bCategoriaSobremesas = findViewById(R.id.bCategoriaSobremesas);
-        bCategoriaSopas = findViewById(R.id.bCategoriaSopas);
-        bCategoriaLanches = findViewById(R.id.bCategoriaLanches);
-        bPerfilUsuario = findViewById(R.id.bPerfilUsuario);
-        bTelaInicial = findViewById(R.id.bTelaInicial);
+        ibCategoriaCarnes = findViewById(R.id.ibCategoriaCarnes);
+        ibCategoriaMassas = findViewById(R.id.ibCategoriaMassas);
+        ibCategoriaSaladas = findViewById(R.id.ibCategoriaSaladas);
+        ibCategoriaSobremesas = findViewById(R.id.ibCategoriaSobremesas);
+        ibCategoriaSopas = findViewById(R.id.ibCategoriaSopas);
+        ibCategoriaLanches = findViewById(R.id.ibCategoriaLanches);
+        ibPerfilUsuario = findViewById(R.id.ibPerfilUsuario);
+        ibTelaInicial = findViewById(R.id.ibTelaInicial);
 
         informacoesApp = (InformacoesApp) getApplicationContext();
 
         //BOTÕES:
         //Botão Categoria Carnes:
-        bCategoriaCarnes.setOnClickListener(new View.OnClickListener() {
+        ibCategoriaCarnes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -46,7 +46,7 @@ public class CategoriasReceitasActivity extends AppCompatActivity {
         });
 
         //Botão Categoria Massas:
-        bCategoriaMassas.setOnClickListener(new View.OnClickListener() {
+        ibCategoriaMassas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -54,7 +54,7 @@ public class CategoriasReceitasActivity extends AppCompatActivity {
         });
 
         //Botão Categoria Saladas:
-        bCategoriaSaladas.setOnClickListener(new View.OnClickListener() {
+        ibCategoriaSaladas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -62,7 +62,7 @@ public class CategoriasReceitasActivity extends AppCompatActivity {
         });
 
         //Botão Categoria Sobremesas:
-        bCategoriaSobremesas.setOnClickListener(new View.OnClickListener() {
+        ibCategoriaSobremesas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -70,7 +70,7 @@ public class CategoriasReceitasActivity extends AppCompatActivity {
         });
 
         //Botão Categoria Sopas:
-        bCategoriaSopas.setOnClickListener(new View.OnClickListener() {
+        ibCategoriaSopas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -78,7 +78,7 @@ public class CategoriasReceitasActivity extends AppCompatActivity {
         });
 
         //Botão Categoria Lanches:
-        bCategoriaLanches.setOnClickListener(new View.OnClickListener() {
+        ibCategoriaLanches.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -86,7 +86,7 @@ public class CategoriasReceitasActivity extends AppCompatActivity {
         });
 
         //Botão Perfil:
-        bPerfilUsuario.setOnClickListener(new View.OnClickListener() {
+        ibPerfilUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(CategoriasReceitasActivity.this, PerfilUsuarioActivity.class);
@@ -95,7 +95,7 @@ public class CategoriasReceitasActivity extends AppCompatActivity {
         });
 
         //Botão Tela Inicial:
-        bTelaInicial.setOnClickListener(new View.OnClickListener() {
+        ibTelaInicial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //                Intent it = new Intent(CategoriasReceitasActivity.this, CategoriasReceitasActivity.class);

@@ -3,9 +3,12 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/verdeClaro</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:windowBackground">@color/fundoTela</item>
+        <item name="android:buttonStyle">@style/EstiloBotao</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -16,5 +19,10 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="EstiloBotao" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/botao_customizado</item>
+        <item name="android:textColor">@color/textoPreto</item>
+    </style>
 
 </resources>
