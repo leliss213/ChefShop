@@ -29,8 +29,7 @@
                 android:id="@+id/tvReceitaCategoria"/>
 
         </LinearLayout>
-
-
+        
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>
