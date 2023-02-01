@@ -19,7 +19,6 @@ import modelDominio.Usuario;
 public class CategoriasReceitasActivity extends AppCompatActivity {
     ImageButton ibCategoriaCarnes,ibCategoriaMassas,ibCategoriaSaladas,ibCategoriaSobremesas,ibCategoriaSopas,ibCategoriaLanches,ibPerfilUsuario,ibTelaInicial;
     InformacoesApp informacoesApp;
-    //imagebutton
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
