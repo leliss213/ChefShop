@@ -14,10 +14,10 @@ public class Ingredientes implements Serializable{
     private static final long serialVersionUID = 123456789L;
     
     private int codIngrediente;
-    private int quantidadeIngredientes;
+    private float quantidadeIngredientes;
     private Produto produto;
 
-    public Ingredientes(int codIngrediente, int quantidadeIngredientes, Produto produto) {
+    public Ingredientes(int codIngrediente, float quantidadeIngredientes, Produto produto) {
         this.codIngrediente = codIngrediente;
         this.quantidadeIngredientes = quantidadeIngredientes;
         this.produto = produto;
