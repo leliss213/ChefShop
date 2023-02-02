@@ -21,24 +21,24 @@ public class ReceitaDao {
     }
          // método que retorna todas as receitas cadastradas 
         public ArrayList<Receita>getLista(){
-        PreparedStatement stmt = null; 
+        Statement stmt = null; 
         ArrayList<Receita> listaReceita = new ArrayList<>();
        
         try {
-            String sql = "select * from receita";
-            // criando o statement
-            stmt = con.prepareStatement(sql);
+            stmt = con.createStatement();
+            String sql = "select * from receita";            
             
             //executando o script SQL
-            ResultSet res = stmt.executeQuery();
+            ResultSet res = stmt.executeQuery(sql);
             // se existe um resultado
             while (res.next()) {
                 Receita r = new Receita(res.getInt("codreceita"), res.getInt("tipo"), res.getString("nomereceita"), (ArrayList<Ingredientes>) res.getArray("ingredientes"), res.getString("modopreparo"), res.getBytes("imagemreceita"));
-                System.out.println(r);
+                //Receita r = new Receita(res.getInt("codreceita"), res.getInt("tipo"), res.getString("nomereceita"), res.getString("modopreparo"));
+                //ERRO TA AQUI
                 listaReceita.add(r);
                 
             }
-            /// fechar as conexões e statement 
+            /// fechar as conexões e statement
             res.close();
             stmt.close();
             con.close();

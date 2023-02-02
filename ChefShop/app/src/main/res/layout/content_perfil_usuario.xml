@@ -10,36 +10,41 @@
     android:padding="8dp"
     tools:showIn="@layout/activity_perfil_usuario">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/iconeperfil"
+        android:layout_gravity="center_horizontal"
+        android:padding="30dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="imagem no centro"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nome (puxar do banco)"/>
+        android:text="Nome (puxar do banco)"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center_horizontal">-->
 
-        <!-- separar, botar em baixo da tela -->
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Inicial"
-            android:layout_weight="1"
-            android:id="@+id/ibTelaInicial"
-            android:src="@drawable/home"/>
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Perfil"
-            android:layout_weight="1"
-            android:id="@+id/ibPerfilUsuario"
-            android:src="@drawable/perfil"/>
+<!--        &lt;!&ndash; separar, botar em baixo da tela &ndash;&gt;-->
+<!--        <ImageButton-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Inicial"-->
+<!--            android:layout_weight="1"-->
+<!--            android:id="@+id/ibTelaInicial"-->
+<!--            android:src="@drawable/home"/>-->
+<!--        <ImageButton-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Perfil"-->
+<!--            android:layout_weight="1"-->
+<!--            android:id="@+id/ibPerfilUsuario"-->
+<!--            android:src="@drawable/perfil"/>-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
 </LinearLayout>

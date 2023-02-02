@@ -12,11 +12,12 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import modelDominio.Usuario;
 
 public class CategoriasReceitasActivity extends AppCompatActivity {
-    Button ibCategoriaCarnes,ibCategoriaMassas,ibCategoriaSaladas,ibCategoriaSobremesas,ibCategoriaSopas,ibCategoriaLanches,ibPerfilUsuario,ibTelaInicial;
+    ImageButton ibCategoriaCarnes,ibCategoriaMassas,ibCategoriaSaladas,ibCategoriaSobremesas,ibCategoriaSopas,ibCategoriaLanches,ibPerfilUsuario,ibTelaInicial;
     InformacoesApp informacoesApp;
 
     @Override
@@ -31,77 +32,76 @@ public class CategoriasReceitasActivity extends AppCompatActivity {
         ibCategoriaSobremesas = findViewById(R.id.ibCategoriaSobremesas);
         ibCategoriaSopas = findViewById(R.id.ibCategoriaSopas);
         ibCategoriaLanches = findViewById(R.id.ibCategoriaLanches);
-        ibPerfilUsuario = findViewById(R.id.ibPerfilUsuario);
-        ibTelaInicial = findViewById(R.id.ibTelaInicial);
 
         informacoesApp = (InformacoesApp) getApplicationContext();
 
-        //BOTÕES:
-        //Botão Categoria Carnes:
+//        //BOTÕES:
+//        //Botão Categoria Carnes:
         ibCategoriaCarnes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-            }
-        });
-
-        //Botão Categoria Massas:
-        ibCategoriaMassas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        //Botão Categoria Saladas:
-        ibCategoriaSaladas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        //Botão Categoria Sobremesas:
-        ibCategoriaSobremesas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        //Botão Categoria Sopas:
-        ibCategoriaSopas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        //Botão Categoria Lanches:
-        ibCategoriaLanches.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        //Botão Perfil:
-        ibPerfilUsuario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(CategoriasReceitasActivity.this, PerfilUsuarioActivity.class);
+                Intent it = new Intent(CategoriasReceitasActivity.this, VisualizacaoReceitasRecyclerActivity.class);
                 startActivity(it);
             }
         });
-
-        //Botão Tela Inicial:
-        ibTelaInicial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Intent it = new Intent(CategoriasReceitasActivity.this, CategoriasReceitasActivity.class);
+//
+//        //Botão Categoria Massas:
+//        ibCategoriaMassas.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//
+//        //Botão Categoria Saladas:
+//        ibCategoriaSaladas.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//
+//        //Botão Categoria Sobremesas:
+//        ibCategoriaSobremesas.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//
+//        //Botão Categoria Sopas:
+//        ibCategoriaSopas.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//
+//        //Botão Categoria Lanches:
+//        ibCategoriaLanches.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//
+//        //Botão Perfil:
+//        ibPerfilUsuario.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent it = new Intent(CategoriasReceitasActivity.this, PerfilUsuarioActivity.class);
 //                startActivity(it);
-            }
-        });
+//            }
+//        });
+//
+//        //Botão Tela Inicial:
+//        ibTelaInicial.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                Intent it = new Intent(CategoriasReceitasActivity.this, CategoriasReceitasActivity.class);
+////                startActivity(it);
+//            }
+//        });
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

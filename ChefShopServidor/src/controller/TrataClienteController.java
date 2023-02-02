@@ -4,6 +4,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
+import model.ReceitaDao;
 import model.UsuarioDao;
 import modelDominio.Usuario;
 
@@ -45,7 +46,14 @@ public class TrataClienteController extends Thread{
                     UsuarioDao usdao = new UsuarioDao();
                     Usuario userlogado = usdao.efetuarLogin(user);
                     out.writeObject(userlogado);
+                } else if (comando.equalsIgnoreCase("ListaReceitas")){
+                    ReceitaDao dao = new ReceitaDao();
+                    out.writeObject(dao.getLista());
+                    
                 }
+
+
+//cadastro
                 
                 //relendo
                 comando = (String) in.readObject(); //relendo o próximo comando
