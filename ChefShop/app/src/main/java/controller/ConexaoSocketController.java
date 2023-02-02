@@ -6,7 +6,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.ArrayList;
 
+import modelDominio.Receita;
 import modelDominio.Usuario;
 
 public class ConexaoSocketController {
@@ -22,7 +24,7 @@ public class ConexaoSocketController {
     public boolean criaConexao () {
         boolean resultado;
         try {
-            informacoesApp.socket = new Socket("10.0.2.2", 12345); // Criando o socket
+            informacoesApp.socket = new Socket("192.168.3.83", 12345); // Criando o socket
             informacoesApp.out = new ObjectOutputStream(informacoesApp.socket.getOutputStream()); //criando um novo canal de saida (out) a partir do socket criado na linha de cima
             informacoesApp.in = new ObjectInputStream(informacoesApp.socket.getInputStream());
             resultado = true;
@@ -80,6 +82,21 @@ public class ConexaoSocketController {
             return null;
         }
         return msgRecebida;
+    }
+
+    public ArrayList<Receita> listaReceitas(){
+        ArrayList<Receita> listaReceitas;
+        try {
+            informacoesApp.out.writeObject("ListaReceitas");
+            listaReceitas = (ArrayList<Receita>) informacoesApp.in.readObject();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+            listaReceitas = null;
+        } catch (ClassNotFoundException classe) {
+            classe.printStackTrace();
+            listaReceitas = null;
+        }
+        return listaReceitas;
     }
 
 }

@@ -35,72 +35,73 @@ public class CategoriasReceitasActivity extends AppCompatActivity {
 
         informacoesApp = (InformacoesApp) getApplicationContext();
 
-        //BOTÕES:
-        //Botão Categoria Carnes:
+//        //BOTÕES:
+//        //Botão Categoria Carnes:
         ibCategoriaCarnes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-            }
-        });
-
-        //Botão Categoria Massas:
-        ibCategoriaMassas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        //Botão Categoria Saladas:
-        ibCategoriaSaladas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        //Botão Categoria Sobremesas:
-        ibCategoriaSobremesas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        //Botão Categoria Sopas:
-        ibCategoriaSopas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        //Botão Categoria Lanches:
-        ibCategoriaLanches.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        //Botão Perfil:
-        ibPerfilUsuario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(CategoriasReceitasActivity.this, PerfilUsuarioActivity.class);
+                Intent it = new Intent(CategoriasReceitasActivity.this, VisualizacaoReceitasRecyclerActivity.class);
                 startActivity(it);
             }
         });
-
-        //Botão Tela Inicial:
-        ibTelaInicial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Intent it = new Intent(CategoriasReceitasActivity.this, CategoriasReceitasActivity.class);
+//
+//        //Botão Categoria Massas:
+//        ibCategoriaMassas.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//
+//        //Botão Categoria Saladas:
+//        ibCategoriaSaladas.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//
+//        //Botão Categoria Sobremesas:
+//        ibCategoriaSobremesas.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//
+//        //Botão Categoria Sopas:
+//        ibCategoriaSopas.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//
+//        //Botão Categoria Lanches:
+//        ibCategoriaLanches.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//
+//        //Botão Perfil:
+//        ibPerfilUsuario.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent it = new Intent(CategoriasReceitasActivity.this, PerfilUsuarioActivity.class);
 //                startActivity(it);
-            }
-        });
+//            }
+//        });
+//
+//        //Botão Tela Inicial:
+//        ibTelaInicial.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                Intent it = new Intent(CategoriasReceitasActivity.this, CategoriasReceitasActivity.class);
+////                startActivity(it);
+//            }
+//        });
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

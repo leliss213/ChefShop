@@ -34,7 +34,6 @@ public class UsuarioDao {
             stmt = con.prepareStatement(sql); // Vai preparar o script de cima pra q eu possa trocar os dois ?;
             stmt.setString(1, user.getLogin()); // Trocando o primeiro ? pelo login
             stmt.setString(2, user.getSenha());
-            stmt.execute();
 //            try {
 //		MessageDigest md = MessageDigest.getInstance("MD5"); // MD5, SHA-1, SHA-256
 //			

@@ -23,7 +23,6 @@ public class InformacoesApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        listaReceitas = new ArrayList<>();
     }
 
     //getters
@@ -33,9 +32,7 @@ public class InformacoesApp extends Application {
     public Usuario getUsuarioInserido() {
         return usuarioInserido;
     }
-    public ArrayList<Receita> getListaReceitas() {
-        return listaReceitas;
-    }
+
 
     //setters
     public void setUsuarioLogado(Usuario usuarioLogado) {
@@ -43,8 +40,5 @@ public class InformacoesApp extends Application {
     }
     public void setUsuarioInserido(Usuario usuarioInserido) {
         this.usuarioInserido = usuarioInserido;
-    }
-    public void setListaReceitas(ArrayList<Receita> listaReceitas) {
-        this.listaReceitas = listaReceitas;
     }
 }
