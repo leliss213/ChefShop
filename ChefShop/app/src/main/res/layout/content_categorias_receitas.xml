@@ -10,17 +10,16 @@
     android:padding="15dp"
     tools:showIn="@layout/activity_categorias_receitas">
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Categorias"
         android:layout_gravity="center_horizontal"
-        android:text="CATEGORIAS"
-        android:textSize="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="50dp"/>
+        android:textSize="26dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp" />
 
-    <LinearLayout
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
