@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import modelDominio.Ingredientes;
 import modelDominio.Produto;
+import modelDominio.Receita;
 import view.util.Imagem;
 
 /**
@@ -21,6 +22,7 @@ import view.util.Imagem;
 public class FormCadReceita extends javax.swing.JDialog {
     private Imagem imagem = null;
     private ArrayList<Ingredientes>listaIngredientes;
+    
     /**
      * Creates new form FormCadReceita
      */
@@ -242,6 +244,7 @@ public class FormCadReceita extends javax.swing.JDialog {
 
     private void jBDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBDeletarActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jBDeletarActionPerformed
 
     private void jBAdicionarImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAdicionarImgActionPerformed
@@ -269,7 +272,7 @@ public class FormCadReceita extends javax.swing.JDialog {
                 if(jTAIngredientes.getText().isEmpty()){
                     if(jTAModoPreparo.getText().isEmpty()){
          
-                     
+                        
                                   
                     }else{
                         JOptionPane.showMessageDialog(rootPane, "Erro! Descreva o modo de preparo da receita.");
@@ -297,6 +300,8 @@ public class FormCadReceita extends javax.swing.JDialog {
         quantidade = ((Number)jFTFQuantidade.getValue()).floatValue();
         //Obtém o produto selecionado
         // COD-NOME
+        
+        
         
         //Produto prod = listaIngredientes.get(jCBProduto.getSelectedIndex());
         //Produto prod = ProdutoDAo.getProduto(id)
