@@ -51,6 +51,13 @@ public class TrataClienteController extends Thread{
                     int tipo = (int) in.readObject();
                     ReceitaDao dao = new ReceitaDao();
                     out.writeObject(dao.getLista(tipo));
+                } else if (comando.equalsIgnoreCase("inserirUsuario")) {
+                    out.writeObject("ok"); 
+                    Usuario user = (Usuario) in.readObject();
+                    // criando um Dao para armazenar no Banco
+                    UsuarioDao userdao = new UsuarioDao();
+                    userdao.inserirUsuario(user);
+                    out.writeObject("ok"); 
                 }
 
 

@@ -104,6 +104,14 @@ public class UsuarioDao {
                 }
                stmt.setString(1, user.getLogin());
                stmt.setString(2, senhaHash);
+               int tipo;
+                if (user instanceof Administrador){
+                    tipo = 1;
+                }else{
+                    tipo = 0;
+                }
+                //stmt.setInt(5, ((usr instanceof Administrador) ? 1 : 0));
+                stmt.setInt(5, tipo);
                stmt.execute();
                con.commit();
                return -1;
