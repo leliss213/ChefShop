@@ -47,9 +47,10 @@ public class TrataClienteController extends Thread{
                     Usuario userlogado = usdao.efetuarLogin(user);
                     out.writeObject(userlogado);
                 } else if (comando.equalsIgnoreCase("ListaReceitas")){
+                    out.writeObject("ok");
+                    int tipo = (int) in.readObject();
                     ReceitaDao dao = new ReceitaDao();
-                    out.writeObject(dao.getLista());
-                    
+                    out.writeObject(dao.getLista(tipo));
                 }
 
 

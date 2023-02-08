@@ -41,50 +41,67 @@ public class CategoriasReceitasActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(CategoriasReceitasActivity.this, VisualizacaoReceitasRecyclerActivity.class);
+                //tenho q transmitir o parametro do tipo clicado
+                it.putExtra("tipo",1);
                 startActivity(it);
             }
         });
-//
-//        //Botão Categoria Massas:
-//        ibCategoriaMassas.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
-//
-//        //Botão Categoria Saladas:
-//        ibCategoriaSaladas.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
-//
-//        //Botão Categoria Sobremesas:
-//        ibCategoriaSobremesas.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
-//
-//        //Botão Categoria Sopas:
-//        ibCategoriaSopas.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
-//
-//        //Botão Categoria Lanches:
-//        ibCategoriaLanches.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
-//
+
+        //Botão Categoria Massas:
+        ibCategoriaMassas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(CategoriasReceitasActivity.this, VisualizacaoReceitasRecyclerActivity.class);
+                //tenho q transmitir o parametro do tipo clicado
+                it.putExtra("tipo",2);
+                startActivity(it);
+            }
+        });
+
+        //Botão Categoria Saladas:
+        ibCategoriaSaladas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(CategoriasReceitasActivity.this, VisualizacaoReceitasRecyclerActivity.class);
+                //tenho q transmitir o parametro do tipo clicado
+                it.putExtra("tipo",3);
+                startActivity(it);
+            }
+        });
+
+        //Botão Categoria Sobremesas:
+        ibCategoriaSobremesas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(CategoriasReceitasActivity.this, VisualizacaoReceitasRecyclerActivity.class);
+                //tenho q transmitir o parametro do tipo clicado
+                it.putExtra("tipo",4);
+                startActivity(it);
+            }
+        });
+
+        //Botão Categoria Sopas:
+        ibCategoriaSopas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(CategoriasReceitasActivity.this, VisualizacaoReceitasRecyclerActivity.class);
+                //tenho q transmitir o parametro do tipo clicado
+                it.putExtra("tipo",5);
+                startActivity(it);
+            }
+        });
+
+        //Botão Categoria Lanches:
+        ibCategoriaLanches.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(CategoriasReceitasActivity.this, VisualizacaoReceitasRecyclerActivity.class);
+                //tenho q transmitir o parametro do tipo clicado
+                it.putExtra("tipo",6);
+                startActivity(it);
+            }
+        });
+
 //        //Botão Perfil:
 //        ibPerfilUsuario.setOnClickListener(new View.OnClickListener() {
 //            @Override

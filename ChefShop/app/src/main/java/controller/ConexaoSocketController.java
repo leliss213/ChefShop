@@ -24,7 +24,7 @@ public class ConexaoSocketController {
     public boolean criaConexao () {
         boolean resultado;
         try {
-            informacoesApp.socket = new Socket("192.168.2.101", 12345); // Criando o socket
+            informacoesApp.socket = new Socket("10.0.2.2", 12345); // Criando o socket
             informacoesApp.out = new ObjectOutputStream(informacoesApp.socket.getOutputStream()); //criando um novo canal de saida (out) a partir do socket criado na linha de cima
             informacoesApp.in = new ObjectInputStream(informacoesApp.socket.getInputStream());
             resultado = true;
@@ -84,10 +84,12 @@ public class ConexaoSocketController {
         return msgRecebida;
     }
 
-    public ArrayList<Receita> listaReceitas(){
+    public ArrayList<Receita> listaReceitas(int tipo){
         ArrayList<Receita> listaReceitas;
         try {
             informacoesApp.out.writeObject("ListaReceitas");
+            informacoesApp.in.readObject(); //lendo o ok
+            informacoesApp.out.writeObject(tipo); //transmitindo a variavel q recebi como parametro
             listaReceitas = (ArrayList<Receita>) informacoesApp.in.readObject();
         } catch (IOException ioe) {
             ioe.printStackTrace();
