@@ -49,40 +49,40 @@ public class LoginActivity extends AppCompatActivity {
 
                         user = new Usuario(usuario,senha);
 
-//                        Thread thread = new Thread(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                ConexaoSocketController ccont = new ConexaoSocketController(informacoesApp);
-//                                userLogado = ccont.login(user);
-//                                System.out.println(userLogado);
-//
-//                                if (userLogado != null) {
-//                                    informacoesApp.setUsuarioLogado(userLogado);
-//                                    Intent it = new Intent(LoginActivity.this, CategoriasReceitasActivity.class);
-//                                    startActivity(it);
-//                                    runOnUiThread(new Runnable() {
-//                                        @Override
-//                                        public void run() {
-//                                            Toast.makeText(informacoesApp, "IRU DEU CERTO", Toast.LENGTH_SHORT).show();
-//                                        }
-//                                    });
-//
-//                                } else {
-//                                    runOnUiThread(new Runnable() {
-//                                        @Override
-//                                        public void run() {
-//                                            Toast.makeText(informacoesApp, "Usuário ou senha incorretos", Toast.LENGTH_SHORT).show();
-//                                        }
-//                                    });
-//                                }
-//                            }
-//                        });
-//                        thread.start();
-                        if (usuario.equals("alice") && senha.equals("1234")){
-                            Intent it = new Intent(LoginActivity.this, CategoriasReceitasActivity.class);
-                            it.putExtra("usuario",usuario);
-                            startActivity(it);
-                        }
+                        Thread thread = new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                ConexaoSocketController ccont = new ConexaoSocketController(informacoesApp);
+                                userLogado = ccont.login(user);
+                                System.out.println(userLogado);
+
+                                if (userLogado != null) {
+                                    informacoesApp.setUsuarioLogado(userLogado);
+                                    Intent it = new Intent(LoginActivity.this, CategoriasReceitasActivity.class);
+                                    startActivity(it);
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Toast.makeText(informacoesApp, "IRU DEU CERTO", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+
+                                } else {
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Toast.makeText(informacoesApp, "Usuário ou senha incorretos", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                        thread.start();
+//                        if (usuario.equals("alice") && senha.equals("1234")){
+//                            Intent it = new Intent(LoginActivity.this, CategoriasReceitasActivity.class);
+//                            it.putExtra("usuario",usuario);
+//                            startActivity(it);
+//                        }
 
                     } else {
                         etLoginSenha.setError("ERRO: Informe a senha.");

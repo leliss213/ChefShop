@@ -51,7 +51,7 @@ public class TrataClienteController extends Thread{
                     int tipo = (int) in.readObject();
                     ReceitaDao dao = new ReceitaDao();
                     out.writeObject(dao.getLista(tipo));
-                }
+                } 
 
 
 //cadastro

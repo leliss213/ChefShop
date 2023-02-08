@@ -45,7 +45,6 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                         //Obtendo as informações
                         String usuario = etNomeUsuario.getText().toString();
                         String senha = etSenhaUsuario.getText().toString();
-                        Toast.makeText(informacoesApp, "vamo ver", Toast.LENGTH_SHORT).show();
                         user = new Usuario(usuario,senha);
 
                         Thread thread = new Thread(new Runnable() {
