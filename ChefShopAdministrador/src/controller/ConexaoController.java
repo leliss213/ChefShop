@@ -40,6 +40,24 @@ public class ConexaoController {
             e.printStackTrace();
             return null;
         }
-    } 
+    }
+    
+    public Boolean usuarioIserir(Usuario user){
+        String msg = "";
+        try{
+            out.writeObject("UsuarioInserir");
+            msg = (String) in.readObject(); // lendo ok
+            out.writeObject(user); // escrevendo o user
+            msg = (String) in.readObject(); // lendo ok
+            if (msg.equals("ok")){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(Exception ex){
+            ex.printStackTrace();
+            return false;
+        }
+    }
     
 }

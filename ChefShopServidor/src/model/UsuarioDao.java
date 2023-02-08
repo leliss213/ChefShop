@@ -33,7 +33,7 @@ public class UsuarioDao {
 			
 		BigInteger senhaHashDigitada = new BigInteger(1, md.digest(user.getSenha().getBytes()));
 		senhaHash = senhaHashDigitada.toString();
-                System.out.println(senhaHash);
+                System.out.println("Senha em hash: " + senhaHash);
                         
             } catch (NoSuchAlgorithmException e) {
 		System.out.println("Erro ao carregar o MessageDigest");
