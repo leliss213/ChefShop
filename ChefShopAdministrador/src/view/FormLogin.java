@@ -17,6 +17,7 @@ public class FormLogin extends javax.swing.JDialog{
      */
     public FormLogin() {
         initComponents();
+        jLAviso.setVisible(false);
     }
 
     /**
@@ -32,8 +33,9 @@ public class FormLogin extends javax.swing.JDialog{
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTFLogin = new javax.swing.JTextField();
-        jTFSenha = new javax.swing.JTextField();
         jBEntrar = new javax.swing.JButton();
+        jLAviso = new javax.swing.JLabel();
+        jPFSenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -41,12 +43,18 @@ public class FormLogin extends javax.swing.JDialog{
 
         jLabel2.setText("Senha:");
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Bem vindo, Administrador!");
         jLabel3.setToolTipText("");
 
         jTFLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFLoginActionPerformed(evt);
+            }
+        });
+        jTFLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTFLoginKeyReleased(evt);
             }
         });
 
@@ -57,49 +65,56 @@ public class FormLogin extends javax.swing.JDialog{
             }
         });
 
+        jLAviso.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLAviso.setForeground(new java.awt.Color(102, 0, 0));
+        jLAviso.setText("Administrador inválido");
+
+        jPFSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jPFSenhaKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(83, 83, 83)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLAviso)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTFSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(6, 6, 6))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTFLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTFLogin)
+                            .addComponent(jPFSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))
+                    .addComponent(jLabel3)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
+                        .addGap(79, 79, 79)
                         .addComponent(jBEntrar)))
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel3)
+                .addGap(12, 12, 12)
+                .addComponent(jLAviso)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTFLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jTFSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(40, 40, 40)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jPFSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
                 .addComponent(jBEntrar)
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         pack();
@@ -111,17 +126,31 @@ public class FormLogin extends javax.swing.JDialog{
     }//GEN-LAST:event_jTFLoginActionPerformed
 
     private void jBEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEntrarActionPerformed
-        Usuario user = new Usuario(jTFLogin.getText(), jTFSenha.getText());
-        System.out.println(user); //pra ver se foi enviado o login e senha certinho
-        
+        Usuario user = new Usuario(jTFLogin.getText(), jPFSenha.getText());
+        System.out.println(user); //pra ver se foi enviado o login e senha certinho 
         Usuario userLogin = ChefShopAdministrador.ccont.efetuarLogin(user); //vai devolver o usuario
+       
+        
         if (userLogin != null){
             ChefShopAdministrador.ccont.usuario = userLogin;
-            FormPrincipal formpr = new FormPrincipal();
-            formpr.setVisible(true);
+            FormCategorias formcat = new FormCategorias();
+            formcat.setVisible(true);
             dispose();
+        } else {
+            System.out.println("Usuário inválido");
+            jLAviso.setVisible(true);
         }
     }//GEN-LAST:event_jBEntrarActionPerformed
+
+    private void jTFLoginKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFLoginKeyReleased
+        // TODO add your handling code here:
+        jLAviso.setVisible(false);
+    }//GEN-LAST:event_jTFLoginKeyReleased
+
+    private void jPFSenhaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPFSenhaKeyReleased
+        // TODO add your handling code here:
+        jLAviso.setVisible(false);
+    }//GEN-LAST:event_jPFSenhaKeyReleased
 
     /**
      * @param args the command line arguments
@@ -160,10 +189,11 @@ public class FormLogin extends javax.swing.JDialog{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBEntrar;
+    private javax.swing.JLabel jLAviso;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPasswordField jPFSenha;
     private javax.swing.JTextField jTFLogin;
-    private javax.swing.JTextField jTFSenha;
     // End of variables declaration//GEN-END:variables
 }
