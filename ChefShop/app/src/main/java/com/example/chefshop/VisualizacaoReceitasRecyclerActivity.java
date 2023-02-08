@@ -40,11 +40,19 @@ public class VisualizacaoReceitasRecyclerActivity extends AppCompatActivity {
         //obtendo o contexto
         informacoesApp = (InformacoesApp) getApplicationContext();
 
+        //tenho q ler o parametro recebido da activity de categorias
+
+
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
+                Intent it = getIntent();
+                int tipo = 0;
+                if(it != null){
+                    tipo = it.getIntExtra("tipo",0);
+                }
                 ConexaoSocketController cont = new ConexaoSocketController(informacoesApp);
-                listaReceitas = cont.listaReceitas();
+                listaReceitas = cont.listaReceitas(tipo);//passar o parametro
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
