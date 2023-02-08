@@ -66,7 +66,7 @@ public class ConexaoSocketController {
         //Usuario userInserido = null;
         String msgRecebida;
         try {
-            informacoesApp.out.writeObject("InserirUsuario");
+            informacoesApp.out.writeObject("inserirUsuario");
             msgRecebida = (String) informacoesApp.in.readObject();
 
             if (msgRecebida.equals("ok")) {

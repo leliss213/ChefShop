@@ -55,7 +55,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                                 String msgRecebida = ccont.inserir(user);
                                 if (msgRecebida.equals("ok")) {
                                     informacoesApp.setUsuarioInserido(userInserido);
-                                    Intent it = new Intent(CadastroUsuarioActivity.this, LoginActivity.class);
+                                    Intent it = new Intent(CadastroUsuarioActivity.this, VisualizacaoReceitasRecyclerActivity.class);
                                     startActivity(it);
                                     runOnUiThread(new Runnable() {
                                         @Override

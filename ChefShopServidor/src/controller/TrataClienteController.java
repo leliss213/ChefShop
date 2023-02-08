@@ -56,8 +56,12 @@ public class TrataClienteController extends Thread{
                     Usuario user = (Usuario) in.readObject();
                     // criando um Dao para armazenar no Banco
                     UsuarioDao userdao = new UsuarioDao();
-                    userdao.inserirUsuario(user);
-                    out.writeObject("ok"); 
+                    int retorno = userdao.inserirUsuario(user);
+                    if (retorno == -1) {
+                        out.writeObject("ok");
+                    } else { 
+                        out.writeObject("nOk");
+                    }
                 }
 
 
