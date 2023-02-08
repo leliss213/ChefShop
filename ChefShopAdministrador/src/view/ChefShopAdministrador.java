@@ -29,9 +29,9 @@ public class ChefShopAdministrador {
             System.out.println("Cliente conectado no servidor!");
             
             ccont = new ConexaoController(out,in); //esse ccont é o conexaocontroller, é pra não precisar criar sempre um conexao controller;
-            //Criando tela de login:
-            FormLogin formlogin = new FormLogin(); //formlogin é o novo cliente
-            formlogin.setVisible(true);
+  
+            FormPrincipal frmprincipal = new FormPrincipal();
+            frmprincipal.setVisible(true);
             
         } catch (Exception e) {
             e.printStackTrace(); //imprime o erro q aconteceu

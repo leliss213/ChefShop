@@ -27,25 +27,25 @@ public class UsuarioDao {
     public Usuario efetuarLogin(Usuario user){
         PreparedStatement stmt = null; //em um statement eu rodo um script;
         Usuario userSelecionado = null;
+        String senhaHash = null;
+        try {
+		MessageDigest md = MessageDigest.getInstance("MD5"); // MD5, SHA-1, SHA-256
+			
+		BigInteger senhaHashDigitada = new BigInteger(1, md.digest(user.getSenha().getBytes()));
+		senhaHash = senhaHashDigitada.toString();
+                System.out.println(senhaHash);
+                        
+            } catch (NoSuchAlgorithmException e) {
+		System.out.println("Erro ao carregar o MessageDigest");
+            }
         
         try {
             String sql = "select * from usuario where login = ? and senha = ?";
             //criar o statement e trocar os parametros:
             stmt = con.prepareStatement(sql); // Vai preparar o script de cima pra q eu possa trocar os dois ?;
             stmt.setString(1, user.getLogin()); // Trocando o primeiro ? pelo login
-            stmt.setString(2, user.getSenha());
-//            try {
-//		MessageDigest md = MessageDigest.getInstance("MD5"); // MD5, SHA-1, SHA-256
-//			
-//		BigInteger a = new BigInteger(1, md.digest(user.getSenha().getBytes()));
-//		String senhaHash = a.toString();
-//		stmt.setString(2, senhaHash); // Trocando o segundo ? pela senha
-//                System.out.println(senhaHash);
-//                        
-//            } catch (NoSuchAlgorithmException e) {
-//                //hash não funciona no android
-//		System.out.println("Erro ao carregar o MessageDigest");
-//            }
+            stmt.setString(2, senhaHash); // Trocando o segundo ? pela senha
+            
             
             //Executando o script SQL:
             ResultSet res = stmt.executeQuery();
@@ -74,7 +74,7 @@ public class UsuarioDao {
             res.close();
             stmt.close();
             con.close();
-            return userSelecionado;
+            return userSelecionado; 
             
         } catch (Exception e) {
             e.printStackTrace();
