@@ -8,28 +8,55 @@
     tools:context=".PerfilUsuarioActivity"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:showIn="@layout/activity_perfil_usuario">
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/iconeperfil"
-        android:layout_gravity="center_horizontal"
-        android:padding="30dp"/>
+    tools:showIn="@layout/activity_perfil_usuario"
+    android:background="@drawable/fundo">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nome (puxar do banco)"
-        android:textSize="20dp"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="50dp"
+        android:text="Seja bem-vindo, cliente!"
+        android:textColor="@android:color/black"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/iconeperfil" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome (banco)"
+        android:textSize="26dp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="O templo de um cozinheiro é a cozinha, suas receitas são histórias, testes, perseverança e seus pratos conquista de aromas e sabores."
+        android:textStyle="italic"
+        android:padding="30dp"
+        android:textColor="@android:color/black"
+        android:textSize="18dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="Sair"
+        android:layout_gravity="center_horizontal" />
 
 <!--    <LinearLayout-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        android:gravity="center_horizontal">-->
 
-<!--        &lt;!&ndash; separar, botar em baixo da tela &ndash;&gt;-->
 <!--        <ImageButton-->
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_height="wrap_content"-->

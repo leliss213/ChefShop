@@ -32,7 +32,7 @@ public class ReceitaDao {
             ResultSet res = stmt.executeQuery(sql);
             // se existe um resultado
             while (res.next()) {
-                Receita r = new Receita(res.getInt("codreceita"), res.getInt("tipo"), res.getString("nomereceita"), (ArrayList<Ingredientes>) res.getArray("ingredientes"), res.getString("modopreparo"), res.getBytes("imagemreceita"));
+                Receita r = new Receita(res.getInt("codreceita"), res.getInt("tipo"), res.getString("nomereceita"), res.getString("modopreparo"), res.getBytes("imagemreceita"));
                 //Receita r = new Receita(res.getInt("codreceita"), res.getInt("tipo"), res.getString("nomereceita"), res.getString("modopreparo"));
                 //ERRO TA AQUI
                 listaReceita.add(r);

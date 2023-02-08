@@ -36,6 +36,14 @@ public class Receita implements Serializable{
         this.nomeReceita = nomeReceita;
         this.modoPreparo = modoPreparo;
     }
+
+    public Receita(int codReceita, int tipo, String nomeReceita, String modoPreparo, byte[] imagemReceita) {
+        this.codReceita = codReceita;
+        this.tipo = tipo;
+        this.nomeReceita = nomeReceita;
+        this.modoPreparo = modoPreparo;
+        this.imagemReceita = imagemReceita;
+    }
     
 
     public Receita(int codReceita) {
