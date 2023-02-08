@@ -8,7 +8,7 @@ package view;
  *
  * @author Aila
  */
-public class FormCategoriaExpandida extends javax.swing.JPanel {
+public class FormCategoriaExpandida extends javax.swing.JFrame {
 
     /**
      * Creates new form FormCategoriaExpandida
@@ -27,6 +27,10 @@ public class FormCategoriaExpandida extends javax.swing.JPanel {
     private void initComponents() {
 
         jBAddReceita = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTTabelaReceitas = new javax.swing.JTable();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jBAddReceita.setText("Adicionar receita nessa categoria");
         jBAddReceita.addActionListener(new java.awt.event.ActionListener() {
@@ -35,30 +39,60 @@ public class FormCategoriaExpandida extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        jTTabelaReceitas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Nome da Receita", "Categoria", "Ingredientes"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTTabelaReceitas);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(296, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jBAddReceita)
-                .addGap(71, 71, 71))
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(jBAddReceita)
-                .addContainerGap(289, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBAddReceitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAddReceitaActionPerformed
         // TODO add your handling code here:
+        FormCadReceita frmcadrec = new FormCadReceita();
+        frmcadrec.setVisible(true);
     }//GEN-LAST:event_jBAddReceitaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAddReceita;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTTabelaReceitas;
     // End of variables declaration//GEN-END:variables
 }

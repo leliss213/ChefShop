@@ -10,7 +10,7 @@ import modelDominio.Usuario;
  *
  * @author aluno
  */
-public class FormLogin extends javax.swing.JDialog{
+public class FormLogin extends javax.swing.JFrame{
 
     /**
      * Creates new form FormLogin

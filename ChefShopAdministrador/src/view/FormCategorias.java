@@ -37,6 +37,11 @@ public class FormCategorias extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jBCarnes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/carne.png"))); // NOI18N
+        jBCarnes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCarnesActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Adicione, edite e exclua receitas por categoria:");
 
@@ -95,6 +100,12 @@ public class FormCategorias extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBCarnesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCarnesActionPerformed
+        // TODO add your handling code here:
+        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
+        frmcatexp.setVisible(true);
+    }//GEN-LAST:event_jBCarnesActionPerformed
 
     /**
      * @param args the command line arguments

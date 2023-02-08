@@ -91,18 +91,19 @@ public class UsuarioDao {
                con.setAutoCommit(false);
                String sql = "insert into Usuario(login,senha,tipo) values(?,?,2);";
                stmt = con.prepareStatement(sql);
-               stmt.setString(1, user.getLogin());
+               String senhaHash = null;
                try {
                     MessageDigest md = MessageDigest.getInstance("MD5"); // MD5, SHA-1, SHA-256
 
-                    BigInteger a = new BigInteger(1, md.digest(user.getSenha().getBytes()));
-                    String senhaHash = a.toString();
-                    stmt.setString(2, senhaHash); // Trocando o segundo ? pela senha
-                    System.out.println(senhaHash);
+                    BigInteger senhaHashCadastrada = new BigInteger(1, md.digest(user.getSenha().getBytes()));
+                    senhaHash = senhaHashCadastrada.toString();
+                    System.out.println(senhaHashCadastrada);
 
                 } catch (NoSuchAlgorithmException e) {
                     System.out.println("Erro ao carregar o MessageDigest");
                 }
+               stmt.setString(1, user.getLogin());
+               stmt.setString(2, senhaHash);
                stmt.execute();
                con.commit();
                return -1;
