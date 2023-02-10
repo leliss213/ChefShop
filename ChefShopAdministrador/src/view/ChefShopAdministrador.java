@@ -23,7 +23,7 @@ public class ChefShopAdministrador {
         
         try {
             //Conexão com o servidor:
-            socket = new Socket("127.0.0.1",12345); //ip do servidor e a porta
+            socket = new Socket("127.0.0.1", 12345); //ip do servidor e a porta
             out = new ObjectOutputStream(socket.getOutputStream());
             in = new ObjectInputStream(socket.getInputStream());
             System.out.println("Cliente conectado no servidor!");

@@ -31,6 +31,7 @@ public class FormCategoriaExpandida extends javax.swing.JFrame {
         jTTabelaReceitas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Categoria Expandida");
 
         jBAddReceita.setText("Adicionar receita nessa categoria");
         jBAddReceita.addActionListener(new java.awt.event.ActionListener() {

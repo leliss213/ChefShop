@@ -14,21 +14,33 @@ import modelDominio.Ingredientes;
 import modelDominio.Produto;
 import modelDominio.Receita;
 import view.util.Imagem;
+import view.util.ComboBoxProduto;
 
 /**
  *
  * @author Aila
  */
-public class FormCadReceita extends javax.swing.JDialog {
+public class FormCadReceita extends javax.swing.JFrame {
+    
     private Imagem imagem = null;
     private ArrayList<Ingredientes>listaIngredientes;
+    
+    
+    private void preencheComboBoxProduto() {
+        ArrayList<Produto> listaProdutos = new ArrayList<Produto>();
+        listaProdutos = ChefShopAdministrador.ccont.produtoLista();
+        ComboBoxProduto.preencheComboBoxProduto(-1, jCBProduto, listaProdutos, false);
+    }
     
     /**
      * Creates new form FormCadReceita
      */
     public FormCadReceita() {
         initComponents();
-        listaIngredientes = new ArrayList<>();
+        
+        
+        preencheComboBoxProduto();
+        // listaIngredientes = new ArrayList<>();
     }
 
     /**
@@ -61,6 +73,9 @@ public class FormCadReceita extends javax.swing.JDialog {
         jBAdicionarImg = new javax.swing.JButton();
         jLImagem = new javax.swing.JLabel();
         jFTFQuantidade = new javax.swing.JFormattedTextField();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de Receita");
 
         jLabel1.setText("Cadastrar uma receita:");
 
@@ -143,8 +158,8 @@ public class FormCadReceita extends javax.swing.JDialog {
 
         jFTFQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,##0.00"))));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -236,6 +251,9 @@ public class FormCadReceita extends javax.swing.JDialog {
                     .addComponent(jBDeletar))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
+
+        pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTFNomeReceitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNomeReceitaActionPerformed

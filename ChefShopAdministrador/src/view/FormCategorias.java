@@ -33,8 +33,12 @@ public class FormCategorias extends javax.swing.JFrame {
         jBSobremesas = new javax.swing.JButton();
         jBSopas = new javax.swing.JButton();
         jBLanches = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Receitas Por Categoria");
 
         jBCarnes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/carne.png"))); // NOI18N
         jBCarnes.addActionListener(new java.awt.event.ActionListener() {
@@ -43,17 +47,51 @@ public class FormCategorias extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel1.setText("Adicione, edite e exclua receitas por categoria:");
 
         jBMassas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/massas.png"))); // NOI18N
+        jBMassas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBMassasActionPerformed(evt);
+            }
+        });
 
         jBSaladas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/salada.png"))); // NOI18N
+        jBSaladas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSaladasActionPerformed(evt);
+            }
+        });
 
         jBSobremesas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/sobremesas.png"))); // NOI18N
+        jBSobremesas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSobremesasActionPerformed(evt);
+            }
+        });
 
         jBSopas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/sopas.png"))); // NOI18N
+        jBSopas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSopasActionPerformed(evt);
+            }
+        });
 
         jBLanches.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/lanches.png"))); // NOI18N
+        jBLanches.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBLanchesActionPerformed(evt);
+            }
+        });
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -61,30 +99,28 @@ public class FormCategorias extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(77, 77, 77))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jBCarnes)
                             .addComponent(jBSobremesas))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(57, 57, 57)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jBSopas)
                             .addComponent(jBMassas))
-                        .addGap(57, 57, 57)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBSaladas)
-                    .addComponent(jBLanches))
-                .addContainerGap(46, Short.MAX_VALUE))
+                        .addGap(57, 57, 57)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jBSaladas)
+                            .addComponent(jBLanches)))
+                    .addComponent(jLabel1))
+                .addGap(46, 46, 46))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(jLabel1)
-                .addGap(41, 41, 41)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jBCarnes)
                     .addComponent(jBMassas)
@@ -94,7 +130,7 @@ public class FormCategorias extends javax.swing.JFrame {
                     .addComponent(jBSobremesas)
                     .addComponent(jBSopas)
                     .addComponent(jBLanches))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -105,7 +141,43 @@ public class FormCategorias extends javax.swing.JFrame {
         // TODO add your handling code here:
         FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
         frmcatexp.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jBCarnesActionPerformed
+
+    private void jBMassasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMassasActionPerformed
+        // TODO add your handling code here:
+        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
+        frmcatexp.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jBMassasActionPerformed
+
+    private void jBSaladasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSaladasActionPerformed
+        // TODO add your handling code here:
+        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
+        frmcatexp.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jBSaladasActionPerformed
+
+    private void jBSobremesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSobremesasActionPerformed
+        // TODO add your handling code here:
+        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
+        frmcatexp.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jBSobremesasActionPerformed
+
+    private void jBSopasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSopasActionPerformed
+        // TODO add your handling code here:
+        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
+        frmcatexp.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jBSopasActionPerformed
+
+    private void jBLanchesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLanchesActionPerformed
+        // TODO add your handling code here:
+        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
+        frmcatexp.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jBLanchesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,5 +222,8 @@ public class FormCategorias extends javax.swing.JFrame {
     private javax.swing.JButton jBSobremesas;
     private javax.swing.JButton jBSopas;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

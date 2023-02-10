@@ -31,8 +31,11 @@ public class FormPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Bem-vindo!");
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jBIniciar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jBIniciar.setForeground(new java.awt.Color(139, 187, 84));
         jBIniciar.setText("Entrar");
         jBIniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

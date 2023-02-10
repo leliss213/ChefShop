@@ -7,6 +7,7 @@ package controller;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import modelDominio.Produto;
 import modelDominio.Usuario;
 
 /**
@@ -57,6 +58,19 @@ public class ConexaoController {
         }catch(Exception ex){
             ex.printStackTrace();
             return false;
+        }
+    }
+    
+    public ArrayList<Produto> produtoLista(){
+        String msg;
+        try{
+            out.writeObject("ProdutoLista");
+            msg = (String) in.readObject(); // lendo ok
+            ArrayList<Produto> listaproduto = (ArrayList<Produto>) in.readObject(); 
+            return listaproduto;
+        }catch(Exception ex){
+            ex.printStackTrace();
+            return null;
         }
     }
     

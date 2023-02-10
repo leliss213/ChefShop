@@ -38,6 +38,7 @@ public class FormLogin extends javax.swing.JFrame{
         jPFSenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Login");
 
         jLabel1.setText("Login:");
 
