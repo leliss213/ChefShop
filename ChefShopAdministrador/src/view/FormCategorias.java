@@ -26,16 +26,23 @@ public class FormCategorias extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jBCarnes = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jBCarnes = new javax.swing.JButton();
         jBMassas = new javax.swing.JButton();
         jBSaladas = new javax.swing.JButton();
         jBSobremesas = new javax.swing.JButton();
         jBSopas = new javax.swing.JButton();
         jBLanches = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Receitas Por Categoria");
+
+        jPanel1.setBackground(new java.awt.Color(251, 251, 248));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel1.setText("Adicione, edite e exclua receitas por categoria:");
 
         jBCarnes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/carne.png"))); // NOI18N
         jBCarnes.addActionListener(new java.awt.event.ActionListener() {
@@ -43,9 +50,6 @@ public class FormCategorias extends javax.swing.JFrame {
                 jBCarnesActionPerformed(evt);
             }
         });
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel1.setText("Adicione, edite e exclua receitas por categoria:");
 
         jBMassas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/massas.png"))); // NOI18N
         jBMassas.addActionListener(new java.awt.event.ActionListener() {
@@ -82,44 +86,71 @@ public class FormCategorias extends javax.swing.JFrame {
             }
         });
 
+        jPanel2.setBackground(new java.awt.Color(139, 187, 84));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 34, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jBCarnes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBSobremesas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(34, 34, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jBSopas, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jBMassas, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jBSaladas)
+                    .addComponent(jBLanches))
+                .addContainerGap(68, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jBMassas, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jBSaladas, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jBCarnes, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(52, 52, 52)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jBSopas, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jBSobremesas, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jBLanches, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(62, 62, 62))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jBCarnes)
-                            .addComponent(jBSobremesas))
-                        .addGap(57, 57, 57)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jBSopas)
-                            .addComponent(jBMassas))
-                        .addGap(57, 57, 57)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jBSaladas)
-                            .addComponent(jBLanches)))
-                    .addComponent(jLabel1))
-                .addGap(46, 46, 46))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jLabel1)
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBCarnes)
-                    .addComponent(jBMassas)
-                    .addComponent(jBSaladas))
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBSobremesas)
-                    .addComponent(jBSopas)
-                    .addComponent(jBLanches))
-                .addContainerGap(64, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -128,6 +159,7 @@ public class FormCategorias extends javax.swing.JFrame {
 
     private void jBCarnesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCarnesActionPerformed
         // TODO add your handling code here:
+        
         FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
         frmcatexp.setVisible(true);
         dispose();
@@ -211,5 +243,7 @@ public class FormCategorias extends javax.swing.JFrame {
     private javax.swing.JButton jBSobremesas;
     private javax.swing.JButton jBSopas;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
