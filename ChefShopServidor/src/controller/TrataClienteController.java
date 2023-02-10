@@ -56,7 +56,7 @@ public class TrataClienteController extends Thread{
                     out.writeObject("ok");
                     ProdutoDao dao = new ProdutoDao();
                     System.out.println("teste");
-                    out.writeObject(dao.getListaProdutos("semnome"));
+                    out.writeObject(dao.getListaProdutos());
                     System.out.println("ttsssss");
                 } else if (comando.equalsIgnoreCase("inserirUsuario")) {
                     out.writeObject("ok"); 

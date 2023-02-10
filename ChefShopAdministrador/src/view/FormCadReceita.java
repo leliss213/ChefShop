@@ -210,7 +210,7 @@ public class FormCadReceita extends javax.swing.JFrame {
                                             .addGap(95, 95, 95)
                                             .addComponent(jBAdicionarIngrediente, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addComponent(jLabel1))
-                        .addContainerGap(32, Short.MAX_VALUE))))
+                        .addContainerGap(37, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
