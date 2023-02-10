@@ -4,6 +4,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
+import model.ProdutoDao;
 import model.ReceitaDao;
 import model.UsuarioDao;
 import modelDominio.Usuario;
@@ -51,6 +52,12 @@ public class TrataClienteController extends Thread{
                     int tipo = (int) in.readObject();
                     ReceitaDao dao = new ReceitaDao();
                     out.writeObject(dao.getLista(tipo));
+                } else if (comando.equalsIgnoreCase("ProdutoLista")){
+                    out.writeObject("ok");
+                    ProdutoDao dao = new ProdutoDao();
+                    System.out.println("teste");
+                    out.writeObject(dao.getListaProdutos("semnome"));
+                    System.out.println("ttsssss");
                 } else if (comando.equalsIgnoreCase("inserirUsuario")) {
                     out.writeObject("ok"); 
                     Usuario user = (Usuario) in.readObject();

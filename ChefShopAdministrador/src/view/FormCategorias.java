@@ -33,9 +33,6 @@ public class FormCategorias extends javax.swing.JFrame {
         jBSobremesas = new javax.swing.JButton();
         jBSopas = new javax.swing.JButton();
         jBLanches = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Receitas Por Categoria");
@@ -85,14 +82,6 @@ public class FormCategorias extends javax.swing.JFrame {
             }
         });
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -130,7 +119,7 @@ public class FormCategorias extends javax.swing.JFrame {
                     .addComponent(jBSobremesas)
                     .addComponent(jBSopas)
                     .addComponent(jBLanches))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         pack();
@@ -222,8 +211,5 @@ public class FormCategorias extends javax.swing.JFrame {
     private javax.swing.JButton jBSobremesas;
     private javax.swing.JButton jBSopas;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

@@ -67,6 +67,7 @@ public class ConexaoController {
             out.writeObject("ProdutoLista");
             msg = (String) in.readObject(); // lendo ok
             ArrayList<Produto> listaproduto = (ArrayList<Produto>) in.readObject(); 
+            System.out.println("cc tst");
             return listaproduto;
         }catch(Exception ex){
             ex.printStackTrace();
