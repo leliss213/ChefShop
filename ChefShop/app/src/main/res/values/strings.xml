@@ -9,4 +9,6 @@
     <string name="title_activity_visualizacao_receitas_recycler">
         VisualizacaoReceitasRecyclerActivity
     </string>
+    <string name="title_activity_visualizacao_detalhada_receitas">VisualizacaoDetalhadaReceitas
+    </string>
 </resources>
