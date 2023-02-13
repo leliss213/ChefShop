@@ -88,11 +88,11 @@ public class VisualizacaoReceitasRecyclerActivity extends AppCompatActivity {
             //Obtendo o curso do clique:
             Receita minhaReceita = listaReceitas.get(position);
             //Chamar a tela -> criar a intent:
-//            Intent it = new Intent(VisualizacaoReceitasRecyclerActivity.this,VisualizacaoDetalhadaActivity.class);
+            Intent it = new Intent(VisualizacaoReceitasRecyclerActivity.this,VisualizacaoDetalhadaReceitas.class);
             //Adicionando o curso na solicitação:
-//            it.putExtra("receita",minhaReceita);
+            it.putExtra("receita",minhaReceita);
             //Enviando a solicitação:
-//            startActivity(it);
+            startActivity(it);
         }
     };
 

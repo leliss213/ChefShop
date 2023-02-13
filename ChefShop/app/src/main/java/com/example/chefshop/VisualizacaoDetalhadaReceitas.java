@@ -1,5 +1,6 @@
 package com.example.chefshop;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -18,6 +19,11 @@ public class VisualizacaoDetalhadaReceitas extends AppCompatActivity {
         setContentView(R.layout.activity_visualizacao_detalhada_receitas);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Intent it = getIntent();
+        if (it.equals("minhaReceita")) {
+
+        }
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
