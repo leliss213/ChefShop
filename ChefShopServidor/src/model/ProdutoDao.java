@@ -26,7 +26,7 @@ public class ProdutoDao {
         con = Conector.getConnection();
     }
 
-    public ArrayList<Produto> getListaProdutos(String nome) {
+    public ArrayList<Produto> getListaProdutos() {
         Statement stmt = null; // usado para rodar SQL
         ArrayList<Produto> listaprodutos = new ArrayList<Produto>();
 
@@ -54,9 +54,5 @@ public class ProdutoDao {
             return null;
         }
 
-    }
-
-    public Object getListaProdutos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
