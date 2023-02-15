@@ -20,7 +20,7 @@ public class IngredienteDao {
         con = Conector.getConnection();
     }
     
-    public ArrayList<Ingredientes>getLista(){
+    public ArrayList<Ingredientes>getListaIngredientes(){
         PreparedStatement stmt = null; 
         ArrayList<Ingredientes> listaIngredientes = new ArrayList<>();
        
