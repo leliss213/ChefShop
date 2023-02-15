@@ -16,8 +16,8 @@
         android:text="Categorias"
         android:layout_gravity="center_horizontal"
         android:textSize="26dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="50dp" />
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp" />
 
         <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="130dp"
+            android:layout_height="100dp"
             android:text="Carnes"
             android:layout_weight="1"
             android:background="@color/fundoTela"
@@ -35,7 +35,7 @@
             android:src="@drawable/carne"/>
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="130dp"
+            android:layout_height="100dp"
             android:text="Massas"
             android:layout_weight="1"
             android:background="@color/fundoTela"
@@ -52,7 +52,7 @@
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="130dp"
+            android:layout_height="100dp"
             android:text="Saladas"
             android:layout_weight="1"
             android:background="@color/fundoTela"
@@ -60,7 +60,7 @@
             android:src="@drawable/salada"/>
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="130dp"
+            android:layout_height="100dp"
             android:text="Sobremesas"
             android:layout_weight="1"
             android:background="@color/fundoTela"
@@ -75,7 +75,7 @@
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="130dp"
+            android:layout_height="100dp"
             android:text="Sopas"
             android:layout_weight="1"
             android:background="@color/fundoTela"
@@ -83,7 +83,7 @@
             android:src="@drawable/sopas"/>
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="130dp"
+            android:layout_height="100dp"
             android:text="Lanches"
             android:layout_weight="1"
             android:background="@color/fundoTela"

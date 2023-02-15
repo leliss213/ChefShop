@@ -55,15 +55,14 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                                 String msgRecebida = ccont.inserir(user);
                                 if (msgRecebida.equals("ok")) {
                                     informacoesApp.setUsuarioInserido(userInserido);
-                                    Intent it = new Intent(CadastroUsuarioActivity.this, VisualizacaoReceitasRecyclerActivity.class);
+                                    Intent it = new Intent(CadastroUsuarioActivity.this, LoginActivity.class);
                                     startActivity(it);
-                                    runOnUiThread(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            Toast.makeText(informacoesApp, "IRU DEU CERTO", Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
-
+//                                    runOnUiThread(new Runnable() {
+//                                        @Override
+//                                        public void run() {
+//                                            Toast.makeText(informacoesApp, "Cadastro funcionou", Toast.LENGTH_SHORT).show();
+//                                        }
+//                                    });
                                 } else {
                                     runOnUiThread(new Runnable() {
                                         @Override
@@ -77,7 +76,6 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
 
                         thread.start();
 
-
                     } else {
                         etSenhaUsuario.setError("ERRO: Informe uma senha.");
                     }
@@ -86,7 +84,6 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                 }
             }
         });
-
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

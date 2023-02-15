@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                                     runOnUiThread(new Runnable() {
                                         @Override
                                         public void run() {
-                                            Toast.makeText(informacoesApp, "IRU DEU CERTO", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(informacoesApp, "Login funcionou", Toast.LENGTH_SHORT).show();
                                         }
                                     });
 
