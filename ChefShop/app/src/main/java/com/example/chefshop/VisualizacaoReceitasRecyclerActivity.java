@@ -53,12 +53,12 @@ public class VisualizacaoReceitasRecyclerActivity extends AppCompatActivity {
                 }
                 ConexaoSocketController cont = new ConexaoSocketController(informacoesApp);
                 listaReceitas = cont.listaReceitas(tipo);//passar o parametro
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(informacoesApp, "abriu o recycler", Toast.LENGTH_SHORT).show();
-                    }
-                });
+//                runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        Toast.makeText(informacoesApp, "abriu o recycler", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -76,8 +76,6 @@ public class VisualizacaoReceitasRecyclerActivity extends AppCompatActivity {
             }
         });
         thread.start();
-
-
     }
 
     //fora do onCreate mas dentro da activity eu vou criar o trata clique:
@@ -85,11 +83,11 @@ public class VisualizacaoReceitasRecyclerActivity extends AppCompatActivity {
     ReceitaAdapter.ReceitaOnClickListener trataCliqueItem = new ReceitaAdapter.ReceitaOnClickListener() {
         @Override
         public void onClickReceita(View view, int position) {
-            //Obtendo o curso do clique:
+            //Obtendo a receita do clique:
             Receita minhaReceita = listaReceitas.get(position);
             //Chamar a tela -> criar a intent:
             Intent it = new Intent(VisualizacaoReceitasRecyclerActivity.this,VisualizacaoDetalhadaReceitas.class);
-            //Adicionando o curso na solicitação:
+            //Adicionando a receita na solicitação:
             it.putExtra("receita",minhaReceita);
             //Enviando a solicitação:
             startActivity(it);
