@@ -32,6 +32,34 @@ public class FormCadReceita extends javax.swing.JFrame {
         ComboBoxProduto.preencheComboBoxProduto(-1, jCBProduto, listaProdutos, false);
     }
     
+    private void limpaCampos() {
+    
+        jTFNomeReceita.setText("");
+        jCBCategoriaReceita.setSelectedIndex(0);
+        jCBProduto.setSelectedIndex(0);
+        jCBUnidadeMedida.setSelectedIndex(7);
+        jFTFQuantidade.setText("");
+        listaIngredientes.isEmpty();
+        jTAIngredientes.setText("");
+        jTAModoPreparo.setText("");
+    }
+    
+    private void limpaProd() {
+    
+        jCBProduto.setSelectedIndex(0);
+        jCBUnidadeMedida.setSelectedIndex(7);
+        jFTFQuantidade.setText("");
+    }
+    
+    private void limpaProd2() {
+    
+        jCBProduto.setSelectedIndex(0);
+        jCBUnidadeMedida.setSelectedIndex(7);
+        jFTFQuantidade.setText("");
+        listaIngredientes.isEmpty();
+        jTAIngredientes.setText("");
+    }
+    
     /**
      * Creates new form FormCadReceita
      */
@@ -39,6 +67,7 @@ public class FormCadReceita extends javax.swing.JFrame {
         initComponents();
         
         
+        jCBUnidadeMedida.setSelectedIndex(7);
         preencheComboBoxProduto();
         listaIngredientes = new ArrayList<>();
     }
@@ -73,6 +102,7 @@ public class FormCadReceita extends javax.swing.JFrame {
         jBAdicionarImg = new javax.swing.JButton();
         jLImagem = new javax.swing.JLabel();
         jFTFQuantidade = new javax.swing.JFormattedTextField();
+        jBLimpaProd = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Receita");
@@ -107,7 +137,7 @@ public class FormCadReceita extends javax.swing.JFrame {
             }
         });
 
-        jCBUnidadeMedida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Colher de Sopa", "Colher de Chá ", "Xícara ", "Gramas", "Quilos ", "Unidade", "Pitada" }));
+        jCBUnidadeMedida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Colher de Sopa", "Colher de Chá ", "Xícara ", "Gramas", "Quilos ", "Unidade", "Pitada", "Unidade de Medida" }));
         jCBUnidadeMedida.setEnabled(false);
         jCBUnidadeMedida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,6 +171,11 @@ public class FormCadReceita extends javax.swing.JFrame {
         });
 
         jBCancelar.setText("Cancelar");
+        jBCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCancelarActionPerformed(evt);
+            }
+        });
 
         jBDeletar.setText("Deletar");
         jBDeletar.addActionListener(new java.awt.event.ActionListener() {
@@ -159,6 +194,13 @@ public class FormCadReceita extends javax.swing.JFrame {
         jLImagem.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jFTFQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,##0.00"))));
+
+        jBLimpaProd.setText("Limpar");
+        jBLimpaProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBLimpaProdActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -182,21 +224,18 @@ public class FormCadReceita extends javax.swing.JFrame {
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jCBProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jCBUnidadeMedida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(jLabel4))
+                                    .addComponent(jCBProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jCBUnidadeMedida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel5)
-                                            .addGap(212, 212, 212))
-                                        .addGroup(layout.createSequentialGroup()
                                             .addComponent(jFTFQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jBAdicionarIngrediente, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(jBAdicionarIngrediente))
+                                        .addComponent(jLabel5))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jBLimpaProd)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -213,7 +252,9 @@ public class FormCadReceita extends javax.swing.JFrame {
                                         .addComponent(jBAdicionarImg)
                                         .addGap(33, 33, 33))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel1)
+                                            .addComponent(jLabel4))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addComponent(jLImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(21, 21, 21))))
@@ -234,17 +275,18 @@ public class FormCadReceita extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jCBCategoriaReceita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
+                        .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)))
                     .addComponent(jLImagem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCBProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCBUnidadeMedida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBAdicionarIngrediente)
-                    .addComponent(jFTFQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jFTFQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBLimpaProd)
+                    .addComponent(jBAdicionarIngrediente))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -326,7 +368,11 @@ public class FormCadReceita extends javax.swing.JFrame {
         Produto produto = listaProdutos.get(jCBProduto.getSelectedIndex());
         Ingredientes ingrediente = new Ingredientes(0, quantidade, produto);
         listaIngredientes.add(ingrediente);
-        jTAIngredientes.append(ingrediente.toString());
+        String msgFormatada = ingrediente.getQuantidadeIngredientes() + " x " + ingrediente.getProduto().getNomeProduto() + " (" + ingrediente.getProduto().getUnidadeLiteral()+ ")\n";
+        jTAIngredientes.append(msgFormatada);
+        limpaProd();
+        jTAIngredientes.setLineWrap(true);
+        
         
     }//GEN-LAST:event_jBAdicionarIngredienteActionPerformed
 
@@ -344,12 +390,24 @@ public class FormCadReceita extends javax.swing.JFrame {
         jCBUnidadeMedida.setSelectedIndex(prod.getUnidade());        
     }//GEN-LAST:event_jCBProdutoActionPerformed
 
+    private void jBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCancelarActionPerformed
+        // TODO add your handling code here:
+        limpaCampos();
+        
+    }//GEN-LAST:event_jBCancelarActionPerformed
+
+    private void jBLimpaProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimpaProdActionPerformed
+        // TODO add your handling code here:
+        limpaProd2();
+    }//GEN-LAST:event_jBLimpaProdActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAdicionarImg;
     private javax.swing.JButton jBAdicionarIngrediente;
     private javax.swing.JButton jBCancelar;
     private javax.swing.JButton jBDeletar;
+    private javax.swing.JButton jBLimpaProd;
     private javax.swing.JButton jBSalvar;
     private javax.swing.JComboBox<String> jCBCategoriaReceita;
     private javax.swing.JComboBox<String> jCBProduto;

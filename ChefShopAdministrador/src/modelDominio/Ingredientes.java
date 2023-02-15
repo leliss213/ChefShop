@@ -23,6 +23,32 @@ public class Ingredientes implements Serializable{
         this.produto = produto;
     }
 
+    public int getCodIngrediente() {
+        return codIngrediente;
+    }
+
+    public void setCodIngrediente(int codIngrediente) {
+        this.codIngrediente = codIngrediente;
+    }
+
+    public float getQuantidadeIngredientes() {
+        return quantidadeIngredientes;
+    }
+
+    public void setQuantidadeIngredientes(float quantidadeIngredientes) {
+        this.quantidadeIngredientes = quantidadeIngredientes;
+    }
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+
+    
+    
     @Override
     public String toString() {
         return "Ingredientes{" + "codIngrediente=" + codIngrediente + ", quantidadeIngredientes=" + quantidadeIngredientes + ", produto=" + produto + '}';

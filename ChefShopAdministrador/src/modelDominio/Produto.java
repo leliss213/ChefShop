@@ -57,5 +57,25 @@ public class Produto implements Serializable{
         return "Produto{" + "codProduto=" + codProduto + ", nomeProduto=" + nomeProduto + ", unidade=" + unidade + '}';
     }
     
+    public String getUnidadeLiteral() {
+        String retorno = "";
+        if (this.unidade == 0) {
+            retorno = "Colher de Sopa";
+        } else if (this.unidade == 1) {
+            retorno = "Colher de Chá";
+        } else if (this.unidade == 2) {
+            retorno = "Xícara";
+        } else if (this.unidade == 3){
+            retorno = "Gramas";
+        } else if (this.unidade == 4) {
+            retorno = "Quilos";
+        } else if (this.unidade == 5) {
+            retorno = "Unidade";
+        } else if (this.unidade == 6){
+            retorno = "Pitada";
+        } 
+        
+        return retorno;
+    }
         
 }
