@@ -22,6 +22,11 @@ public class Ingredientes implements Serializable{
         this.quantidadeIngredientes = quantidadeIngredientes;
         this.produto = produto;
     }
+
+    @Override
+    public String toString() {
+        return "Ingredientes{" + "codIngrediente=" + codIngrediente + ", quantidadeIngredientes=" + quantidadeIngredientes + ", produto=" + produto + '}';
+    }
     
     
     
