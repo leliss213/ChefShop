@@ -2,9 +2,13 @@ package com.example.chefshop;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -34,6 +38,7 @@ public class ReceitaAdapter extends RecyclerView.Adapter<ReceitaAdapter.MyViewHo
         Receita minharReceita = listaReceitas.get(position);
         holder.tvReceitaNome.setText(minharReceita.getNomeReceita());
         holder.tvReceitaCategoria.setText(minharReceita.getTipoLiteral());
+//        Bitmap bmp = BitmapFactory.decodeByteArray(minharReceita.getImagemReceita(),0 , minharReceita.getImagemReceita().length);
         // clique no item do cliente
         if (receitaOnClickListener != null) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -52,10 +57,12 @@ public class ReceitaAdapter extends RecyclerView.Adapter<ReceitaAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView tvReceitaNome, tvReceitaCategoria;
+//        ImageView ivImagemReceita;
         public MyViewHolder(View itemView) {
             super(itemView);
             tvReceitaNome = (TextView) itemView.findViewById(R.id.tvReceitaNome);
             tvReceitaCategoria = (TextView) itemView.findViewById(R.id.tvReceitaCategoria);
+//            ivImagemReceita = itemView.findViewById(R.id.ivImagemReceita);
         }
     }
 

@@ -29,7 +29,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nome (banco)"
         android:textSize="26dp"
         android:layout_marginTop="15dp"
         android:layout_gravity="center_horizontal"

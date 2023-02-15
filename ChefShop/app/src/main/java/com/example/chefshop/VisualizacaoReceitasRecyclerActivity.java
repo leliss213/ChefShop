@@ -72,7 +72,6 @@ public class VisualizacaoReceitasRecyclerActivity extends AppCompatActivity {
                         }
                     }
                 });
-
             }
         });
         thread.start();
