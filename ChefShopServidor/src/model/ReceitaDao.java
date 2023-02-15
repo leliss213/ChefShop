@@ -50,46 +50,63 @@ public class ReceitaDao {
             return null;
         }
     }
+    
+    public int inserir(Receita receita){
+        PreparedStatement stmt = null; 
         
-//    public int inserir(Receita receita) {
-//        //vai receber o script SQL de INSERT 
-//        PreparedStatement stmt = null;
-//        try {
-//            try {
-//                // desliga o autocommit
-//                con.setAutoCommit(false);
-//                String sql = "insert into bike (modelo,codmarca,preco,imagem,datalancamento) values (?,?,?,?,?)";
-//                stmt = con.prepareStatement(sql);
-//                //substituir os ? do script SQL
-//                stmt.setString(1, bk.getModelo());
-//                stmt.setInt(2, bk.getMarca().getCodmarca());
-//                stmt.setDouble(3, bk.getPreco());
-//                stmt.setBytes(4, bk.getImagem());
-//                stmt.setDate(5, new java.sql.Date(bk.getDataLancamento().getTime()));
-//                //executar o SCRIPT SQL
-//                stmt.execute();
-//                //efetivar a transação
-//                con.commit();
-//                return -1; // <- indica que tudo deu CERTO
-//            } catch (SQLException e) {
-//                try {
-//                    con.rollback(); // cancelando a transação 
-//                    e.printStackTrace();
-//                    return e.getErrorCode(); // devolvendo o erro
-//                } catch (SQLException ex) {
-//                    ex.printStackTrace();
-//                    return ex.getErrorCode();
-//                }
-//            }
-//        } finally {// isto será executado dando ERRO ou NÃO
-//            try {
-//                stmt.close();
-//                con.setAutoCommit(true);
-//                con.close();
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//                return e.getErrorCode();
-//            }
-//        }
+        try {
+            try {
+                String sql = "insert into receita (tipo, nomereceita, modopreparo) values (?,?,?);";
+                stmt = con.prepareStatement(sql);
+                stmt.setInt(1, receita.getTipo());
+                stmt.setString(2, receita.getNomeReceita());
+                stmt.setString(3, receita.getModoPreparo());
+                stmt.execute();
+                con.commit(); //depois ele me explica
+                
+                PreparedStatement stmt2 = null;
+                PreparedStatement stmt3 = con.prepareStatement("select last_insert_id() from receita;");
+                ResultSet result = null;
+                result = stmt3.executeQuery();
+                result.next();
+                
+                int ultimoidReceita = Integer.valueOf(result.getString(1));
+                for (Ingredientes ingredientes : receita.getIngredientes()) { //pra cada ingrediente percorre a lista
+                    String sql2 = "insert into ingrediente (quantidade, codproduto, codreceita) values (?,?,?);";
+                    stmt2 = con.prepareStatement(sql2);
+                    stmt2.setFloat(1, ingredientes.getQuantidadeIngredientes());
+                    stmt2.setInt(2, ingredientes.getProduto().getCodProduto());
+                    stmt2.setInt(3, ultimoidReceita);
+                    stmt2.execute();
+                }
+                con.commit();
+                stmt.close();
+                stmt2.close();
+                stmt3.close();
+                return -1;
+                
+            } catch(SQLException e){
+                try {
+                    con.rollback(); // cancelando a transação 
+                    return e.getErrorCode(); // devolvendo o erro
+                } catch (SQLException ex) {
+                    return ex.getErrorCode();
+                }
+            }
+            
+        } finally {
+            try {
+                stmt.close();
+                con.setAutoCommit(true);
+                con.close();
+            } catch(SQLException ex){
+                ex.printStackTrace();
+                
+            }                
+        }
+        
+    }
+        
+
 }
     

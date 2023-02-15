@@ -29,6 +29,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/tvNomeUser"
         android:textSize="26dp"
         android:layout_marginTop="15dp"
         android:layout_gravity="center_horizontal"
@@ -49,6 +50,7 @@
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:text="Sair"
+        android:id="@+id/bSairCliente"
         android:layout_gravity="center_horizontal" />
 
 <!--    <LinearLayout-->

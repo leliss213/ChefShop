@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import model.ProdutoDao;
 import model.ReceitaDao;
 import model.UsuarioDao;
+import modelDominio.Receita;
 import modelDominio.Usuario;
 
 /**
@@ -69,10 +70,19 @@ public class TrataClienteController extends Thread{
                     } else { 
                         out.writeObject("nOk");
                     }
+                } else if (comando.equalsIgnoreCase("inserir")){
+                    out.writeObject("ok"); 
+                    Receita receita = (Receita) in.readObject();
+                    // criando um Dao para armazenar no Banco
+                    ReceitaDao receitadao = new ReceitaDao();
+                    int retorno = receitadao.inserir(receita);
+                    if (retorno == -1) {
+                        out.writeObject("ok");
+                    } else { 
+                        out.writeObject("nOk");
+                    }
                 }
 
-
-//cadastro
                 
                 //relendo
                 comando = (String) in.readObject(); //relendo o próximo comando

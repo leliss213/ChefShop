@@ -16,6 +16,18 @@ public class Ingredientes implements Serializable{
     private int codIngrediente;
     private float quantidadeIngredientes;
     private Produto produto;
+    private int codReceita;
+
+    public Ingredientes(float quantidadeIngredientes, Produto produto) {
+        this.quantidadeIngredientes = quantidadeIngredientes;
+        this.produto = produto;
+    }  
+    
+    public Ingredientes(float quantidadeIngredientes, Produto produto, int codReceita) {
+        this.quantidadeIngredientes = quantidadeIngredientes;
+        this.produto = produto;
+        this.codReceita = codReceita;
+    }
 
     public Ingredientes(int codIngrediente, float quantidadeIngredientes, Produto produto) {
         this.codIngrediente = codIngrediente;
