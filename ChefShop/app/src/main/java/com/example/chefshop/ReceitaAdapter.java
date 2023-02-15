@@ -38,7 +38,6 @@ public class ReceitaAdapter extends RecyclerView.Adapter<ReceitaAdapter.MyViewHo
         Receita minharReceita = listaReceitas.get(position);
         holder.tvReceitaNome.setText(minharReceita.getNomeReceita());
         holder.tvReceitaCategoria.setText(minharReceita.getTipoLiteral());
-//        Bitmap bmp = BitmapFactory.decodeByteArray(minharReceita.getImagemReceita(),0 , minharReceita.getImagemReceita().length);
         // clique no item do cliente
         if (receitaOnClickListener != null) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {

@@ -19,15 +19,16 @@ public class ReceitaDao {
     public ReceitaDao() { // deve ser vazio e fazer a conexão dentro
         con = Conector.getConnection();
     }
-         // método que retorna todas as receitas cadastradas 
-        public ArrayList<Receita>getLista(int tipo){
+    
+     // método que retorna todas as receitas cadastradas 
+    public ArrayList<Receita>getLista(int tipo){
         Statement stmt = null; 
         ArrayList<Receita> listaReceita = new ArrayList<>();
-       
+
         try {
             stmt = con.createStatement();
             String sql = "select * from receita where tipo = "+tipo;            
-            
+
             //executando o script SQL
             ResultSet res = stmt.executeQuery(sql);
             // se existe um resultado
@@ -36,14 +37,14 @@ public class ReceitaDao {
                 //Receita r = new Receita(res.getInt("codreceita"), res.getInt("tipo"), res.getString("nomereceita"), res.getString("modopreparo"));
                 //ERRO TA AQUI
                 listaReceita.add(r);
-                
+
             }
             /// fechar as conexões e statement
             res.close();
             stmt.close();
             con.close();
             return listaReceita;
-            
+
         } catch (Exception e) {
             e.printStackTrace();
             return null;
