@@ -194,6 +194,11 @@ public class FormCadReceita extends javax.swing.JFrame {
         jLImagem.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jFTFQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,##0.00"))));
+        jFTFQuantidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFTFQuantidadeActionPerformed(evt);
+            }
+        });
 
         jBLimpaProd.setText("Limpar");
         jBLimpaProd.addActionListener(new java.awt.event.ActionListener() {
@@ -335,9 +340,10 @@ public class FormCadReceita extends javax.swing.JFrame {
             quantidade = 0;
         }
         if(!jTFNomeReceita.getText().isEmpty()){
-            if(imagem.getImagem()!=null){
-                if(jTAIngredientes.getText().isEmpty()){
-                    if(jTAModoPreparo.getText().isEmpty()){
+            if (jCBCategoriaReceita.getSelectedIndex() != 0) {
+            if(imagem != null){
+                if(!jTAIngredientes.getText().isEmpty()){
+                    if(!jTAModoPreparo.getText().isEmpty()){
          
                         
                                   
@@ -354,6 +360,9 @@ public class FormCadReceita extends javax.swing.JFrame {
             }else{
                 JOptionPane.showMessageDialog(rootPane, "Erro! Selecione uma imagem para a receita."); 
             }
+            }else {
+                JOptionPane.showMessageDialog(rootPane, "Erro! Defina a categoria da receita.");
+            }
         }else{
             JOptionPane.showMessageDialog(rootPane, "Erro! Defina o nome da receita.");
             jTFNomeReceita.requestFocus();   
@@ -364,14 +373,21 @@ public class FormCadReceita extends javax.swing.JFrame {
     private void jBAdicionarIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAdicionarIngredienteActionPerformed
 //      // TODO add your handling code here:
         float quantidade = 0;
-        quantidade = ((Number)jFTFQuantidade.getValue()).floatValue();    
-        Produto produto = listaProdutos.get(jCBProduto.getSelectedIndex());
-        Ingredientes ingrediente = new Ingredientes(0, quantidade, produto);
-        listaIngredientes.add(ingrediente);
-        String msgFormatada = ingrediente.getQuantidadeIngredientes() + " x " + ingrediente.getProduto().getNomeProduto() + " (" + ingrediente.getProduto().getUnidadeLiteral()+ ")\n";
-        jTAIngredientes.append(msgFormatada);
-        limpaProd();
-        jTAIngredientes.setLineWrap(true);
+        
+        if (!jFTFQuantidade.getText().isEmpty()) {
+            quantidade = ((Number)jFTFQuantidade.getValue()).floatValue();    
+            Produto produto = listaProdutos.get(jCBProduto.getSelectedIndex());
+            Ingredientes ingrediente = new Ingredientes(0, quantidade, produto);
+            listaIngredientes.add(ingrediente);
+            String msgFormatada = ingrediente.getQuantidadeIngredientes() + " x " + ingrediente.getProduto().getNomeProduto() + " (" + ingrediente.getProduto().getUnidadeLiteral()+ ")\n";
+            jTAIngredientes.append(msgFormatada);
+            limpaProd();
+            jTAIngredientes.setLineWrap(true);
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Erro! Defina uma quatidade");
+        }
+        
+        
         
         
     }//GEN-LAST:event_jBAdicionarIngredienteActionPerformed
@@ -400,6 +416,10 @@ public class FormCadReceita extends javax.swing.JFrame {
         // TODO add your handling code here:
         limpaProd2();
     }//GEN-LAST:event_jBLimpaProdActionPerformed
+
+    private void jFTFQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFTFQuantidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFTFQuantidadeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
