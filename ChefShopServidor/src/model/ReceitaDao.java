@@ -51,6 +51,7 @@ public class ReceitaDao {
         }
     }
     
+    // Inserir receita
     public int inserir(Receita receita){
         PreparedStatement stmt = null; 
         
@@ -83,7 +84,7 @@ public class ReceitaDao {
                 stmt.close();
                 stmt2.close();
                 stmt3.close();
-                return -1;
+                return -1; // <- indica que tudo deu CERTO
                 
             } catch(SQLException e){
                 try {
@@ -104,9 +105,49 @@ public class ReceitaDao {
                 
             }                
         }
-        
     }
+    
+    // Excluir receita
+    public int excluir(Receita receita) {
+        //vai receber o script SQL de INSERT 
+        PreparedStatement stmt = null;
+        try {
+            try {
+                // desliga o autocommit
+                con.setAutoCommit(false);
+                // o ? será substituído pelo valor
+                String sql = "delete from receita where codreceita = ? ";
+                stmt = con.prepareStatement(sql);
+                //substituir os ? do script SQL
+                stmt.setInt(1, receita.getCodReceita());
+                
+                //executar o SCRIPT SQL
+                stmt.execute();
+                //efetivar a transação
+                con.commit();
+                return -1; // <- indica que tudo deu CERTO
+            } catch (SQLException e) {
+                try {
+                    con.rollback(); // cancelando a transação 
+                    return e.getErrorCode(); // devolvendo o erro
+                } catch (SQLException ex) {
+                    return ex.getErrorCode();
+                }
+            }
+        } finally {// isto será executado dando ERRO ou NÃO
+            try {
+                stmt.close();
+                con.setAutoCommit(true);
+                con.close();
+            } catch (SQLException e) {
+                return e.getErrorCode();
+            }
+        }
+    }
+    
+    // Alterar receita
         
-
+    
+    
 }
     
