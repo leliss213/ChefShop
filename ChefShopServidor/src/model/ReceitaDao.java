@@ -57,11 +57,12 @@ public class ReceitaDao {
         
         try {
             try {
-                String sql = "insert into receita (tipo, nomereceita, modopreparo) values (?,?,?);";
+                String sql = "insert into receita (tipo, nomereceita, modopreparo, imagem) values (?,?,?,?);";
                 stmt = con.prepareStatement(sql);
                 stmt.setInt(1, receita.getTipo());
                 stmt.setString(2, receita.getNomeReceita());
                 stmt.setString(3, receita.getModoPreparo());
+                stmt.setBytes(4, receita.getImagemReceita());
                 stmt.execute();
                 con.commit(); //depois ele me explica
                 
