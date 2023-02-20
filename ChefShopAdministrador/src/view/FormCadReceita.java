@@ -345,8 +345,23 @@ public class FormCadReceita extends javax.swing.JFrame {
                 if(!jTAIngredientes.getText().isEmpty()){
                     if(!jTAModoPreparo.getText().isEmpty()){
          
+                        Receita receita;
+                        receita = new Receita(jCBCategoriaReceita.getSelectedIndex(), jTFNomeReceita.getText(), listaIngredientes, jTAModoPreparo.getText(), imagem.getImagem());
                         
-                                  
+                        Boolean ok = ChefShopAdministrador.ccont.inserir(receita);
+                        if (!ok) {
+                            JOptionPane.showMessageDialog(this,
+                            "Ocorreu um  erro.",
+                            this.getTitle(),
+                            JOptionPane.ERROR_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(this,
+                            "Receita cadastrada com sucesso.",
+                            this.getTitle(),
+                            JOptionPane.INFORMATION_MESSAGE);
+                            limpaCampos();
+            }
+                        
                     }else{
                         JOptionPane.showMessageDialog(rootPane, "Erro! Descreva o modo de preparo da receita.");
                         jTAModoPreparo.requestFocus();

@@ -8,6 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import modelDominio.Produto;
+import modelDominio.Receita;
 import modelDominio.Usuario;
 
 /**
@@ -74,5 +75,24 @@ public class ConexaoController {
             return null;
         }
     }
+    
+    public Boolean inserir(Receita rc){
+        String msg = "";
+        try{
+            out.writeObject("ReceitaInserir");
+            msg = (String) in.readObject();
+            out.writeObject(rc);
+            msg = (String) in.readObject();
+            if (msg.equals("ok")){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(Exception ex){
+            ex.printStackTrace();
+            return false;
+        }
+    }
+
     
 }
