@@ -21,19 +21,19 @@ import view.util.ComboBoxProduto;
  * @author Aila
  */
 public class FormCadReceita extends javax.swing.JFrame {
-    
+
     private Imagem imagem = null;
-    private ArrayList<Ingredientes>listaIngredientes;
+    private ArrayList<Ingredientes> listaIngredientes;
     ArrayList<Produto> listaProdutos = new ArrayList<Produto>();
-    
+
     private void preencheComboBoxProduto() {
-        
+
         listaProdutos = ChefShopAdministrador.ccont.produtoLista();
         ComboBoxProduto.preencheComboBoxProduto(-1, jCBProduto, listaProdutos, false);
     }
-    
+
     private void limpaCampos() {
-    
+
         jTFNomeReceita.setText("");
         jCBCategoriaReceita.setSelectedIndex(0);
         jCBProduto.setSelectedIndex(0);
@@ -43,30 +43,29 @@ public class FormCadReceita extends javax.swing.JFrame {
         jTAIngredientes.setText("");
         jTAModoPreparo.setText("");
     }
-    
+
     private void limpaProd() {
-    
+
         jCBProduto.setSelectedIndex(0);
         jCBUnidadeMedida.setSelectedIndex(7);
         jFTFQuantidade.setText("");
     }
-    
+
     private void limpaProd2() {
-    
+
         jCBProduto.setSelectedIndex(0);
         jCBUnidadeMedida.setSelectedIndex(7);
         jFTFQuantidade.setText("");
         listaIngredientes.isEmpty();
         jTAIngredientes.setText("");
     }
-    
+
     /**
      * Creates new form FormCadReceita
      */
     public FormCadReceita() {
         initComponents();
-        
-        
+
         jCBUnidadeMedida.setSelectedIndex(7);
         preencheComboBoxProduto();
         listaIngredientes = new ArrayList<>();
@@ -316,95 +315,92 @@ public class FormCadReceita extends javax.swing.JFrame {
 
     private void jBDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBDeletarActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jBDeletarActionPerformed
 
     private void jBAdicionarImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAdicionarImgActionPerformed
-        // TODO add your handling code here:
+        // Botão ADD IMAGEM
         JFileChooser jFileChooser1 = new JFileChooser();
         FileNameExtensionFilter imageFilter = new FileNameExtensionFilter("Image files", ImageIO.getReaderFileSuffixes());
         jFileChooser1.addChoosableFileFilter(imageFilter);
         if (jFileChooser1.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
             imagem = new Imagem(jFileChooser1.getSelectedFile());
-            jLImagem.setIcon(imagem.getImageIcon()); 
+            jLImagem.setIcon(imagem.getImageIcon());
             //jblImagem é um label grande na tela para aparecer a imagem
         }
     }//GEN-LAST:event_jBAdicionarImgActionPerformed
 
     private void jBSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalvarActionPerformed
-        // TODO add your handling code here:
+        // Botão SALVAR
         float quantidade;
         try {
-            quantidade = ((Number) jFTFQuantidade.getValue()).floatValue();  
+            quantidade = ((Number) jFTFQuantidade.getValue()).floatValue();
         } catch (Exception e) {
             quantidade = 0;
         }
-        if(!jTFNomeReceita.getText().isEmpty()){
+        if (!jTFNomeReceita.getText().isEmpty()) {
             if (jCBCategoriaReceita.getSelectedIndex() != 0) {
-            if(imagem != null){
-                if(!jTAIngredientes.getText().isEmpty()){
-                    if(!jTAModoPreparo.getText().isEmpty()){
-         
-                        Receita receita;
-                        receita = new Receita(jCBCategoriaReceita.getSelectedIndex(), jTFNomeReceita.getText(), listaIngredientes, jTAModoPreparo.getText(), imagem.getImagem());
-                        
-                        Boolean ok = ChefShopAdministrador.ccont.inserir(receita);
-                        if (!ok) {
-                            JOptionPane.showMessageDialog(this,
-                            "Ocorreu um  erro.",
-                            this.getTitle(),
-                            JOptionPane.ERROR_MESSAGE);
+                if (imagem != null) {
+                    if (!jTAIngredientes.getText().isEmpty()) {
+                        if (!jTAModoPreparo.getText().isEmpty()) {
+
+                            Receita receita;
+                            receita = new Receita(jCBCategoriaReceita.getSelectedIndex(), jTFNomeReceita.getText(), listaIngredientes, jTAModoPreparo.getText(), imagem.getImagem());
+
+                            Boolean ok = ChefShopAdministrador.ccont.inserir(receita);
+                            if (!ok) {
+                                JOptionPane.showMessageDialog(this,
+                                        "Ocorreu um  erro.",
+                                        this.getTitle(),
+                                        JOptionPane.ERROR_MESSAGE);
+                            } else {
+                                JOptionPane.showMessageDialog(this,
+                                        "Receita cadastrada com sucesso.",
+                                        this.getTitle(),
+                                        JOptionPane.INFORMATION_MESSAGE);
+                                limpaCampos();
+                            }
                         } else {
-                            JOptionPane.showMessageDialog(this,
-                            "Receita cadastrada com sucesso.",
-                            this.getTitle(),
-                            JOptionPane.INFORMATION_MESSAGE);
-                            limpaCampos();
-            }
-                        
-                    }else{
-                        JOptionPane.showMessageDialog(rootPane, "Erro! Descreva o modo de preparo da receita.");
-                        jTAModoPreparo.requestFocus();
+                            JOptionPane.showMessageDialog(rootPane, "Erro! Descreva o modo de preparo da receita.");
+                            jTAModoPreparo.requestFocus();
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "Erro! Você não adicionou nenhum ingrediente.");
+                        jFTFQuantidade.requestFocus();
+                        jCBProduto.requestFocus();
+                        jCBUnidadeMedida.requestFocus();
                     }
-                }else{
-                    JOptionPane.showMessageDialog(rootPane, "Erro! Você não adicionou nenhum ingrediente.");
-                    jFTFQuantidade.requestFocus();
-                    jCBProduto.requestFocus();
-                    jCBUnidadeMedida.requestFocus();
-                } 
-            }else{
-                JOptionPane.showMessageDialog(rootPane, "Erro! Selecione uma imagem para a receita."); 
-            }
-            }else {
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Erro! Selecione uma imagem para a receita.");
+                }
+            } else {
                 JOptionPane.showMessageDialog(rootPane, "Erro! Defina a categoria da receita.");
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(rootPane, "Erro! Defina o nome da receita.");
-            jTFNomeReceita.requestFocus();   
+            jTFNomeReceita.requestFocus();
         }
-        
+
     }//GEN-LAST:event_jBSalvarActionPerformed
 
     private void jBAdicionarIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAdicionarIngredienteActionPerformed
-//      // TODO add your handling code here:
+//      // Botão ADD INGREDIENTE
         float quantidade = 0;
-        
+
         if (!jFTFQuantidade.getText().isEmpty()) {
-            quantidade = ((Number)jFTFQuantidade.getValue()).floatValue();    
+            quantidade = ((Number) jFTFQuantidade.getValue()).floatValue();
             Produto produto = listaProdutos.get(jCBProduto.getSelectedIndex());
             Ingredientes ingrediente = new Ingredientes(0, quantidade, produto);
             listaIngredientes.add(ingrediente);
-            String msgFormatada = ingrediente.getQuantidadeIngredientes() + " x " + ingrediente.getProduto().getNomeProduto() + " (" + ingrediente.getProduto().getUnidadeLiteral()+ ")\n";
+            String msgFormatada = ingrediente.getQuantidadeIngredientes() + " x " + ingrediente.getProduto().getNomeProduto() + " (" + ingrediente.getProduto().getUnidadeLiteral() + ")\n";
             jTAIngredientes.append(msgFormatada);
             limpaProd();
             jTAIngredientes.setLineWrap(true);
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro! Defina uma quatidade");
         }
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_jBAdicionarIngredienteActionPerformed
 
     private void jCBCategoriaReceitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBCategoriaReceitaActionPerformed
@@ -418,13 +414,12 @@ public class FormCadReceita extends javax.swing.JFrame {
     private void jCBProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBProdutoActionPerformed
         // TODO add your handling code here:
         Produto prod = listaProdutos.get(jCBProduto.getSelectedIndex());
-        jCBUnidadeMedida.setSelectedIndex(prod.getUnidade());        
+        jCBUnidadeMedida.setSelectedIndex(prod.getUnidade());
     }//GEN-LAST:event_jCBProdutoActionPerformed
 
     private void jBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCancelarActionPerformed
-        // TODO add your handling code here:
+        // Botão CANCELAR
         limpaCampos();
-        
     }//GEN-LAST:event_jBCancelarActionPerformed
 
     private void jBLimpaProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimpaProdActionPerformed

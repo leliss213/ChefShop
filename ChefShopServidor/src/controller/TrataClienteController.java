@@ -70,7 +70,7 @@ public class TrataClienteController extends Thread{
                     } else { 
                         out.writeObject("nOk");
                     }
-                } else if (comando.equalsIgnoreCase("inserir")){
+                } else if (comando.equalsIgnoreCase("ReceitaInserir")){
                     out.writeObject("ok"); 
                     Receita receita = (Receita) in.readObject();
                     // criando um Dao para armazenar no Banco

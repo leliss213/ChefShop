@@ -64,7 +64,7 @@ public class ReceitaDao {
                 stmt.setString(3, receita.getModoPreparo());
                 stmt.setBytes(4, receita.getImagemReceita());
                 stmt.execute();
-                con.commit(); //depois ele me explica
+                con.commit();
                 
                 PreparedStatement stmt2 = null;
                 PreparedStatement stmt3 = con.prepareStatement("select last_insert_id() from receita;");
