@@ -20,8 +20,8 @@ import javax.swing.ImageIcon;
  * @author alice
  */
 public class Imagem {
-    private static final int LARGURA = 150;
-    private static final int ALTURA = 84;
+    private static final int LARGURA = 195;
+    private static final int ALTURA = 177;
     
     private byte[] imagem;
     
@@ -70,8 +70,8 @@ public class Imagem {
             float imageAspect = (float) bimg.getWidth() / (float) bimg.getHeight();
             float canvasAspect = (float) LARGURA / (float) ALTURA;
             
-            int imgWidth = 150;
-            int imgHeight = 84;
+            int imgWidth = 195;
+            int imgHeight = 177;
             if (imageAspect < canvasAspect) {
                 //Se o aspect ratio da imagem for menor que o da tela então altera a largura
                 float w = (float) ALTURA * imageAspect;
