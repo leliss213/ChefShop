@@ -11,4 +11,8 @@
     </string>
     <string name="title_activity_visualizacao_detalhada_receitas">VisualizacaoDetalhadaReceitas
     </string>
+    <string name="perfil">perfil</string>
+    <string name="home">home</string>
+    <string name="Categorias">Categorias</string>
+    <string name="Perfil">Perfil</string>
 </resources>

@@ -3,12 +3,15 @@ package com.example.chefshop;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,9 +19,10 @@ import android.widget.ImageButton;
 
 import modelDominio.Usuario;
 
-public class CategoriasReceitasActivity extends AppCompatActivity {
+public class CategoriasReceitasActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
     ImageButton ibCategoriaCarnes,ibCategoriaMassas,ibCategoriaSaladas,ibCategoriaSobremesas,ibCategoriaSopas,ibCategoriaLanches,ibPerfilUsuario,ibTelaInicial;
     InformacoesApp informacoesApp;
+    BottomNavigationView bnvCategorias;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +36,11 @@ public class CategoriasReceitasActivity extends AppCompatActivity {
         ibCategoriaSobremesas = findViewById(R.id.ibCategoriaSobremesas);
         ibCategoriaSopas = findViewById(R.id.ibCategoriaSopas);
         ibCategoriaLanches = findViewById(R.id.ibCategoriaLanches);
+        bnvCategorias = findViewById(R.id.bnvMenu);
 
         informacoesApp = (InformacoesApp) getApplicationContext();
+
+        bnvCategorias.setOnNavigationItemSelectedListener(this);
 
 //        //BOTÕES:
 //        //Botão Categoria Carnes:
@@ -123,4 +130,18 @@ public class CategoriasReceitasActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    //metodo da barrinha
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        int id = menuItem.getItemId();
+        switch (id) {
+            case R.id.categorias:
+                Intent it= new Intent(this, CategoriasReceitasActivity.class);
+            return true;
+
+            case R.id.perfil:
+                it = new Intent(this, PerfilUsuarioActivity.class);
+        }
+        return false;
+    }
 }

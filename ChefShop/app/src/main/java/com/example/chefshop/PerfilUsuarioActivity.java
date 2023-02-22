@@ -35,6 +35,14 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
         tvNomeUser.setText(informacoesApp.getUsuarioLogado().getNomeUsuario());
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //Botão Desconectar cliente:
+        bSairCliente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
 }

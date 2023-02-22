@@ -11,20 +11,38 @@
     tools:showIn="@layout/activity_visualizacao_detalhada_receitas">
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:id="@+id/ivVisualizacaoDetalhadaReceitasImagem"/>
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/ivVisualizacaoDetalhadaReceitasImagem"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvVisualizacaoDetalhadaReceitasNome"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Ingredientes:"/>
+
     <!--alguma forma de mostrar na tela a lista de ingredientes-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Modo de preparo:"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:id="@+id/VisualizacaoDetalhadaReceitasModoPreparo"/>
 
 </LinearLayout>
