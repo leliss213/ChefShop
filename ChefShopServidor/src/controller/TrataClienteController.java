@@ -75,6 +75,7 @@ public class TrataClienteController extends Thread{
                     Receita receita = (Receita) in.readObject();
                     // criando um Dao para armazenar no Banco
                     ReceitaDao receitadao = new ReceitaDao();
+                    System.out.println(receita);
                     int retorno = receitadao.inserir(receita);
                     if (retorno == -1) {
                         out.writeObject("ok");

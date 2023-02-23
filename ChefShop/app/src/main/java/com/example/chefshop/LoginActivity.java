@@ -85,9 +85,11 @@ public class LoginActivity extends AppCompatActivity {
 
                     } else {
                         etLoginSenha.setError("ERRO: Informe a senha.");
+                        etLoginSenha.requestFocus();
                     }
                 } else {
                     etLoginUsuario.setError("ERRO: Informe o usuário.");
+                    etLoginUsuario.requestFocus();
                 }
             }
         });
@@ -104,6 +106,12 @@ public class LoginActivity extends AppCompatActivity {
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+    }
+    public void limpaCampos() {
+        etLoginUsuario.setText("");
+        etLoginSenha.setText("");
     }
 
 }

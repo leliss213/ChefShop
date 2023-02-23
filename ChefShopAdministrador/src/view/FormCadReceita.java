@@ -343,10 +343,10 @@ public class FormCadReceita extends javax.swing.JFrame {
                 if (imagem != null) {
                     if (!jTAIngredientes.getText().isEmpty()) {
                         if (!jTAModoPreparo.getText().isEmpty()) {
-
+                            
                             Receita receita;
                             receita = new Receita(jCBCategoriaReceita.getSelectedIndex(), jTFNomeReceita.getText(), listaIngredientes, jTAModoPreparo.getText(), imagem.getImagem());
-
+System.out.println(receita);
                             Boolean ok = ChefShopAdministrador.ccont.inserir(receita);
                             if (!ok) {
                                 JOptionPane.showMessageDialog(this,
@@ -389,6 +389,7 @@ public class FormCadReceita extends javax.swing.JFrame {
 
         if (!jFTFQuantidade.getText().isEmpty()) {
             quantidade = ((Number) jFTFQuantidade.getValue()).floatValue();
+            System.out.println(listaProdutos.get(jCBProduto.getSelectedIndex()));
             Produto produto = listaProdutos.get(jCBProduto.getSelectedIndex());
             Ingredientes ingrediente = new Ingredientes(0, quantidade, produto);
             listaIngredientes.add(ingrediente);
@@ -396,6 +397,7 @@ public class FormCadReceita extends javax.swing.JFrame {
             jTAIngredientes.append(msgFormatada);
             limpaProd();
             jTAIngredientes.setLineWrap(true);
+            System.out.println(listaIngredientes);
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro! Defina uma quatidade");
         }

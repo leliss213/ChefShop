@@ -54,7 +54,8 @@ public class ReceitaDao {
     // Inserir receita
     public int inserir(Receita receita){
         PreparedStatement stmt = null; 
-        
+        System.out.println("inserir dentro do dao");
+        System.out.println(receita);
         try {
             try {
                 String sql = "insert into receita (tipo, nomereceita, modopreparo, imagem) values (?,?,?,?);";
@@ -65,7 +66,7 @@ public class ReceitaDao {
                 stmt.setBytes(4, receita.getImagemReceita());
                 stmt.execute();
                 con.commit();
-                
+                System.out.println(receita);
                 PreparedStatement stmt2 = null;
                 PreparedStatement stmt3 = con.prepareStatement("select last_insert_id() from receita;");
                 ResultSet result = null;
@@ -80,11 +81,12 @@ public class ReceitaDao {
                     stmt2.setInt(2, ingredientes.getProduto().getCodProduto());
                     stmt2.setInt(3, ultimoidReceita);
                     stmt2.execute();
+                    con.commit();
                 }
-                con.commit();
+                
                 stmt.close();
                 stmt2.close();
-                stmt3.close();
+                //stmt3.close();
                 return -1; // <- indica que tudo deu CERTO
                 
             } catch(SQLException e){
