@@ -41,6 +41,7 @@ public class FormLogin extends javax.swing.JFrame{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Login");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(251, 251, 248));
 

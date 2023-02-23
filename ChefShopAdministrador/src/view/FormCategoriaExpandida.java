@@ -28,7 +28,7 @@ public class FormCategoriaExpandida extends javax.swing.JFrame {
      */
     public FormCategoriaExpandida() {
         initComponents();
-        atualizaTabela();
+//        atualizaTabela();
     }
 
     /**
@@ -48,6 +48,7 @@ public class FormCategoriaExpandida extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Categoria Expandida");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(251, 251, 248));
 

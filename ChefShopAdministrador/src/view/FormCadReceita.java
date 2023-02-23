@@ -105,6 +105,7 @@ public class FormCadReceita extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Receita");
+        setResizable(false);
 
         jLabel1.setText("Cadastrar uma receita:");
 

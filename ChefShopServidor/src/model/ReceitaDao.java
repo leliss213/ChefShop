@@ -56,8 +56,10 @@ public class ReceitaDao {
         PreparedStatement stmt = null; 
         System.out.println("inserir dentro do dao");
         System.out.println(receita);
+        System.out.println("Receita: " + receita.getNomeReceita() + ", ingredientes: " + receita.getIngredientes().size());
         try {
             try {
+                con.setAutoCommit(false);
                 String sql = "insert into receita (tipo, nomereceita, modopreparo, imagem) values (?,?,?,?);";
                 stmt = con.prepareStatement(sql);
                 stmt.setInt(1, receita.getTipo());
@@ -90,6 +92,8 @@ public class ReceitaDao {
                 return -1; // <- indica que tudo deu CERTO
                 
             } catch(SQLException e){
+                System.out.println("Erro ao cadastrar a receita!");
+                e.printStackTrace();
                 try {
                     con.rollback(); // cancelando a transação 
                     return e.getErrorCode(); // devolvendo o erro
