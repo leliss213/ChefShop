@@ -4,17 +4,31 @@
  */
 package view;
 
+import java.util.ArrayList;
+import modelDominio.Receita;
+import view.tablemodel.ReceitaTableModel;
+
 /**
  *
  * @author Aila
  */
 public class FormCategoriaExpandida extends javax.swing.JFrame {
 
+    private ReceitaTableModel receitamodel;
+    
+    private void atualizaTabela() {
+        ArrayList<Receita> listaReceita = ChefShopAdministrador.ccont.receitaLista();
+
+        receitamodel = new ReceitaTableModel(listaReceita);
+        jTTabelaReceitas.setModel(receitamodel);
+    }
+    
     /**
      * Creates new form FormCategoriaExpandida
      */
     public FormCategoriaExpandida() {
         initComponents();
+        atualizaTabela();
     }
 
     /**

@@ -166,7 +166,7 @@ public class FormLogin extends javax.swing.JFrame{
 
     private void jBEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEntrarActionPerformed
         Usuario user = new Usuario(jTFLogin.getText(), jPFSenha.getText());
-        System.out.println(user); //pra ver se foi enviado o login e senha certinho 
+        System.out.println("Usuário " + user.getLogin() + " fez login."); //pra ver se foi enviado o login e senha certinho 
         Usuario userLogin = ChefShopAdministrador.ccont.efetuarLogin(user); //vai devolver o usuario
        
         
