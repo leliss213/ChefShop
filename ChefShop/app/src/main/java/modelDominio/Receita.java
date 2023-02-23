@@ -117,4 +117,22 @@ public class Receita implements Serializable{
         return "Receita{" + "codReceita=" + codReceita + ", tipo=" + tipo + ", nomeReceita=" + nomeReceita + ", Ingredientes=" + ingredientes + ", modoPreparo=" + modoPreparo + ", imagemReceita=" + imagemReceita + '}';
     }
 
+    //    Carnes -> 1, Massas -> 2, Saladas -> 3, Sobremesas -> 4, Sopas -> 5, Lanches -> 6
+    public String getTipoLiteral(){
+        String retorno = "";
+        if (this.tipo == 1) {
+            retorno = "Carnes";
+        } else if (this.tipo == 2) {
+            retorno = "Massas";
+        } else if (this.tipo == 3) {
+            retorno = "Saladas";
+        } else if (this.tipo == 4) {
+            retorno = "Sobremesas";
+        } else if (this.tipo == 5) {
+            retorno = "Sopas";
+        } else if (this.tipo == 6) {
+            retorno = "Lanches";
+        }
+        return retorno;
+    }
 }
