@@ -93,6 +93,18 @@ public class ConexaoController {
             return false;
         }
     }
+    
+    public ArrayList<Receita> receitaLista(){
+        String msg;
+        try{
+            out.writeObject("ReceitaLista");
+            ArrayList<Receita> listareceita = (ArrayList<Receita>) in.readObject(); 
+            return listareceita;
+        }catch(Exception ex){
+            ex.printStackTrace();
+            return null;
+        }
+    }
 
     
 }

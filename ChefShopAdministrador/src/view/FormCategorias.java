@@ -358,7 +358,6 @@ public class FormCategorias extends javax.swing.JFrame {
 
     private void jBCarnesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCarnesActionPerformed
         // TODO add your handling code here:
-        
         FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
         frmcatexp.setVisible(true);
         dispose();
