@@ -94,7 +94,7 @@ public class ConexaoController {
         }
     }
     
-    public ArrayList<Receita> receitaLista(){
+    public ArrayList<Receita> receitaLista(int tipo){
         String msg;
         try{
             out.writeObject("ReceitaLista");

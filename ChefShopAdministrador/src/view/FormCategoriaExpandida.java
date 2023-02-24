@@ -17,7 +17,8 @@ public class FormCategoriaExpandida extends javax.swing.JFrame {
     private ReceitaTableModel receitamodel;
     
     private void atualizaTabela() {
-        ArrayList<Receita> listaReceita = ChefShopAdministrador.ccont.receitaLista();
+        int tipo = 0;
+        ArrayList<Receita> listaReceita = ChefShopAdministrador.ccont.receitaLista(tipo);
 
         receitamodel = new ReceitaTableModel(listaReceita);
         jTTabelaReceitas.setModel(receitamodel);
@@ -28,7 +29,7 @@ public class FormCategoriaExpandida extends javax.swing.JFrame {
      */
     public FormCategoriaExpandida() {
         initComponents();
-//        atualizaTabela();
+        atualizaTabela();
     }
 
     /**
