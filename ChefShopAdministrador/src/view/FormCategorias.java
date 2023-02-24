@@ -29,6 +29,8 @@ public class FormCategorias extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jBVoltar = new javax.swing.JButton();
+        jBInformacoes = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jBCarnes = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -48,7 +50,7 @@ public class FormCategorias extends javax.swing.JFrame {
         jBLanches = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Receitas Por Categoria");
         setResizable(false);
 
@@ -59,15 +61,43 @@ public class FormCategorias extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(139, 187, 84));
 
+        jBVoltar.setBackground(new java.awt.Color(139, 187, 84));
+        jBVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/voltar.png"))); // NOI18N
+        jBVoltar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jBVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBVoltarActionPerformed(evt);
+            }
+        });
+
+        jBInformacoes.setBackground(new java.awt.Color(139, 187, 84));
+        jBInformacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/info.png"))); // NOI18N
+        jBInformacoes.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jBInformacoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBInformacoesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jBVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jBInformacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 48, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jBInformacoes)
+                    .addComponent(jBVoltar))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(196, 255, 170));
@@ -101,7 +131,7 @@ public class FormCategorias extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(10, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jBCarnes, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
@@ -303,9 +333,10 @@ public class FormCategorias extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(61, 61, 61)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -316,11 +347,8 @@ public class FormCategorias extends javax.swing.JFrame {
                         .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel1)))
-                .addContainerGap(74, Short.MAX_VALUE))
+                            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(61, 61, 61))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -338,7 +366,7 @@ public class FormCategorias extends javax.swing.JFrame {
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addGap(40, 40, 40))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -357,46 +385,60 @@ public class FormCategorias extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBCarnesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCarnesActionPerformed
-        // TODO add your handling code here:
+        // Botão Carnes:
         FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
         frmcatexp.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBCarnesActionPerformed
 
     private void jBMassasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMassasActionPerformed
-        // TODO add your handling code here:
+        // Botão Massas:
         FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
         frmcatexp.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBMassasActionPerformed
 
     private void jBSaladasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSaladasActionPerformed
-        // TODO add your handling code here:
+        // Botão Saladas:
         FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
         frmcatexp.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBSaladasActionPerformed
 
     private void jBSobremesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSobremesasActionPerformed
-        // TODO add your handling code here:
+        // Botão Sobremesas:
         FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
         frmcatexp.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBSobremesasActionPerformed
 
     private void jBSopasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSopasActionPerformed
-        // TODO add your handling code here:
+        // Botão Sopas:
         FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
         frmcatexp.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBSopasActionPerformed
 
     private void jBLanchesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLanchesActionPerformed
-        // TODO add your handling code here:
+        // Botão Lanches:
         FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
         frmcatexp.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBLanchesActionPerformed
+
+    private void jBVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVoltarActionPerformed
+        // Botão sair:
+        FormPrincipal frmprincipal = new FormPrincipal();
+        frmprincipal.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jBVoltarActionPerformed
+
+    private void jBInformacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBInformacoesActionPerformed
+        // Botão Informações do software:
+        FormSobre frmsobre = new FormSobre();
+        frmsobre.setVisible(true);
+        //dispose();
+    }//GEN-LAST:event_jBInformacoesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -435,11 +477,13 @@ public class FormCategorias extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBCarnes;
+    private javax.swing.JButton jBInformacoes;
     private javax.swing.JButton jBLanches;
     private javax.swing.JButton jBMassas;
     private javax.swing.JButton jBSaladas;
     private javax.swing.JButton jBSobremesas;
     private javax.swing.JButton jBSopas;
+    private javax.swing.JButton jBVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
