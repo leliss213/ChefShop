@@ -18,14 +18,16 @@ public class Usuario implements Serializable{
     private String login;
     private String senha;
     private String email;
+    private int tipo;
     
     //CONSTRUTORES
-    public Usuario(int codUsuario, String nomeUsuario, String login, String senha, String email) { 
+    public Usuario(int codUsuario, String nomeUsuario, String login, String senha, String email, int tipo) { 
         this.codUsuario = codUsuario;
         this.nomeUsuario = nomeUsuario;
         this.login = login;
         this.senha = senha;
         this.email = email;
+        this.tipo = tipo;
     } //construtor com todos os atributos: usado pra edição e mostrar na tela
 
     public Usuario(String login, String senha) {
@@ -37,11 +39,12 @@ public class Usuario implements Serializable{
         this.codUsuario = codUsuario;
     } //construtor só com o codigo: utilizado para deletar
     
-    public Usuario(String nomeUsuario, String login, String senha, String email) {
+    public Usuario(String nomeUsuario, String login, String senha, String email, int tipo) {
         this.nomeUsuario = nomeUsuario;
         this.login = login;
         this.senha = senha;
         this.email = email;
+        this.tipo = tipo;
     } //construtor sem o codigo: usado para inserção de usuário
     
     
@@ -85,11 +88,26 @@ public class Usuario implements Serializable{
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
     
-    //TOSTRING
+    
+    
+//    //TOSTRING
+//    @Override
+//    public String toString() {
+//        return "Usuario{" + "codUsuario=" + codUsuario + ", nomeUsuario=" + nomeUsuario + ", login=" + login + ", senha=" + senha + ", email=" + email + '}';
+//    }
+
     @Override
     public String toString() {
-        return "Usuario{" + "codUsuario=" + codUsuario + ", nomeUsuario=" + nomeUsuario + ", login=" + login + ", senha=" + senha + ", email=" + email + '}';
+        return "Usuario{" + "codUsuario=" + codUsuario + ", nomeUsuario=" + nomeUsuario + ", login=" + login + ", senha=" + senha + ", email=" + email + ", tipo=" + tipo + '}';
     }
     
 }

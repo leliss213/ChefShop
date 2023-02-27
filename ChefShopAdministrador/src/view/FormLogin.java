@@ -172,7 +172,8 @@ public class FormLogin extends javax.swing.JFrame{
         Usuario userLogin = ChefShopAdministrador.ccont.efetuarLogin(user); //vai devolver o usuario
        
         
-        if (userLogin != null){
+        
+        if (userLogin != null && userLogin.getTipo() == 1){
             ChefShopAdministrador.ccont.usuario = userLogin;
             FormCategorias formcat = new FormCategorias();
             formcat.setVisible(true);
