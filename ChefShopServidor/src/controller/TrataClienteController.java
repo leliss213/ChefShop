@@ -86,7 +86,6 @@ public class TrataClienteController extends Thread{
                     }
                 }
 
-                
                 //relendo
                 comando = (String) in.readObject(); //relendo o próximo comando
             }

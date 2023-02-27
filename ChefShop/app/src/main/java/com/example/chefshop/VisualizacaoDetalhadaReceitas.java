@@ -20,6 +20,7 @@ import modelDominio.Receita;
 public class VisualizacaoDetalhadaReceitas extends AppCompatActivity {
     ImageView ivVisualizacaoDetalhadaReceitasImagem;
     TextView tvVisualizacaoDetalhadaReceitasNome,tvVisualizacaoDetalhadaReceitasIngredientes,tvVisualizacaoDetalhadaReceitasModoPreparo;
+    InformacoesApp informacoesApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +33,20 @@ public class VisualizacaoDetalhadaReceitas extends AppCompatActivity {
         tvVisualizacaoDetalhadaReceitasIngredientes = findViewById(R.id.tvVisualizacaoDetalhadaReceitasIngredientes);
         tvVisualizacaoDetalhadaReceitasModoPreparo = findViewById(R.id.tvVisualizacaoDetalhadaReceitasModoPreparo);
 
+        //obtendo o contexto
+        informacoesApp = (InformacoesApp) getApplicationContext();
 
         Intent it = getIntent();
         final Receita receita = (Receita) it.getSerializableExtra("receita");
         if (it!=null) {
             tvVisualizacaoDetalhadaReceitasNome.setText(receita.getNomeReceita());
-            tvVisualizacaoDetalhadaReceitasModoPreparo.setText(receita.getModoPreparo());
-            tvVisualizacaoDetalhadaReceitasIngredientes.setText(receita.getNomesIngredientes(receita.getIngredientes()).toString());
-            Bitmap bitmap = BitmapFactory.decodeByteArray(receita.getImagemReceita(), 0, receita.getImagemReceita().length);
-            ivVisualizacaoDetalhadaReceitasImagem.setImageBitmap(bitmap);
+            tvVisualizacaoDetalhadaReceitasModoPreparo.setText("Modo de preparo: "+receita.getModoPreparo());
+            tvVisualizacaoDetalhadaReceitasIngredientes.setText("Ingredientes: "+ receita.getNomesIngredientes(receita.getIngredientes()).toString());
+            if (receita.getImagemReceita() != null){
+                Bitmap bitmap = BitmapFactory.decodeByteArray(receita.getImagemReceita(), 0, receita.getImagemReceita().length);
+                ivVisualizacaoDetalhadaReceitasImagem.setImageBitmap(bitmap);
+            }
+
         }
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

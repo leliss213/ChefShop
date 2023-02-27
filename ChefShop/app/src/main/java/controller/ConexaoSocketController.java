@@ -24,7 +24,7 @@ public class ConexaoSocketController {
     public boolean criaConexao () {
         boolean resultado;
         try {
-            informacoesApp.socket = new Socket("192.168.2.108", 12345); // Criando o socket
+            informacoesApp.socket = new Socket("192.168.4.11", 12345); // Criando o socket
             informacoesApp.out = new ObjectOutputStream(informacoesApp.socket.getOutputStream()); //criando um novo canal de saida (out) a partir do socket criado na linha de cima
             informacoesApp.in = new ObjectInputStream(informacoesApp.socket.getInputStream());
             resultado = true;
