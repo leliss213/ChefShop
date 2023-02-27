@@ -5,6 +5,7 @@
 package view.tablemodel;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
+import modelDominio.Ingredientes;
 import modelDominio.Receita;
 /**
  *
@@ -35,7 +36,7 @@ public class ReceitaTableModel extends AbstractTableModel{
         switch (columnIndex) {
             case 0:  return rc.getNomeReceita();
             case 1:  return rc.getTipo();
-            case 2:  return rc.getIngredientes();
+            case 2:  return rc.getNomesIngredientes(rc.getIngredientes());
             default: return "";
         }
     }

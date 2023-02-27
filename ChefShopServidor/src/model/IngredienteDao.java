@@ -20,27 +20,28 @@ public class IngredienteDao {
         con = Conector.getConnection();
     }
     
-    public ArrayList<Ingredientes>getListaIngredientes(){
-        PreparedStatement stmt = null; 
+    public ArrayList<Ingredientes>getListaIngredientes(int codReceita){
+        PreparedStatement pstmt = null; 
         ArrayList<Ingredientes> listaIngredientes = new ArrayList<>();
        
         try {
-            String sql = "select * from ingredientes";
-            // criando o statement
-            stmt = con.prepareStatement(sql);
+            String sql = "select * from ingrediente inner join produto "
+                    + "on ingrediente.codproduto = produto.codproduto where ingrediente.codreceita = ?";
             
+            // criando o statement
+            pstmt = con.prepareStatement(sql);
+            pstmt.setInt(1, codReceita);
             //executando o script SQL
-            ResultSet res = stmt.executeQuery();
+            ResultSet res = pstmt.executeQuery();
             // se existe um resultado     
             while (res.next()) {
-                //Ingredientes ing = new Ingredientes(res.getInt("codingrediente"), res.getInt("quantidadeingredientes"), );
-                //System.out.println(ing);
-                //listaIngredientes.add(ing);
-                
+                Produto produto = new Produto(res.getInt("codproduto"),res.getString("nomeproduto"),res.getInt("unidade"));
+                Ingredientes ingredientes = new Ingredientes(res.getInt("codingrediente"),res.getFloat("quantidade"),produto);
+                listaIngredientes.add(ingredientes);
             }
             /// fechar as conexões e statement 
             res.close();
-            stmt.close();
+            pstmt.close();
             con.close();
             return listaIngredientes;
             

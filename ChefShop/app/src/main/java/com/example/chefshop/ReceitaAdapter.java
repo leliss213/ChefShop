@@ -35,10 +35,10 @@ public class ReceitaAdapter extends RecyclerView.Adapter<ReceitaAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(final ReceitaAdapter.MyViewHolder holder, final int position) {
-        Receita minharReceita = listaReceitas.get(position);
-        holder.tvReceitaNome.setText(minharReceita.getNomeReceita());
-        holder.tvReceitaCategoria.setText(minharReceita.getTipoLiteral());
-        Bitmap bitmap = BitmapFactory.decodeByteArray(minharReceita.getImagemReceita(), 0, minharReceita.getImagemReceita().length);
+        Receita minhaReceita = listaReceitas.get(position);
+        holder.tvReceitaNome.setText(minhaReceita.getNomeReceita());
+        holder.tvReceitaCategoria.setText(minhaReceita.getTipoLiteral());
+        Bitmap bitmap = BitmapFactory.decodeByteArray(minhaReceita.getImagemReceita(), 0, minhaReceita.getImagemReceita().length);
         holder.ivImagemReceita.setImageBitmap(bitmap);
         // clique no item do cliente
         if (receitaOnClickListener != null) {

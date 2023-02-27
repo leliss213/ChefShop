@@ -386,42 +386,48 @@ public class FormCategorias extends javax.swing.JFrame {
 
     private void jBCarnesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCarnesActionPerformed
         // Botão Carnes:
-        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
+        int tipo = 1;
+        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida(tipo);
         frmcatexp.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBCarnesActionPerformed
 
     private void jBMassasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMassasActionPerformed
         // Botão Massas:
-        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
+        int tipo = 2;
+        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida(tipo);
         frmcatexp.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBMassasActionPerformed
 
     private void jBSaladasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSaladasActionPerformed
         // Botão Saladas:
-        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
+        int tipo = 3;
+        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida(tipo);
         frmcatexp.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBSaladasActionPerformed
 
     private void jBSobremesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSobremesasActionPerformed
         // Botão Sobremesas:
-        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
+        int tipo = 4;
+        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida(tipo);
         frmcatexp.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBSobremesasActionPerformed
 
     private void jBSopasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSopasActionPerformed
         // Botão Sopas:
-        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
+        int tipo = 5;
+        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida(tipo);
         frmcatexp.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBSopasActionPerformed
 
     private void jBLanchesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLanchesActionPerformed
         // Botão Lanches:
-        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida();
+        int tipo = 6;
+        FormCategoriaExpandida frmcatexp = new FormCategoriaExpandida(tipo);
         frmcatexp.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBLanchesActionPerformed

@@ -96,10 +96,18 @@ public class ConexaoController {
     
     public ArrayList<Receita> receitaLista(int tipo){
         String msg;
+        ArrayList<Receita> listaReceitas = null;
         try{
-            out.writeObject("ReceitaLista");
-            ArrayList<Receita> listareceita = (ArrayList<Receita>) in.readObject(); 
-            return listareceita;
+            out.writeObject("ListaReceitas");
+            msg = (String)in.readObject();
+            if(msg.equals("ok")){
+                out.writeObject(tipo);
+                msg = (String)in.readObject();
+                if(msg.equals("ok")){
+                    listaReceitas = (ArrayList<Receita>) in.readObject(); 
+                }
+            }      
+            return listaReceitas;
         }catch(Exception ex){
             ex.printStackTrace();
             return null;

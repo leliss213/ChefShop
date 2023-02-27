@@ -51,6 +51,7 @@ public class TrataClienteController extends Thread{
                 } else if (comando.equalsIgnoreCase("ListaReceitas")){
                     out.writeObject("ok");
                     int tipo = (int) in.readObject();
+                    out.writeObject("ok");
                     ReceitaDao dao = new ReceitaDao();
                     out.writeObject(dao.getLista(tipo));
                 } else if (comando.equalsIgnoreCase("ProdutoLista")){

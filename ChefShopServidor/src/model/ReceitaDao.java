@@ -4,11 +4,15 @@
  */
 package model;
 
+import java.sql.Connection;
 import factory.Conector;
-import java.sql.*;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import modelDominio.Ingredientes;
 import modelDominio.Receita;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import modelDominio.Produto;
 /**
  *
  * @author Aila e Alice
@@ -21,39 +25,67 @@ public class ReceitaDao {
     }
     
      // método que retorna todas as receitas cadastradas 
-    public ArrayList<Receita>getLista(int tipo){
-        Statement stmt = null; 
-        ArrayList<Receita> listaReceita = new ArrayList<Receita>();
+    public ArrayList<Receita> getLista(int tipo) throws SQLException {
+    ArrayList<Receita> listaReceita = new ArrayList<Receita>();
 
-        try {
-            stmt = con.createStatement();
-            String sql = "select * from receita where tipo = " + tipo;            
-
-            //executando o script SQL
-            ResultSet res = stmt.executeQuery(sql);
-            // se existe um resultado
+    String sql = "SELECT * FROM receita WHERE tipo = ?";
+    PreparedStatement pstmt = con.prepareStatement(sql);
+    pstmt.setInt(1, tipo);
+    try  {
+        ResultSet res = pstmt.executeQuery();
+        if(res != null){
             while (res.next()) {
-                Receita r = new Receita(res.getInt("codreceita"), 
-                                        res.getInt("tipo"), 
-                                        res.getString("nomereceita"), 
-                                        res.getString("modopreparo"), 
-                                        res.getBytes("imagem"));
-                //Receita r = new Receita(res.getInt("codreceita"), res.getInt("tipo"), res.getString("nomereceita"), res.getString("modopreparo"));
-                //ERRO TA AQUI
-                listaReceita.add(r);
-
+            Receita r = new Receita(res.getInt("codreceita"), 
+                                    res.getInt("tipo"), 
+                                    res.getString("nomereceita"), 
+                                    res.getString("modopreparo"), 
+                                    res.getBytes("imagem"));
+            
+            ArrayList<Ingredientes> listaIngredientes = new ArrayList<>();
+            IngredienteDao dao = new IngredienteDao();
+            listaIngredientes = dao.getListaIngredientes(r.getCodReceita());
+            r.setIngredientes(listaIngredientes);
+            listaReceita.add(r);
             }
-            /// fechar as conexões e statement
-            res.close();
-            stmt.close();
-            con.close();
-            return listaReceita;
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
         }
+    } catch (SQLException e) {
+        e.printStackTrace();
     }
+    return listaReceita;
+}
+//    public ArrayList<Receita>getLista(int tipo){
+//        Statement stmt = null; 
+//        ArrayList<Receita> listaReceita = new ArrayList<Receita>();
+//
+//        try {
+//            stmt = con.createStatement();
+//            //String sql = "select * from receita where tipo = ;" +tipo;            
+//
+//            //executando o script SQL
+//            ResultSet res = stmt.executeQuery("select * from receita where tipo = "+tipo);
+//            // se existe um resultado
+//            while (res.next()) {
+//                Receita r = new Receita(res.getInt("codreceita"), 
+//                                        res.getInt("tipo"), 
+//                                        res.getString("nomereceita"), 
+//                                        res.getString("modopreparo"), 
+//                                        res.getBytes("imagem"));
+//                //Receita r = new Receita(res.getInt("codreceita"), res.getInt("tipo"), res.getString("nomereceita"), res.getString("modopreparo"));
+//                //ERRO TA AQUI
+//                listaReceita.add(r);
+//
+//            }
+//            /// fechar as conexões e statement
+//            res.close();
+//            stmt.close();
+//            con.close();
+//            return listaReceita;
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
     
     // Inserir receita
     public int inserir(Receita receita){

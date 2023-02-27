@@ -135,4 +135,12 @@ public class Receita implements Serializable{
         }
         return retorno;
     }
+
+    public ArrayList<String> getNomesIngredientes(ArrayList<Ingredientes> listIngredientes){
+        ArrayList<String> nomesIngredientes = new ArrayList<>();
+        for(Ingredientes ingredientes : listIngredientes){
+            nomesIngredientes.add(ingredientes.getProduto().getNomeProduto());
+        }
+        return nomesIngredientes;
+    }
 }

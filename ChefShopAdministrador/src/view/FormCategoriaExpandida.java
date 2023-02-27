@@ -12,24 +12,24 @@ import view.tablemodel.ReceitaTableModel;
  *
  * @author Aila
  */
-public class FormCategoriaExpandida extends javax.swing.JFrame {
+public class FormCategoriaExpandida extends javax.swing.JDialog {
 
     private ReceitaTableModel receitamodel;
-    
-    private void atualizaTabela() {
-        int tipo = 0;
-        ArrayList<Receita> listaReceita = ChefShopAdministrador.ccont.receitaLista(tipo);
-
-        receitamodel = new ReceitaTableModel(listaReceita);
-        jTTabelaReceitas.setModel(receitamodel);
-    }
-    
+    int tipoRecebido = 0;
     /**
      * Creates new form FormCategoriaExpandida
+     * @param tipo
      */
-    public FormCategoriaExpandida() {
+    public FormCategoriaExpandida(int tipo) {
         initComponents();
+        this.tipoRecebido = tipo;
         atualizaTabela();
+    }
+    
+    private void atualizaTabela() {
+        ArrayList<Receita> listaReceita = ChefShopAdministrador.ccont.receitaLista(tipoRecebido);
+        receitamodel = new ReceitaTableModel(listaReceita);
+        jTTabelaReceitas.setModel(receitamodel);
     }
 
     /**
