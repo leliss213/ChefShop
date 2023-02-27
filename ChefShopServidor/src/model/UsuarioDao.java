@@ -60,14 +60,16 @@ public class UsuarioDao {
                                                         res.getString("nomeusuario"),
                                                         res.getString("login"),
                                                         res.getString("senha"),
-                                                        res.getString("email"));
+                                                        res.getString("email"),
+                                                        res.getInt("tipo"));
                 } else {
                     //é um usuário comum
                     userSelecionado = new Comum(res.getInt("codusuario"),
                                                 res.getString("nomeusuario"),
                                                 res.getString("login"),
                                                 res.getString("senha"),
-                                                res.getString("email"));
+                                                res.getString("email"),
+                                                res.getInt("tipo"));
                 }
             }
             // Fechar as conexões e statements:
