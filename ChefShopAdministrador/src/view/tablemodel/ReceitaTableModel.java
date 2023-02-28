@@ -35,8 +35,8 @@ public class ReceitaTableModel extends AbstractTableModel{
         
         switch (columnIndex) {
             case 0:  return rc.getNomeReceita();
-            case 1:  return rc.getTipo();
-            case 2:  return rc.getNomesIngredientes(rc.getIngredientes());
+            case 1:  return rc.getNomesIngredientes(rc.getIngredientes());
+            case 2:  return rc.getModoPreparo();
             default: return "";
         }
     }
@@ -45,8 +45,8 @@ public class ReceitaTableModel extends AbstractTableModel{
     public String getColumnName(int column) {
         switch (column) {
             case 0:  return "Nome da Receita";
-            case 1:  return "Categoria";
-            case 2:  return "Ingredientes";
+            case 1:  return "Ingredientes";
+            case 2:  return "Modo de Preparo";
             default: return "NoName";
         }
     }

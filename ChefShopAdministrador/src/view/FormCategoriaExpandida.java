@@ -30,8 +30,20 @@ public class FormCategoriaExpandida extends javax.swing.JDialog {
         ArrayList<Receita> listaReceita = ChefShopAdministrador.ccont.receitaLista(tipoRecebido);
         receitamodel = new ReceitaTableModel(listaReceita);
         jTTabelaReceitas.setModel(receitamodel);
+        if (tipoRecebido == 1) {
+            setTitle("Carnes");
+        } else if (tipoRecebido == 2) {
+            setTitle("Massas");
+        } else if (tipoRecebido == 3) {
+            setTitle("Saladas");
+        } else if (tipoRecebido == 4) {
+            setTitle("Sobremesas");
+        } else if (tipoRecebido == 5) {
+            setTitle("Sopas");
+        } else if (tipoRecebido == 6) {
+            setTitle("Lanches");
+        }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,7 +62,6 @@ public class FormCategoriaExpandida extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Categoria Expandida");
-        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(251, 251, 248));
 
@@ -121,11 +132,8 @@ public class FormCategoriaExpandida extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(169, 169, 169)
                 .addComponent(jBAddReceita, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+                .addContainerGap(182, Short.MAX_VALUE))
+            .addComponent(jScrollPane1)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,9 +141,8 @@ public class FormCategoriaExpandida extends javax.swing.JDialog {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(jBAddReceita, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -157,12 +164,13 @@ public class FormCategoriaExpandida extends javax.swing.JDialog {
         // TODO add your handling code here:
         FormCadReceita frmcadrec = new FormCadReceita();
         frmcadrec.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jBAddReceitaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         FormCategorias frmcat = new FormCategorias();
         frmcat.setVisible(true);
-        dispose();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

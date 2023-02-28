@@ -139,7 +139,9 @@ public class Receita implements Serializable{
     public ArrayList<String> getNomesIngredientes(ArrayList<Ingredientes> listIngredientes){
         ArrayList<String> nomesIngredientes = new ArrayList<>();
         for(Ingredientes ingredientes : listIngredientes){
+            nomesIngredientes.add(String.valueOf(ingredientes.getQuantidadeIngredientes()));
             nomesIngredientes.add(ingredientes.getProduto().getNomeProduto());
+            nomesIngredientes.add(ingredientes.getProduto().getUnidadeLiteral());
         }
         return nomesIngredientes;
     }
