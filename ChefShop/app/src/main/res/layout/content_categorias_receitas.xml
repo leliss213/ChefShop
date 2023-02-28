@@ -27,20 +27,20 @@
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:text="Carnes"
             android:layout_weight="1"
             android:background="@color/fundoTela"
             android:id="@+id/ibCategoriaCarnes"
-            android:src="@drawable/carne"/>
+            android:src="@drawable/carnes"/>
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:text="Massas"
             android:layout_weight="1"
             android:background="@color/fundoTela"
             android:id="@+id/ibCategoriaMassas"
-            android:src="@drawable/massas"/>
+            android:src="@drawable/massa"/>
 
     </LinearLayout>
 
@@ -52,20 +52,20 @@
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:text="Saladas"
             android:layout_weight="1"
             android:background="@color/fundoTela"
             android:id="@+id/ibCategoriaSaladas"
-            android:src="@drawable/salada"/>
+            android:src="@drawable/saladas"/>
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:text="Sobremesas"
             android:layout_weight="1"
             android:background="@color/fundoTela"
             android:id="@+id/ibCategoriaSobremesas"
-            android:src="@drawable/sobremesas"/>
+            android:src="@drawable/sobremesa"/>
 
     </LinearLayout>
 
@@ -75,20 +75,21 @@
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:text="Sopas"
             android:layout_weight="1"
             android:background="@color/fundoTela"
             android:id="@+id/ibCategoriaSopas"
-            android:src="@drawable/sopas"/>
+            android:src="@drawable/sopa"/>
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:text="Lanches"
             android:layout_weight="1"
             android:background="@color/fundoTela"
             android:id="@+id/ibCategoriaLanches"
-            android:src="@drawable/lanches"/>
+            android:src="@drawable/lanche"/>
+
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

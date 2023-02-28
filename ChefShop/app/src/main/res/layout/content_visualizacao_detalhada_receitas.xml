@@ -6,45 +6,43 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".VisualizacaoDetalhadaReceitas"
-    android:padding="15dp"
     android:orientation="vertical"
+    android:background="@drawable/fundoreceita"
     tools:showIn="@layout/activity_visualizacao_detalhada_receitas">
-
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/ivVisualizacaoDetalhadaReceitasImagem"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
         android:id="@+id/tvVisualizacaoDetalhadaReceitasNome"
         android:text="Nome Receita"
-        android:textSize="18dp"
-        android:textStyle="bold"/>
+        android:textSize="25dp"/>
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/ivVisualizacaoDetalhadaReceitasImagem"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:textSize="16dp"
-        android:text="Ingredientes:"
+        android:text="Ingredientes\n"
         android:id="@+id/tvVisualizacaoDetalhadaReceitasIngredientes"/>
 
-    <!--alguma forma de mostrar na tela a lista de ingredientes-->
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:text="Modo de preparo:"
+        android:textSize="16dp"
+        android:text="Modo de preparo\n"
         android:id="@+id/tvVisualizacaoDetalhadaReceitasModoPreparo"/>
 
 </LinearLayout>

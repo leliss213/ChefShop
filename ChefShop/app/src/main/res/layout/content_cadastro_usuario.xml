@@ -11,22 +11,22 @@
     android:gravity="center_vertical"
     tools:showIn="@layout/activity_cadastro_usuario">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nome de usúario"/>
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/etNomeUsuario"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Senha"/>
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/etNomeUsuario"
+        android:background="@drawable/edittext_bonito"
+        android:layout_marginBottom="10dp"
+        android:hint="  Usuário"/>
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
         android:id="@+id/etSenhaUsuario"
+        android:layout_marginBottom="10dp"
+        android:hint="  Senha"
+        android:background="@drawable/edittext_bonito"
         android:inputType="textPassword"/>
     <Button
         android:layout_width="200dp"
