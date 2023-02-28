@@ -8,6 +8,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -137,10 +138,12 @@ public class CategoriasReceitasActivity extends AppCompatActivity implements Bot
         switch (id) {
             case R.id.categorias:
                 Intent it= new Intent(this, CategoriasReceitasActivity.class);
+                startActivity(it);
             return true;
 
             case R.id.perfil:
                 it = new Intent(this, PerfilUsuarioActivity.class);
+                startActivity(it);
         }
         return false;
     }

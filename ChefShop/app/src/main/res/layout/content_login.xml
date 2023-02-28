@@ -15,34 +15,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Seja bem-vindo, cliente!"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="18dp"
+        android:textSize="18dp"
         android:layout_gravity="center_horizontal"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Usuário"/>
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:hint="  Usuário"
+        android:background="@drawable/edittext_bonito"
         android:id="@+id/etLoginUsuario"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Senha"/>
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
         android:id="@+id/etLoginSenha"
+        android:hint="  Senha"
+        android:background="@drawable/edittext_bonito"
         android:inputType="textPassword"/>
-<!--    <Button-->
-<!--        android:layout_width="200dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Esqueci a senha"-->
-<!--        android:id="@+id/bLoginEsqueciSenha"-->
-<!--        android:layout_gravity="center_horizontal"/>-->
     <Button
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:text="Entrar"
         android:id="@+id/bLoginEntrar"
         android:layout_gravity="center_horizontal"/>
@@ -59,6 +54,6 @@
         android:text="Registre-se"
         android:id="@+id/bLoginRegistrar"
         android:layout_marginBottom="10dp"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

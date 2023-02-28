@@ -11,5 +11,6 @@
     <color name="verdeEscuro">#307921</color>
     <color name="verdeMuitoEscuro">#1B5106</color>
     <color name="textoPreto">#000</color>
+    <color name="bordas">#000</color>
 
 </resources>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -57,12 +58,12 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                                     informacoesApp.setUsuarioInserido(userInserido);
                                     Intent it = new Intent(CadastroUsuarioActivity.this, LoginActivity.class);
                                     startActivity(it);
-//                                    runOnUiThread(new Runnable() {
-//                                        @Override
-//                                        public void run() {
-//                                            Toast.makeText(informacoesApp, "Cadastro funcionou", Toast.LENGTH_SHORT).show();
-//                                        }
-//                                    });
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Toast.makeText(informacoesApp, "Usuário cadastrado!", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
                                 } else {
                                     runOnUiThread(new Runnable() {
                                         @Override
