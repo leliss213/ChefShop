@@ -18,7 +18,6 @@ import modelDominio.Usuario;
 
 public class PerfilUsuarioActivity extends AppCompatActivity {
     TextView tvNomeUser;
-    Button bSairCliente;
     InformacoesApp informacoesApp;
     Usuario user,userLogado;
 
@@ -29,7 +28,6 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         tvNomeUser = findViewById(R.id.tvNomeUser);
-        bSairCliente = findViewById(R.id.bSairCliente);
 
         informacoesApp = (InformacoesApp) getApplicationContext();
 
@@ -37,13 +35,6 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //Botão Desconectar cliente:
-        bSairCliente.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
     }
 
 }
