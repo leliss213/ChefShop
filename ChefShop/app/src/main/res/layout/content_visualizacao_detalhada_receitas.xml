@@ -28,21 +28,25 @@
         android:layout_marginTop="20dp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:padding="10dp"
+        android:background="#FBFBFD"
         android:layout_marginTop="20dp"
         android:textSize="16dp"
         android:text="Ingredientes\n"
         android:id="@+id/tvVisualizacaoDetalhadaReceitasIngredientes"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
+        android:padding="10dp"
         android:layout_marginRight="20dp"
+        android:background="#FBFBFD"
         android:textSize="16dp"
         android:text="Modo de preparo\n"
         android:id="@+id/tvVisualizacaoDetalhadaReceitasModoPreparo"/>

@@ -43,7 +43,7 @@ public class VisualizacaoDetalhadaReceitas extends AppCompatActivity {
             tvVisualizacaoDetalhadaReceitasNome.setText(receita.getNomeReceita());
             tvVisualizacaoDetalhadaReceitasModoPreparo.setText("Modo de preparo: "+receita.getModoPreparo());
 
-            tvVisualizacaoDetalhadaReceitasIngredientes.setText("Ingredientes: "+ receita.getNomesIngredientes(receita.getIngredientes()).toString());
+            tvVisualizacaoDetalhadaReceitasIngredientes.setText("Ingredientes: \n"+ receita.getNomesIngredientes(receita.getIngredientes()).toString());
             if (receita.getImagemReceita() != null){
                 Bitmap bitmap = BitmapFactory.decodeByteArray(receita.getImagemReceita(), 0, receita.getImagemReceita().length);
                 ivVisualizacaoDetalhadaReceitasImagem.setImageBitmap(bitmap);
