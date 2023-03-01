@@ -43,7 +43,6 @@ public class VisualizacaoReceitasRecyclerActivity extends AppCompatActivity {
 
         //tenho q ler o parametro recebido da activity de categorias
 
-
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -69,7 +68,7 @@ public class VisualizacaoReceitasRecyclerActivity extends AppCompatActivity {
                             rvElementos.setItemAnimator(new DefaultItemAnimator());
                             rvElementos.setAdapter(receitaAdapter);
                         } else {
-                            Toast.makeText(informacoesApp, "errooooooooo", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(informacoesApp, "ERRO!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

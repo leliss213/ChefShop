@@ -42,6 +42,7 @@ public class VisualizacaoDetalhadaReceitas extends AppCompatActivity {
         if (it!=null) {
             tvVisualizacaoDetalhadaReceitasNome.setText(receita.getNomeReceita());
             tvVisualizacaoDetalhadaReceitasModoPreparo.setText("Modo de preparo: "+receita.getModoPreparo());
+
             tvVisualizacaoDetalhadaReceitasIngredientes.setText("Ingredientes: "+ receita.getNomesIngredientes(receita.getIngredientes()).toString());
             if (receita.getImagemReceita() != null){
                 Bitmap bitmap = BitmapFactory.decodeByteArray(receita.getImagemReceita(), 0, receita.getImagemReceita().length);

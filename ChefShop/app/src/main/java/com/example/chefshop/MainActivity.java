@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent it = new Intent(MainActivity.this, LoginActivity.class);
                 //Iniciando ela
                 startActivity(it);
-                Toast.makeText(informacoesApp, "entrou intent", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(informacoesApp, "entrou intent", Toast.LENGTH_SHORT).show();
             }
         });
     }
