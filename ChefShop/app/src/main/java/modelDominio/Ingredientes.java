@@ -16,25 +16,27 @@ public class Ingredientes implements Serializable{
     private int codIngrediente;
     private float quantidadeIngredientes;
     private Produto produto;
-    private int codReceita;
-    private int codProduto;
+//    private int codReceita;
+//    private int codProduto;
 
-    public Ingredientes(int codIngrediente, float quantidadeIngredientes, int codProduto) {
-        this.codIngrediente = codIngrediente;
-        this.quantidadeIngredientes = quantidadeIngredientes;
-        this.codProduto = codProduto;
-    }
+//    public Ingredientes(int codIngrediente, float quantidadeIngredientes, int codProduto) {
+//        this.codIngrediente = codIngrediente;
+//        this.quantidadeIngredientes = quantidadeIngredientes;
+//        this.codProduto = codProduto;
+//    }
+
+
 
     public Ingredientes(float quantidadeIngredientes, Produto produto) {
         this.quantidadeIngredientes = quantidadeIngredientes;
         this.produto = produto;
     }
 
-    public Ingredientes(float quantidadeIngredientes, Produto produto, int codReceita) {
-        this.quantidadeIngredientes = quantidadeIngredientes;
-        this.produto = produto;
-        this.codReceita = codReceita;
-    }
+//    public Ingredientes(float quantidadeIngredientes, Produto produto, int codReceita) {
+//        this.quantidadeIngredientes = quantidadeIngredientes;
+//        this.produto = produto;
+//        this.codReceita = codReceita;
+//    }
 
     public Ingredientes(int codIngrediente, float quantidadeIngredientes, Produto produto) {
         this.codIngrediente = codIngrediente;
@@ -73,21 +75,21 @@ public class Ingredientes implements Serializable{
         return "Ingredientes{" + "codIngrediente=" + codIngrediente + ", quantidadeIngredientes=" + quantidadeIngredientes + ", produto=" + produto + '}';
     }
 
-    public int getCodReceita() {
-        return codReceita;
-    }
-
-    public void setCodReceita(int codReceita) {
-        this.codReceita = codReceita;
-    }
-
-    public int getCodProduto() {
-        return codProduto;
-    }
-
-    public void setCodProduto(int codProduto) {
-        this.codProduto = codProduto;
-    }
+//    public int getCodReceita() {
+//        return codReceita;
+//    }
+//
+//    public void setCodReceita(int codReceita) {
+//        this.codReceita = codReceita;
+//    }
+//
+//    public int getCodProduto() {
+//        return codProduto;
+//    }
+//
+//    public void setCodProduto(int codProduto) {
+//        this.codProduto = codProduto;
+//    }
 
 
 
