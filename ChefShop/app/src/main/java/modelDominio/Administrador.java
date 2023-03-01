@@ -8,28 +8,26 @@ import java.io.Serializable;
 
 /**
  *
- * @author aila e alice
+ * @author Aila
  */
 public class Administrador extends Usuario implements Serializable{
     private static final long serialVersionUID = 123456789L;
 
-    //CONSTRUTORES
-    public Administrador(int codUsuario, String nomeUsuario, String login, String senha, String email) {
-        super(codUsuario, nomeUsuario, login, senha, email);
+    public Administrador(int codUsuario, String nomeUsuario, String login, String senha, String email, int tipo) {
+        super(codUsuario, nomeUsuario, login, senha, email, tipo);
     }
 
     public Administrador(int codUsuario) {
         super(codUsuario);
     }
 
-    public Administrador(String nomeUsuario, String login, String senha, String email) {
-        super(nomeUsuario, login, senha, email);
+    public Administrador(String nomeUsuario, String login, String senha, String email, int tipo) {
+        super(nomeUsuario, login, senha, email, tipo);
     }
 
-    //TOSTRING
     @Override
     public String toString() {
-        return super.toString()+"Administrador{" + '}';
+        return "Administrador{" + '}';
     }
 
 }

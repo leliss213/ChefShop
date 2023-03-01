@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                                     runOnUiThread(new Runnable() {
                                         @Override
                                         public void run() {
-                                            Toast.makeText(informacoesApp, "Login funcionou", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(informacoesApp, "Bem-vindo, cliente!", Toast.LENGTH_SHORT).show();
                                         }
                                     });
 

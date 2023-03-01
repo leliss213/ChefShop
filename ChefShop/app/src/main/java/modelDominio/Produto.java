@@ -13,9 +13,9 @@ import java.io.Serializable;
 public class Produto implements Serializable{
     private static final long serialVersionUID = 123456789L;
 
-    private int codProduto;
     private String nomeProduto;
     private int unidade; // Colher de Sopa -> 0, Colher de Chá -> 1, Xícara -> 2, Gramas -> 3, Quilos -> 4, Unidade -> 5, Pitada -> 6
+    private int codProduto;
 
     public Produto(String nomeProduto, int unidade) {
         this.nomeProduto = nomeProduto;

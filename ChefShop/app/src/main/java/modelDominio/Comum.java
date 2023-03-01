@@ -10,19 +10,16 @@ public class Comum extends Usuario implements Serializable{
     private static final long serialVersionUID = 123456789L;
 
     //CONSTRUTORES
-    public Comum(int codUsuario, String nomeUsuario, String login, String senha, String email) {
-        super(codUsuario, nomeUsuario, login, senha, email);
-    }
-    public Comum(String login, String senha) {
-        super(login, senha);
+    public Comum(int codUsuario, String nomeUsuario, String login, String senha, String email, int tipo) {
+        super(codUsuario, nomeUsuario, login, senha, email, tipo);
     }
 
     public Comum(int codUsuario) {
         super(codUsuario);
     }
 
-    public Comum(String nomeUsuario, String login, String senha, String email) {
-        super(nomeUsuario, login, senha, email);
+    public Comum(String nomeUsuario, String login, String senha, String email, int tipo) {
+        super(nomeUsuario, login, senha, email, tipo);
     }
 
     //TOSTRING
