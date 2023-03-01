@@ -114,5 +114,22 @@ public class ConexaoController {
         }
     }
 
+    public Boolean receitaExcluir(Receita rc){
+        String msg = "";
+        try{
+            out.writeObject("ReceitaExcluir");
+            msg = (String) in.readObject(); // lendo ok
+            out.writeObject(rc);
+            msg = (String) in.readObject(); // lendo ok
+            if (msg.equals("ok")){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(Exception ex){
+            ex.printStackTrace();
+            return false;
+        }
+    }
     
 }

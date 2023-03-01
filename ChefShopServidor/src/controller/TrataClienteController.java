@@ -84,6 +84,12 @@ public class TrataClienteController extends Thread{
                     } else { 
                         out.writeObject("nOk");
                     }
+                } else if (comando.equalsIgnoreCase("ReceitaExcluir")){
+                    out.writeObject("ok");
+                    Receita rc = (Receita) in.readObject();
+                    ReceitaDao rcdao = new ReceitaDao();
+                    rcdao.excluir(rc);
+                    out.writeObject("ok");                    
                 }
 
                 //relendo

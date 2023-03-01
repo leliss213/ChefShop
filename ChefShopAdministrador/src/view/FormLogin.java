@@ -173,7 +173,7 @@ public class FormLogin extends javax.swing.JFrame{
        
         
         
-        if (userLogin != null && userLogin.getTipo() == 1){
+        if (userLogin != null && userLogin.getTipo() == 1){ // deveria ter feito instanceof Administrador
             ChefShopAdministrador.ccont.usuario = userLogin;
             FormCategorias formcat = new FormCategorias();
             formcat.setVisible(true);

@@ -30,6 +30,7 @@ public class FormReceitaDetalhada extends javax.swing.JFrame {
         jTAModoPreparo.setText(rc.getModoPreparo());
         Imagem imagem = new Imagem(rc.getImagemReceita());
         jLImagem.setIcon(imagem.getImageIcon());
+        codigo = rc.getCodReceita();
         
     }
 
@@ -95,7 +96,7 @@ public class FormReceitaDetalhada extends javax.swing.JFrame {
 
         jTAModoPreparo.setColumns(20);
         jTAModoPreparo.setRows(5);
-        jTAModoPreparo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTAModoPreparo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
         jTAModoPreparo.setEnabled(false);
         jScrollPane1.setViewportView(jTAModoPreparo);
 
@@ -146,9 +147,9 @@ public class FormReceitaDetalhada extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLNomeReceita)
-                            .addComponent(jBDeletarReceita))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLNomeReceita, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jBDeletarReceita, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -185,7 +186,25 @@ public class FormReceitaDetalhada extends javax.swing.JFrame {
     }//GEN-LAST:event_jBVoltar1ActionPerformed
 
     private void jBDeletarReceitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBDeletarReceitaActionPerformed
-        // TODO add your handling code here:
+        int retorno = JOptionPane.showConfirmDialog(this, 
+                                     "Tem certeza?",
+                                     this.getTitle(),
+                                     JOptionPane.YES_NO_OPTION);
+        // Se usuario respondeu SIM então EXCLUI
+        if (retorno == JOptionPane.YES_OPTION){ 
+            Receita rc = new Receita(codigo);
+            Boolean ok = ChefShopAdministrador.ccont.receitaExcluir(rc);
+            if (ok){
+                JOptionPane.showMessageDialog(this,
+                                              "Registro excluído");
+            }else{
+                JOptionPane.showMessageDialog(this, 
+                                              "Não foi possível excluir",
+                                               this.getTitle(),
+                                               JOptionPane.ERROR_MESSAGE);
+            }
+            dispose();
+        }
         
     }//GEN-LAST:event_jBDeletarReceitaActionPerformed
 
