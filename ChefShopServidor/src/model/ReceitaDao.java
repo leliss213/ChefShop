@@ -26,66 +26,33 @@ public class ReceitaDao {
     
      // método que retorna todas as receitas cadastradas 
     public ArrayList<Receita> getLista(int tipo) throws SQLException {
-    ArrayList<Receita> listaReceita = new ArrayList<Receita>();
+        ArrayList<Receita> listaReceita = new ArrayList<Receita>();
 
-    String sql = "SELECT * FROM receita WHERE tipo = ?";
-    PreparedStatement pstmt = con.prepareStatement(sql);
-    pstmt.setInt(1, tipo);
-    try  {
-        ResultSet res = pstmt.executeQuery();
-        if(res != null){
-            while (res.next()) {
-            Receita r = new Receita(res.getInt("codreceita"), 
-                                    res.getInt("tipo"), 
-                                    res.getString("nomereceita"), 
-                                    res.getString("modopreparo"), 
-                                    res.getBytes("imagem"));
-            
-            ArrayList<Ingredientes> listaIngredientes = new ArrayList<>();
-            IngredienteDao dao = new IngredienteDao();
-            listaIngredientes = dao.getListaIngredientes(r.getCodReceita());
-            r.setIngredientes(listaIngredientes);
-            listaReceita.add(r);
+        String sql = "SELECT * FROM receita WHERE tipo = ?";
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        pstmt.setInt(1, tipo);
+        try  {
+            ResultSet res = pstmt.executeQuery();
+            if(res != null){
+                while (res.next()) { //pra cada linha de resultado que tiver, ele add um obj Receita
+                Receita r = new Receita(res.getInt("codreceita"), 
+                                        res.getInt("tipo"), 
+                                        res.getString("nomereceita"), 
+                                        res.getString("modopreparo"), 
+                                        res.getBytes("imagem"));
+
+                ArrayList<Ingredientes> listaIngredientes = new ArrayList<>(); //cria
+                IngredienteDao dao = new IngredienteDao();
+                listaIngredientes = dao.getListaIngredientes(r.getCodReceita()); //preenchida com os ingred da receita
+                r.setIngredientes(listaIngredientes); //a lista de ingred é definida pra receita r
+                listaReceita.add(r); //e a receita é adicionada na lista de receita
+                }
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-    } catch (SQLException e) {
-        e.printStackTrace();
+        return listaReceita;
     }
-    return listaReceita;
-}
-//    public ArrayList<Receita>getLista(int tipo){
-//        Statement stmt = null; 
-//        ArrayList<Receita> listaReceita = new ArrayList<Receita>();
-//
-//        try {
-//            stmt = con.createStatement();
-//            //String sql = "select * from receita where tipo = ;" +tipo;            
-//
-//            //executando o script SQL
-//            ResultSet res = stmt.executeQuery("select * from receita where tipo = "+tipo);
-//            // se existe um resultado
-//            while (res.next()) {
-//                Receita r = new Receita(res.getInt("codreceita"), 
-//                                        res.getInt("tipo"), 
-//                                        res.getString("nomereceita"), 
-//                                        res.getString("modopreparo"), 
-//                                        res.getBytes("imagem"));
-//                //Receita r = new Receita(res.getInt("codreceita"), res.getInt("tipo"), res.getString("nomereceita"), res.getString("modopreparo"));
-//                //ERRO TA AQUI
-//                listaReceita.add(r);
-//
-//            }
-//            /// fechar as conexões e statement
-//            res.close();
-//            stmt.close();
-//            con.close();
-//            return listaReceita;
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//            return null;
-//        }
-//    }
     
     // Inserir receita
     public int inserir(Receita receita){
@@ -95,7 +62,7 @@ public class ReceitaDao {
         System.out.println("Receita: " + receita.getNomeReceita() + ", ingredientes: " + receita.getIngredientes().size());
         try {
             try {
-                con.setAutoCommit(false);
+                con.setAutoCommit(false); //desativar o commit automático pra controlar a transação na mão
                 String sql = "insert into receita (tipo, nomereceita, modopreparo, imagem) values (?,?,?,?);";
                 stmt = con.prepareStatement(sql);
                 stmt.setInt(1, receita.getTipo());
@@ -105,27 +72,27 @@ public class ReceitaDao {
                 stmt.execute();
                 con.commit();
                 System.out.println(receita);
-                PreparedStatement stmt2 = null;
-                PreparedStatement stmt3 = con.prepareStatement("select last_insert_id() from receita;");
+                PreparedStatement stmt2 = null;  // usado pra inserir cada ingrediente da receita no banco
+                PreparedStatement stmt3 = con.prepareStatement("select last_insert_id() from receita;"); //obtem o ID da última receita inserida
                 ResultSet result = null;
                 result = stmt3.executeQuery();
                 result.next();
                 
                 int ultimoidReceita = Integer.valueOf(result.getString(1));
-                for (Ingredientes ingredientes : receita.getIngredientes()) { //pra cada ingrediente percorre a lista
+                for (Ingredientes ingredientes : receita.getIngredientes()) { 
+                    //percorre a lista de ingredientes e insere eles no banco:
                     String sql2 = "insert into ingrediente (quantidade, codproduto, codreceita) values (?,?,?);";
                     stmt2 = con.prepareStatement(sql2);
                     stmt2.setFloat(1, ingredientes.getQuantidadeIngredientes());
                     stmt2.setInt(2, ingredientes.getProduto().getCodProduto());
                     stmt2.setInt(3, ultimoidReceita);
                     stmt2.execute();
-                    con.commit();
+                    con.commit(); //ativa o modo de commit automático
                 }
                 
                 stmt.close();
                 stmt2.close();
-                //stmt3.close();
-                return -1; // <- indica que tudo deu CERTO
+                return -1; // <- se deu CERTO retorna -1
                 
             } catch(SQLException e){
                 System.out.println("Erro ao cadastrar a receita!");
@@ -172,7 +139,7 @@ public class ReceitaDao {
                 stmt = con.prepareStatement(sql);
                 stmt.setInt(1, receita.getCodReceita());
                 
-                // EXECUTANDO OS COMANDOSS
+                // EXECUTANDO OS COMANDOS
                 
                 stmt.execute();
                 con.commit();
@@ -194,10 +161,7 @@ public class ReceitaDao {
                 return e.getErrorCode();
             }
         }
-    }
-    
-    // Alterar receita
-        
+    }      
     
     
 }

@@ -27,9 +27,10 @@ public class FormCadReceita extends javax.swing.JFrame {
     ArrayList<Produto> listaProdutos = new ArrayList<Produto>();
 
     private void preencheComboBoxProduto() {
-
-        listaProdutos = ChefShopAdministrador.ccont.produtoLista();
+        //preenche o combobox de produtos
+        listaProdutos = ChefShopAdministrador.ccont.produtoLista();//pega a litsa de produtos da conexão controller
         ComboBoxProduto.preencheComboBoxProduto(-1, jCBProduto, listaProdutos, false);
+        
     }
 
     private void limpaCampos() {
@@ -52,6 +53,7 @@ public class FormCadReceita extends javax.swing.JFrame {
         jFTFQuantidade.setText("");
     }
 
+    //pra limpar produto
     private void limpaProd2() {
 
         jCBProduto.setSelectedIndex(0);
@@ -355,17 +357,18 @@ public class FormCadReceita extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jFTFQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jBAdicionarIngrediente)
-                                    .addComponent(jBLimpaProd)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jBLimpaProd)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jFTFQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jBAdicionarIngrediente))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jCBProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jCBUnidadeMedida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jBAdicionarImg)
@@ -422,7 +425,7 @@ public class FormCadReceita extends javax.swing.JFrame {
         } catch (Exception e) {
             quantidade = 0;
         }
-        if (!jTFNomeReceita.getText().isEmpty()) {
+        if (!jTFNomeReceita.getText().isEmpty()) { //se n tiver vazio
             if (jCBCategoriaReceita.getSelectedIndex() != 0) {
                 if (imagem != null) {
                     if (!jTAIngredientes.getText().isEmpty()) {
@@ -430,7 +433,7 @@ public class FormCadReceita extends javax.swing.JFrame {
                             
                             Receita receita;
                             receita = new Receita(jCBCategoriaReceita.getSelectedIndex(), jTFNomeReceita.getText(), listaIngredientes, jTAModoPreparo.getText(), imagem.getImagem());
-System.out.println(receita);
+                            System.out.println(receita);
                             Boolean ok = ChefShopAdministrador.ccont.inserir(receita);
                             if (!ok) {
                                 JOptionPane.showMessageDialog(this,
@@ -468,7 +471,7 @@ System.out.println(receita);
     }//GEN-LAST:event_jBSalvarActionPerformed
 
     private void jBAdicionarIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAdicionarIngredienteActionPerformed
-//      // Botão ADD INGREDIENTE
+        // Botão ADD INGREDIENTE
 
         jBAdicionarIngrediente.requestFocus();
         float quantidade = 0;
@@ -476,9 +479,10 @@ System.out.println(receita);
         if (!jFTFQuantidade.getText().isEmpty()) {
             quantidade = ((Number) jFTFQuantidade.getValue()).floatValue();
             System.out.println(listaProdutos.get(jCBProduto.getSelectedIndex()));
-            Produto produto = listaProdutos.get(jCBProduto.getSelectedIndex());
+            Produto produto = listaProdutos.get(jCBProduto.getSelectedIndex()); //index do combobox
             Ingredientes ingrediente = new Ingredientes(0, quantidade, produto);
             listaIngredientes.add(ingrediente);
+            
             String msgFormatada = ingrediente.getQuantidadeIngredientes() + " x " + ingrediente.getProduto().getNomeProduto() + " (" + ingrediente.getProduto().getUnidadeLiteral() + ")\n";
             jTAIngredientes.append(msgFormatada);
             limpaProd();
@@ -487,7 +491,6 @@ System.out.println(receita);
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro! Defina uma quatidade");
         }
-
 
     }//GEN-LAST:event_jBAdicionarIngredienteActionPerformed
 
@@ -511,7 +514,7 @@ System.out.println(receita);
     }//GEN-LAST:event_jBCancelarActionPerformed
 
     private void jBLimpaProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimpaProdActionPerformed
-        // TODO add your handling code here:
+        // TBotão limpar produto
         limpaProd2();
     }//GEN-LAST:event_jBLimpaProdActionPerformed
 

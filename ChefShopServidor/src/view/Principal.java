@@ -22,6 +22,9 @@ public class Principal {
         Connection con; //declarar conexao que vai armazenar a conexao com banco; PS: Lembrar de importar a mão;
         con = Conector.getConnection();
         
+        //con: armazena a conexão com o banco
+        //getConnection: método em Conector que faz a conexão, tem o caminho do banco (3306)
+        
         try {
             // criar o servidor socket
             ServerSocket servidor = new ServerSocket(12345);

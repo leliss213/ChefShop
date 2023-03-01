@@ -443,7 +443,6 @@ public class FormCategorias extends javax.swing.JFrame {
         // Botão Informações do software:
         FormSobre frmsobre = new FormSobre();
         frmsobre.setVisible(true);
-        //dispose();
     }//GEN-LAST:event_jBInformacoesActionPerformed
 
     /**

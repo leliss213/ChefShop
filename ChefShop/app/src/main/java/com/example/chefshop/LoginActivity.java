@@ -78,11 +78,6 @@ public class LoginActivity extends AppCompatActivity {
                             }
                         });
                         thread.start();
-//                        if (usuario.equals("alice") && senha.equals("1234")){
-//                            Intent it = new Intent(LoginActivity.this, CategoriasReceitasActivity.class);
-//                            it.putExtra("usuario",usuario);
-//                            startActivity(it);
-//                        }
 
                     } else {
                         etLoginSenha.setError("ERRO: Informe a senha.");
@@ -105,14 +100,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
     }
-    public void limpaCampos() {
-        etLoginUsuario.setText("");
-        etLoginSenha.setText("");
-    }
-
 }

@@ -90,7 +90,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIniciarActionPerformed
-        // TODO add your handling code here:
+        // Botão Entrar:
         FormLogin frmlogin = new FormLogin();
         frmlogin.setVisible(true);
         dispose();

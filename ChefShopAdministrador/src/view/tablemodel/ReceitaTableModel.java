@@ -14,7 +14,6 @@ import modelDominio.Receita;
 public class ReceitaTableModel extends AbstractTableModel{
 
     private ArrayList<Receita> listaReceitas;
-    
 
     public ReceitaTableModel(ArrayList<Receita> listaReceitas) {
         this.listaReceitas = listaReceitas;

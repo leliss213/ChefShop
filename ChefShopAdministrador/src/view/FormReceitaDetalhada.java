@@ -193,7 +193,7 @@ public class FormReceitaDetalhada extends javax.swing.JFrame {
         // Se usuario respondeu SIM então EXCLUI
         if (retorno == JOptionPane.YES_OPTION){ 
             Receita rc = new Receita(codigo);
-            Boolean ok = ChefShopAdministrador.ccont.receitaExcluir(rc);
+            Boolean ok = ChefShopAdministrador.ccont.receitaExcluir(rc); //pra saber se do método veio true ou false
             if (ok){
                 JOptionPane.showMessageDialog(this,
                                               "Registro excluído");

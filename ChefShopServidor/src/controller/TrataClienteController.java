@@ -28,6 +28,8 @@ public class TrataClienteController extends Thread{
         this.idUnico = idUnico;
     }
     
+    //DAOs: pegam os dados do banco e transformam em objs de classe
+    
     //insert code -> override method -> RUN
     @Override
     public void run() {
@@ -57,9 +59,7 @@ public class TrataClienteController extends Thread{
                 } else if (comando.equalsIgnoreCase("ProdutoLista")){
                     out.writeObject("ok");
                     ProdutoDao dao = new ProdutoDao();
-                    System.out.println("teste");
                     out.writeObject(dao.getListaProdutos());
-                    System.out.println("ttsssss");
                 } else if (comando.equalsIgnoreCase("inserirUsuario")) {
                     out.writeObject("ok"); 
                     Usuario user = (Usuario) in.readObject();

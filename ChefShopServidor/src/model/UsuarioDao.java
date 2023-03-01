@@ -29,10 +29,12 @@ public class UsuarioDao {
         Usuario userSelecionado = null;
         String senhaHash = null;
         try {
-		MessageDigest md = MessageDigest.getInstance("MD5"); // MD5, SHA-1, SHA-256
-			
-		BigInteger senhaHashDigitada = new BigInteger(1, md.digest(user.getSenha().getBytes()));
-		senhaHash = senhaHashDigitada.toString();
+		MessageDigest md = MessageDigest.getInstance("MD5"); //md instancia md5
+                // md5 - código de hash
+                
+                //método digest pra pegar a senha em vetor:
+		BigInteger senhaHashDigitada = new BigInteger(1, md.digest(user.getSenha().getBytes())); //vetor de bytes p int
+                senhaHash = senhaHashDigitada.toString();
                 System.out.println("Senha em hash: " + senhaHash);
                         
             } catch (NoSuchAlgorithmException e) {

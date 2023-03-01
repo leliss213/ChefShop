@@ -55,7 +55,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                                 //userInserido = ccont.inserir(user);
                                 String msgRecebida = ccont.inserir(user);
                                 if (msgRecebida.equals("ok")) {
-                                    informacoesApp.setUsuarioInserido(userInserido);
+                                    informacoesApp.setUsuarioInserido(userInserido); //salvar no infapp
                                     Intent it = new Intent(CadastroUsuarioActivity.this, LoginActivity.class);
                                     startActivity(it);
                                     runOnUiThread(new Runnable() {

@@ -182,7 +182,7 @@ public class FormCategoriaExpandida extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTTabelaReceitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTTabelaReceitasMouseClicked
-        // TODO add your handling code here:
+        // Quando clica em uma linha da tabela, abre a receita detalhada:
         FormReceitaDetalhada frmrecdet = new FormReceitaDetalhada(receitamodel.getReceita(jTTabelaReceitas.getSelectedRow()));
         frmrecdet.setVisible(true);
     }//GEN-LAST:event_jTTabelaReceitasMouseClicked
