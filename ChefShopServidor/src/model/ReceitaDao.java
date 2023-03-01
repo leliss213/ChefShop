@@ -159,7 +159,8 @@ public class ReceitaDao {
                 // desliga o autocommit
                 con.setAutoCommit(false);
                 // o ? será substituído pelo valor
-                String sql = "delete from receita where codreceita = ? ";
+                String sql = "delete from ingrediente where ingrediente.codreceita = ?;\n" +
+                             "delete from receita where codReceita = ?;";
                 stmt = con.prepareStatement(sql);
                 //substituir os ? do script SQL
                 stmt.setInt(1, receita.getCodReceita());

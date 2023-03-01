@@ -42,6 +42,7 @@ public class FormCadReceita extends javax.swing.JFrame {
         listaIngredientes.isEmpty();
         jTAIngredientes.setText("");
         jTAModoPreparo.setText("");
+        jLImagem.setIcon(null);
     }
 
     private void limpaProd() {
@@ -63,12 +64,13 @@ public class FormCadReceita extends javax.swing.JFrame {
     /**
      * Creates new form FormCadReceita
      */
-    public FormCadReceita() {
+    public FormCadReceita(int tipoRecebido) {
         initComponents();
 
         jCBUnidadeMedida.setSelectedIndex(7);
         preencheComboBoxProduto();
         listaIngredientes = new ArrayList<>();
+        jCBCategoriaReceita.setSelectedIndex(tipoRecebido);
     }
 
     /**
@@ -149,6 +151,7 @@ public class FormCadReceita extends javax.swing.JFrame {
         jLabel3.setText("Categoria:");
 
         jCBCategoriaReceita.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a categoria", "1 - Carnes", "2 - Massas", "3 - Saladas", "4 - Sobremesas", "5 - Sopas", "6 - Lanches" }));
+        jCBCategoriaReceita.setEnabled(false);
         jCBCategoriaReceita.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCBCategoriaReceitaActionPerformed(evt);

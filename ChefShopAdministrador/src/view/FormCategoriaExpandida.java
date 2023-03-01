@@ -170,7 +170,7 @@ public class FormCategoriaExpandida extends javax.swing.JDialog {
 
     private void jBAddReceitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAddReceitaActionPerformed
         // TODO add your handling code here:
-        FormCadReceita frmcadrec = new FormCadReceita();
+        FormCadReceita frmcadrec = new FormCadReceita(this.tipoRecebido);
         frmcadrec.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBAddReceitaActionPerformed
@@ -178,7 +178,7 @@ public class FormCategoriaExpandida extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         FormCategorias frmcat = new FormCategorias();
         frmcat.setVisible(true);
-        
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTTabelaReceitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTTabelaReceitasMouseClicked
