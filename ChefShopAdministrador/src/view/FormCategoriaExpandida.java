@@ -30,6 +30,7 @@ public class FormCategoriaExpandida extends javax.swing.JDialog {
         ArrayList<Receita> listaReceita = ChefShopAdministrador.ccont.receitaLista(tipoRecebido);
         receitamodel = new ReceitaTableModel(listaReceita);
         jTTabelaReceitas.setModel(receitamodel);
+        
         if (tipoRecebido == 1) {
             setTitle("Carnes");
         } else if (tipoRecebido == 2) {
@@ -43,6 +44,7 @@ public class FormCategoriaExpandida extends javax.swing.JDialog {
         } else if (tipoRecebido == 6) {
             setTitle("Lanches");
         }
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -65,6 +67,7 @@ public class FormCategoriaExpandida extends javax.swing.JDialog {
 
         jPanel1.setBackground(new java.awt.Color(251, 251, 248));
 
+        jTTabelaReceitas.setAutoCreateRowSorter(true);
         jTTabelaReceitas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -73,7 +76,7 @@ public class FormCategoriaExpandida extends javax.swing.JDialog {
                 {null, null, null}
             },
             new String [] {
-                "Nome da Receita", "Categoria", "Ingredientes"
+                "Nome da Receita", "Ingredientes", "Modo de Preparo"
             }
         ) {
             Class[] types = new Class [] {
