@@ -87,6 +87,11 @@ public class FormCategoriaExpandida extends javax.swing.JDialog {
                 return types [columnIndex];
             }
         });
+        jTTabelaReceitas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTTabelaReceitasMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTTabelaReceitas);
 
         jBAddReceita.setBackground(new java.awt.Color(139, 187, 84));
@@ -133,18 +138,18 @@ public class FormCategoriaExpandida extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(169, 169, 169)
+                .addContainerGap(170, Short.MAX_VALUE)
                 .addComponent(jBAddReceita, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addContainerGap(170, Short.MAX_VALUE))
             .addComponent(jScrollPane1)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(30, 30, 30)
                 .addComponent(jBAddReceita, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE))
         );
 
@@ -175,6 +180,12 @@ public class FormCategoriaExpandida extends javax.swing.JDialog {
         frmcat.setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTTabelaReceitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTTabelaReceitasMouseClicked
+        // TODO add your handling code here:
+        FormReceitaDetalhada frmrecdet = new FormReceitaDetalhada(receitamodel.getReceita(jTTabelaReceitas.getSelectedRow()));
+        frmrecdet.setVisible(true);
+    }//GEN-LAST:event_jTTabelaReceitasMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

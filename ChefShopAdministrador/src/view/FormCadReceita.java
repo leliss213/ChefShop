@@ -518,7 +518,9 @@ System.out.println(receita);
     }//GEN-LAST:event_jFTFQuantidadeActionPerformed
 
     private void jBVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVoltarActionPerformed
-        this.dispose();
+        dispose();
+        FormCategorias frmcat = new FormCategorias();
+        frmcat.setVisible(true);
     }//GEN-LAST:event_jBVoltarActionPerformed
 
 
